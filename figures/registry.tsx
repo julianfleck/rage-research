@@ -3,12 +3,12 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Bar, BarChart, Cell, Line, LineChart, XAxis, YAxis } from "recharts";
 import { FlowField } from "@/components/flow-field";
-import { SubstrateHeroCoact } from "@/components/figures/substrate-hero-coact";
-import { SubstratePlayground } from "@/components/figures/substrate-playground";
-import { SubstrateField } from "@/components/figures/substrate-field";
-import { TaskSpread } from "@/components/figures/task-spread";
-import { HillTypes } from "@/components/figures/hill-types";
-import { TopoZoom } from "@/components/figures/topo-zoom";
+import { SubstrateHeroCoact } from "./substrate-hero-coact";
+import { SubstratePlayground } from "./substrate-playground";
+import { SubstrateField } from "./substrate-field";
+import { TaskSpread } from "./task-spread";
+import { HillTypes } from "./hill-types";
+import { TopoZoom } from "./topo-zoom";
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
 export type FigureKind = "svg" | "canvas" | "chart";
