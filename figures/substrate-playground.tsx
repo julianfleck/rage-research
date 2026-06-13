@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SubstrateHeroCoact } from "@/components/figures/substrate-hero-coact";
+import { SubstrateHeroCoact } from "./substrate-hero-coact";
 
 // The interactive substrate playground: the landing figure with its governing
 // parameters exposed, each captioned with the substrate metric it maps to.
