@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+.obsidian/
+*.log
+
+# Tooling
+node_modules/
+
+# Internal-only material — not shared with collaborators.
+# (Working research notes currently live under research/; move them into
+# internal/ as they're triaged. Both are kept out of the shared repo.)
+internal/
+research/
+
+# Self-labeled internal working docs (kept out until triaged).
+/tracking.md
