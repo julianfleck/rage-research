@@ -76,7 +76,7 @@ export const figures: Record<string, FigureDef> = {
   // Topography: zooming into the graph exposes finer nodes (progressive disclosure).
   "topo-zoom": { kind: "canvas", render: () => <TopoZoom /> },
   // Mechanical: how a distribution's shape maps to the coefficient.
-  "gini-spread": { kind: "chart", render: () => <GiniAnimated /> },
+  "gini-spread": { kind: "canvas", render: () => <GiniNodes /> },
   // Hill intro: type-bubbles breathing between varied and collapsed.
   "hill-types": { kind: "canvas", render: () => <HillTypes /> },
   // Hill: effective count vs order q for even vs concentrated distributions.
