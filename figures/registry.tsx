@@ -12,7 +12,7 @@ import { TopoZoom } from "./topo-zoom";
 import { GiniNodes } from "./gini-nodes";
 import { TypeDrift } from "./type-drift";
 import { MembraneChannels } from "./membrane-channels";
-import { MembraneAperture } from "./membrane-aperture";
+import { MembraneSize } from "./membrane-size";
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
 export type FigureKind = "svg" | "canvas" | "chart";
@@ -95,6 +95,6 @@ export const figures: Record<string, FigureDef> = {
   "substrate-playground": { kind: "chart", render: () => <SubstratePlayground /> },
   // Membranes: semipermeable channels gating flow at thresholds.
   "membrane-channels": { kind: "canvas", render: () => <MembraneChannels /> },
-  // Membranes: size as an intervention surface — variety inside sets reasoning room.
-  "membrane-aperture": { kind: "chart", render: () => <MembraneAperture /> },
+  // Membranes: a membrane breathing over a typed field — size sets the variety admitted.
+  "membrane-size": { kind: "canvas", render: () => <MembraneSize /> },
 };
