@@ -55,9 +55,11 @@ A membrane is not a cluster. Clusters partition: each node lands in one group. M
 
 Membranes over shared substrate are an active interest across a few projects, each coming at them from a different direction — from [selectively permeable communication](https://www.julianfleck.net/articles/spirits-dark-forest) to trust-scoped coordination across teams. We mostly want a membrane to do two things at once. It **mediates context availability** — deciding what context a turn can reach, and (through [[resonance]]) at what granularity. And it is a **coordination surface** — agents that share a membrane coordinate through it: each one's writes change the coupled region the others retrieve from next, so they align by acting on shared state rather than by messaging each other.
 
-Because the membrane is that surface, it is also where we intervene. The variety it admits bounds what an agent can do: narrow context, limited reasoning and limited agency; broader inputs, broader reasoning and more room to act. So modulating the variety — the size and density of a membrane — is how we act on the agents inside it without touching them one by one. The same boundary makes their state legible from outside: read the membrane and you read what the agents have to work with.
+Because an agent is itself a frame, the rule that builds any membrane builds these too: agents that fire together wire together. Co-acting agents accumulate coupling and are drawn together; the membrane around a team forms from the coordinating itself, bottom-up, rather than being drawn around an org chart — and decay dissolves it again once the coordinating stops.
 
-<Figure id="membrane-size" margin caption="Widening the membrane takes in more whole subgraphs — and more frame-types; tightening it narrows the context back down." />
+<Figure id="membrane-coordination" margin caption="Agents are frames too: when a set of them co-acts, coupling builds and a membrane closes around them — a team that forms from the coordinating itself, then dissolves as the coupling decays." />
+
+The membrane is also where we intervene. The variety it admits bounds what an agent can do: narrow context, limited reasoning and limited agency; broader inputs, broader reasoning and more room to act. So modulating the variety — the size and density of a membrane — is how we act on the agents inside it without touching them one by one. The same boundary makes their state legible from outside: read the membrane and you read what the agents have to work with.
 
 ## Open problems
 
