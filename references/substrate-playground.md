@@ -5,7 +5,7 @@ date: 2026-06-14
 series: References
 order: 20
 author: Julian Fleck
-tags: [substrate, instrumentation]
+tags: [instrumentation]
 show: true
 unlisted: true
 ---

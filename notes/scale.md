@@ -9,7 +9,6 @@ version: 1
 show: true
 author: Julian Fleck
 tags:
-  - substrate
   - scale
   - structure
 ---

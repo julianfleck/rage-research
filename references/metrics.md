@@ -7,7 +7,7 @@ status: draft
 version: 1
 show: true
 author: Julian Fleck
-tags: [substrate, instrumentation]
+tags: [instrumentation]
 ---
 ## 1. Energy Dynamics
 

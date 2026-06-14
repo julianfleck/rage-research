@@ -6,7 +6,7 @@ date: 2026-06-11
 series: Lab notes
 order: 10
 author: Julian Fleck
-tags: [substrate, metric, diversity]
+tags: [metric, diversity]
 show: true
 ---
 
