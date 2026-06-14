@@ -21,7 +21,7 @@ Hill numbers come from ecology. There the kinds are species and the population i
 
 These are notes on what we want to study, not measurements we have taken. The intent is to borrow Hill numbers to read *semantic* diversity over the substrate: treat the kinds as frame types and the population as a set of active frames, and ask how varied that set is. A Hill number is an *effective count* — the number of equally-common types that would produce the diversity you actually see. Ten frame types may be present, but if one dominates, the effective count drops well below ten, and the rare ones barely register.
 
-We expect to use this as a general reading of substrate state — whether a region keeps a varied vocabulary of framings or collapses onto a few — and to read it across [[scale|scales]], since healthy diversity for the whole store, a cluster, and a single membrane need not be the same number.
+We expect to use this as a general reading of substrate state — whether a region keeps a varied vocabulary of framings or collapses onto a few — and to read it across [[scale|scales]], since healthy diversity for the whole store, a membrane, and a single agent's active context need not be the same number.
 
 One thing it should expose is a diversity signature that differs by task: a narrow task should range over few framings, an open one over many. Whether that can be turned into a judgment of [[task-appropriate-behavior|task-appropriate behavior]] is a separate and still-open question.
 
