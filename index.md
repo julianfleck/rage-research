@@ -17,10 +17,10 @@ We currently plan to carry this out over [[graph-construction|frame-semantic kno
 
 These notes document the project as it proceeds. They record open problems alongside results and should be read as provisional. And yes, much of this is written with the help of AI, so don't expect perfect prose, especially not on anything flagged as draft :)
 
-<Related category="References" title="References" />
+<Related category="References" title="References" sort="updated" />
 
-<Related category="Papers" title="Papers" />
+<Related category="Papers" title="Papers" sort="updated" />
 
-<Related category="Articles" title="Articles" />
+<Related category="Articles" title="Articles" sort="updated" />
 
-<Related category="Lab notes" title="Lab notes" />
+<Related category="Lab notes" title="Lab notes" sort="updated" />
