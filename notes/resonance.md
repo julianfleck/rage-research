@@ -17,7 +17,7 @@ In substrate dynamics, *resonance* is a measure on the substrate itself, not on 
 
 What resonance does is set what gets retrieved together. A retrieval gathers the units whose resonance clears a threshold — resonant units come back as a group. Held high, the threshold returns only the most resonant: the coarse summary at the top of a subgraph. Lowered, retrieval reaches deeper and more of the detail below clears the bar, down to fine grain. So resonance, read through a threshold, is the knob behind granularity — how coarse or fine the retrieved context is (see [[fractal-composition]]). Concretely, the threshold is a setting in the re-ranker.
 
-<Figure id="resonance" margin caption="A few orientation sources blend into a field: frames line up into domains where one source dominates and twist where two interfere; the sources turn so the pattern drifts, and dragging the cursor combs the field into the stroke direction." />
+<Figure id="resonance" margin caption="Each frame drawn as its phase angle. Frames that resonate line up to the same angle; where regions of different angle meet, the field interferes." />
 
 There is no privileged recipient in this. It does not matter whether what retrieves is an agent, a person, a document, or a set of instructions — the same resonance is read, the same threshold applies. This is the quantity a [[membranes|membrane]]'s channels gate: the membrane is the boundary, the threshold on resonance is what opens a channel, and how far the threshold drops is how deep retrieval reaches. Permeability, depth, and granularity are the same gate read at different grains.
 
