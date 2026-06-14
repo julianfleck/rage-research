@@ -55,6 +55,8 @@ export function SubstrateHeroCoact({
   const restLenRef = useRef(restLen);
   const injMinRef = useRef(injMin);
   const injMaxRef = useRef(injMax);
+  const showMembraneRef = useRef(showMembrane);
+  useEffect(() => void (showMembraneRef.current = showMembrane), [showMembrane]);
   useEffect(() => void (actDecayRef.current = actDecay), [actDecay]);
   useEffect(() => void (coupDecayRef.current = coupDecay), [coupDecay]);
   useEffect(() => void (coupLearnRef.current = coupLearn), [coupLearn]);
