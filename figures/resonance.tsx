@@ -2,13 +2,15 @@
 
 import { useEffect, useRef } from "react";
 
-// Resonance. Frames are phase oscillators. Where they are both coupled and
-// coherent — here, within a cluster — they pull each other into phase and pulse
-// in unison: they resonate, and the bonds between them brighten as they lock.
-// Weakly tied frames across clusters stay out of phase, and those bonds stay
-// faint. Two clusters run at their own tempo, each resonating internally. So the
-// figure shows resonance itself — how strongly a region vibrates together — not
-// what is retrieved from it. Black/white, currentColor.
+// Resonance as a phase field. Each frame is drawn as a short line at its phase
+// angle. Coupling pulls neighbours toward the same angle, so coherent regions
+// lock into parallel domains that rotate together — that local alignment is
+// resonance. Where a region locks, its ticks brighten and lengthen, so the
+// moment of coming into phase is the visible event; domain boundaries, where
+// rates disagree, stay short and faint. Black/white, currentColor.
+const GRIDN = 8; // GRIDN×GRIDN frames
+const K = 0.55; // coupling toward neighbour alignment
+const STEP = 0.05;
 
 function mulberry32(a: number) {
   return () => {
@@ -20,49 +22,37 @@ function mulberry32(a: number) {
   };
 }
 
-type FNode = { x: number; y: number; theta: number; omega: number; cluster: number };
+type P = { x: number; y: number; omega: number; nbrs: number[] };
 
-const { nodes: NODES, edges: EDGES } = (() => {
-  const rng = mulberry32(20260614);
-  const clusters = [
-    { cx: 0.33, cy: 0.46, base: 0.9 },
-    { cx: 0.66, cy: 0.54, base: 1.22 },
-  ];
-  const M = 6;
-  const nodes: FNode[] = [];
-  clusters.forEach((c, ci) => {
-    for (let i = 0; i < M; i++) {
-      const a = (i / M) * Math.PI * 2 + rng() * 0.5;
-      const r = 0.1 + rng() * 0.05;
-      nodes.push({
-        x: c.cx + Math.cos(a) * r,
-        y: c.cy + Math.sin(a) * r,
-        theta: rng() * Math.PI * 2,
-        omega: c.base + (rng() - 0.5) * 0.08,
-        cluster: ci,
-      });
+const NODES: P[] = (() => {
+  const rng = mulberry32(20260615);
+  const cell = 1 / GRIDN;
+  const pts: P[] = [];
+  for (let r = 0; r < GRIDN; r++) {
+    for (let c = 0; c < GRIDN; c++) {
+      const x = Math.min(0.95, Math.max(0.05, (c + 0.5) * cell + (rng() - 0.5) * cell * 0.6));
+      const y = Math.min(0.95, Math.max(0.05, (r + 0.5) * cell + (rng() - 0.5) * cell * 0.6));
+      // Smooth spatial variation in natural rate → coherent regions plus a few
+      // boundaries where rates disagree.
+      const omega = 0.22 + 0.18 * Math.sin(x * 4.2 + 1) * Math.cos(y * 3.6) + (rng() - 0.5) * 0.05;
+      pts.push({ x, y, omega, nbrs: [] });
     }
-  });
-  // Intra-cluster edges (strong): each node to its two nearest in-cluster peers.
-  const edges: { i: number; j: number; K: number }[] = [];
-  const seen = new Set<string>();
-  const add = (i: number, j: number, K: number) => {
-    const key = i < j ? `${i}-${j}` : `${j}-${i}`;
-    if (seen.has(key)) return;
-    seen.add(key);
-    edges.push({ i, j, K });
-  };
-  nodes.forEach((n, i) => {
-    const peers = nodes
-      .map((m, j) => ({ j, d: (m.x - n.x) ** 2 + (m.y - n.y) ** 2 }))
-      .filter((p) => p.j !== i && nodes[p.j].cluster === n.cluster)
-      .sort((a, b) => a.d - b.d);
-    for (let k = 0; k < 2 && k < peers.length; k++) add(i, peers[k].j, 0.95);
-  });
-  // A couple of weak bridges across clusters.
-  add(2, 8, 0.14);
-  add(4, 9, 0.14);
-  return { nodes, edges };
+  }
+  const rad = 1.45 * cell;
+  for (let i = 0; i < pts.length; i++) {
+    for (let j = i + 1; j < pts.length; j++) {
+      if ((pts[i].x - pts[j].x) ** 2 + (pts[i].y - pts[j].y) ** 2 < rad * rad) {
+        pts[i].nbrs.push(j);
+        pts[j].nbrs.push(i);
+      }
+    }
+  }
+  return pts;
+})();
+
+const THETA0 = (() => {
+  const rng = mulberry32(7);
+  return NODES.map(() => rng() * Math.PI * 2);
 })();
 
 export function ResonanceFigure() {
@@ -80,8 +70,8 @@ export function ResonanceFigure() {
     let frame = 0;
     let color = "#888";
 
-    // Mutable phase state (seeded initial values copied from NODES).
-    const theta = NODES.map((n) => n.theta);
+    const theta = THETA0.slice();
+    const next = new Float32Array(theta.length);
 
     const resize = () => {
       const r = canvas.getBoundingClientRect();
@@ -98,39 +88,60 @@ export function ResonanceFigure() {
     const draw = () => {
       if (frame++ % 40 === 0) color = getComputedStyle(canvas).color;
       ctx.clearRect(0, 0, w, h);
-      const sx = (x: number) => x * w;
-      const sy = (y: number) => y * h;
-      const step = 0.05;
+      const m = Math.min(w, h);
 
-      // Kuramoto: couplings pull connected phases toward alignment.
-      const dθ = NODES.map((n) => n.omega);
-      for (const e of EDGES) {
-        const pull = Math.sin(theta[e.j] - theta[e.i]) * e.K;
-        dθ[e.i] += pull;
-        dθ[e.j] -= pull;
-      }
-      for (let i = 0; i < NODES.length; i++) theta[i] += step * dθ[i];
-
-      // Bonds: brighten with phase coherence (bright when in phase).
-      ctx.strokeStyle = color;
-      ctx.lineWidth = 1;
-      for (const e of EDGES) {
-        const coh = 0.5 + 0.5 * Math.cos(theta[e.i] - theta[e.j]);
-        ctx.globalAlpha = e.K * (0.15 + 0.85 * coh) * (e.K > 0.5 ? 1 : 1.4);
-        ctx.beginPath();
-        ctx.moveTo(sx(NODES[e.i].x), sy(NODES[e.i].y));
-        ctx.lineTo(sx(NODES[e.j].x), sy(NODES[e.j].y));
-        ctx.stroke();
-      }
-
-      // Frames: pulse with their phase; a resonating cluster pulses in unison.
-      ctx.fillStyle = color;
+      // Kuramoto step: each frame turns toward its own rate plus its neighbours.
       for (let i = 0; i < NODES.length; i++) {
-        const p = 0.5 + 0.5 * Math.sin(theta[i]);
-        ctx.globalAlpha = 0.3 + 0.65 * p;
+        let s = 0;
+        for (const j of NODES[i].nbrs) s += Math.sin(theta[j] - theta[i]);
+        next[i] = theta[i] + STEP * (NODES[i].omega + (K * s) / Math.max(1, NODES[i].nbrs.length));
+      }
+      for (let i = 0; i < theta.length; i++) theta[i] = next[i];
+
+      // Local alignment (order) per frame, over itself and its neighbours.
+      const order = new Float32Array(theta.length);
+      for (let i = 0; i < NODES.length; i++) {
+        let cx = Math.cos(theta[i]);
+        let cy = Math.sin(theta[i]);
+        for (const j of NODES[i].nbrs) {
+          cx += Math.cos(theta[j]);
+          cy += Math.sin(theta[j]);
+        }
+        const n = 1 + NODES[i].nbrs.length;
+        order[i] = Math.hypot(cx, cy) / n;
+      }
+
+      // Faint links between aligned neighbours — the field knitting together.
+      ctx.strokeStyle = color;
+      for (let i = 0; i < NODES.length; i++) {
+        for (const j of NODES[i].nbrs) {
+          if (j < i) continue;
+          const coh = 0.5 + 0.5 * Math.cos(theta[i] - theta[j]);
+          if (coh < 0.6) continue;
+          ctx.globalAlpha = 0.12 * (coh - 0.6) * 2.5;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(NODES[i].x * w, NODES[i].y * h);
+          ctx.lineTo(NODES[j].x * w, NODES[j].y * h);
+          ctx.stroke();
+        }
+      }
+
+      // Phase-angle ticks: brighter and longer where the region has locked.
+      ctx.lineCap = "round";
+      for (let i = 0; i < NODES.length; i++) {
+        const o = order[i];
+        const hl = (0.018 + 0.016 * o) * m; // half-length grows with alignment
+        const cx = NODES[i].x * w;
+        const cy = NODES[i].y * h;
+        const dx = Math.cos(theta[i]) * hl;
+        const dy = Math.sin(theta[i]) * hl;
+        ctx.globalAlpha = 0.22 + 0.7 * o;
+        ctx.lineWidth = 1 + 1.4 * o;
         ctx.beginPath();
-        ctx.arc(sx(NODES[i].x), sy(NODES[i].y), 2 + 1.8 * p, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.moveTo(cx - dx, cy - dy);
+        ctx.lineTo(cx + dx, cy + dy);
+        ctx.stroke();
       }
       ctx.globalAlpha = 1;
       raf = requestAnimationFrame(draw);
