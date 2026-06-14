@@ -16,11 +16,11 @@ show: true
 
 In substrate dynamics, *membrane* is meant in the cell-biology sense: a **semipermeable boundary** — not a wall (nothing crosses) and not an open door (everything crosses), but a surface whose **channels open and close at thresholds**. The gating is the point: flow across the boundary is conditional, set by what has accumulated on either side.
 
-<Figure id="membrane-channels" margin caption="A channel opens only once enough has accumulated on its side, lets a burst across, then closes again as the pressure decays." />
+<Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
 
 Over the substrate, a membrane is that surface drawn at a moment around a co-active region — the frames and the agents working over them. What opens its channels is local alignment between frames. How we currently raise that alignment: frames carry an initial phase seeded from their content, and attention events drive them toward each other from there — one mechanism among possible others, and still being worked out. Decay pulls the alignment back down and lets the channels close. A membrane is drawn and released, not a fixed group.
 
-<Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
+<Figure id="membrane-channels" margin caption="A channel opens only once enough has accumulated on its side, lets a burst across, then closes again as the pressure decays." />
 
 A membrane encloses both the information and the actors working on it, not one or the other. An agent, in this reading, is itself a frame — an aggregation over the context it currently holds, its harness plus what it has in play this turn. It carries an activation pattern like any other frame, so computing that fingerprint over frames picks out the membrane: two agents on the same codebase fall inside one naturally, and two people with overlapping research interests are grouped just as organically — close enough on the substrate to be put in touch.
 
