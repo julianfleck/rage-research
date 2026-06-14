@@ -45,13 +45,13 @@ Beyond depth, a membrane regulates two axes, and the work here can read it throu
 
 The two are complementary — one gates how much, the other gates who. The open question is which axis dominates for which problem, and whether they are two views of one gating mechanism or two mechanisms sharing a boundary.
 
-## Membranes over membranes
+## Nesting and overlap
 
 A membrane is not a cluster. Clusters partition: each node lands in one group. Membranes nest and overlap — one can sit inside another, and two can share frames without either containing the other. A membrane need not be semantically coherent: co-activation defines it, not similarity, so one can span diverse regions of the substrate, holding frames pulled together by use rather than by meaning. An agent's active context, a project's working set, and a team's shared region are membranes at different [[scale|scales]], drawn at the same moment over overlapping material. The object of study is membranes over membranes: boundaries layered and crossing, not tiles.
 
 <Figure id="substrate-hero" margin caption="Several membranes forming at once over shared frames — nesting and overlapping rather than partitioning into tiles." />
 
-## As an intervention surface
+## Intervention and coordination
 
 Membranes over shared substrate are an active interest across a few projects, each coming at them from a different direction — from [selectively permeable communication](https://www.julianfleck.net/articles/spirits-dark-forest) to trust-scoped coordination across teams. We mostly want a membrane to do two things at once. It **mediates context availability** — deciding what context a turn can reach, and (through [[resonance]]) at what granularity. And it is a **coordination surface** — agents that share a membrane coordinate through it: each one's writes change the coupled region the others retrieve from next, so they align by acting on shared state rather than by messaging each other.
 
@@ -59,7 +59,7 @@ Because the membrane is that surface, it is also where we intervene. The variety
 
 <Figure id="membrane-size" margin caption="Widening the membrane takes in more whole subgraphs — and more frame-types; tightening it narrows the context back down." />
 
-## Open Questions
+## Open problems
 
 - What sets a channel's threshold — how much [[resonance]] it takes to open one, and how far past it the channel opens — the size and permeability a membrane should have for a task, the same unsettled referent as [[task-appropriate-behavior]].
 - How to measure a membrane's permeability, and the variety it admits.
