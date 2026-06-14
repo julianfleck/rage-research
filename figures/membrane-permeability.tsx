@@ -85,7 +85,7 @@ export function MembranePermeability() {
       ctx.lineWidth = 1.25;
       ctx.globalAlpha = 0.5;
       ctx.beginPath();
-      const rr = (0.1 + 0.34 * res) * m;
+      const rr = (0.1 + 0.34 * reach) * m;
       const STEPS = 80;
       for (let i = 0; i <= STEPS; i++) {
         const a = (i / STEPS) * Math.PI * 2;
