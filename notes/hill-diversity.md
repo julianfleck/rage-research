@@ -1,5 +1,6 @@
 ---
 title: Hill diversity
+definition: "Effective counts of frame types at several orders (richness, Shannon, inverse-Simpson) — a diversity reading of whether rare framings survive or get drowned out."
 description: Effective counts of frame types at different orders — how we'd tell whether rare framings survive or get drowned out.
 date: 2026-06-12
 series: Lab notes

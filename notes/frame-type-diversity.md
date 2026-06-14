@@ -1,5 +1,6 @@
 ---
 title: Frame-type diversity
+definition: "The variety of frame types active in a region of the substrate — the most direct read-out of where a population sits in the divergence/convergence cycle."
 description: The variety of frame types in play as the most direct read-out of the divergence/convergence cycle — and its one-directional collapse, homogenization drift.
 date: 2026-06-11
 series: Lab notes

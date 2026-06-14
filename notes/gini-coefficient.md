@@ -1,5 +1,6 @@
 ---
 title: Gini coefficient
+definition: "A single number (0–1) for how unequally activation is concentrated across frames — high values flag a few frames hoarding the energy."
 description: A single number for how unequally energy is spread across the substrate.
 date: 2026-06-12
 series: Lab notes
