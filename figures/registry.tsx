@@ -16,6 +16,7 @@ import { MembraneNesting } from "./membrane-nesting";
 import { MembraneCoordination } from "./membrane-coordination";
 import { ResonanceFigure } from "./resonance";
 import { CouplingPropagation } from "./coupling-propagation";
+import { FractalZoom } from "./fractal-zoom";
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
 export type FigureKind = "svg" | "canvas" | "chart";
@@ -111,4 +112,6 @@ export const figures: Record<string, FigureDef> = {
   // Coupling: the hero's propagation + binding with the membrane left out, and a
   // stronger pull so co-active frames visibly draw together.
   "coupling-propagation": { kind: "canvas", render: () => <CouplingPropagation /> },
+  // Fractal composition: an endless zoom into self-similar nested membranes.
+  "fractal-zoom": { kind: "canvas", render: () => <FractalZoom /> },
 };
