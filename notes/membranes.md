@@ -41,7 +41,7 @@ A membrane regulates two axes, and the work here can read it through either.
 
 The two are complementary — one gates how much, the other gates who. The open question is which is load-bearing for which problem, and whether they are two views of one gating mechanism or two mechanisms sharing a boundary.
 
-## Open
+## Open Questions
 
 - What sets a channel's threshold — the size and permeability a membrane should have for a task, the same unsettled referent as [[task-appropriate-behavior]].
 - How to measure a membrane's permeability, and the variety it admits.
