@@ -1,7 +1,7 @@
 ---
 title: State of the codebase
-definition: The frame-graph construction exists twice — Recurse (production, over Neo4j) and rage-substrate (a lighter SQLite rewrite that moved ahead on the frame model, a pushed event stream, and spatial addressing). The plan is to converge them into one pipeline and a modular dynamics layer.
-description: Where the implementation stands — Recurse vs rage-substrate, what each is ahead on, the metrics the substrate is instrumented to read, and the two-way migration toward one construction pipeline and a modular dynamics layer.
+definition: The frame-graph construction exists twice — Recurse (production, over Neo4j) and rage-substrate (the experimental testbed, over SQLite, where the dynamics primitives live). The substrate-dynamics layer and its metrics are mostly not built yet; rage-substrate provides the foundation.
+description: Where the implementation stands — Recurse vs rage-substrate, the dynamics primitives that already work in the testbed, and the substrate-dynamics layer and metrics that are still aspirational.
 date: 2026-06-15
 series: Lab notes
 status: draft
@@ -12,26 +12,37 @@ tags:
 show: true
 ---
 
-The frame-semantic graph construction currently exists **twice**, and the two copies have diverged. The original implementation, **[Recurse](https://www.recurse.cc/)**, is production-grade: a five-stage extraction pipeline emitting to Neo4j, dual embeddings, hybrid search, a multi-tenant REST API. When the dynamics work started, those production requirements made it hard to iterate, so a lighter implementation — **rage-substrate**, over SQLite — was rewritten to move faster. It is architecturally ahead in three places: a cleaner [[frame]] model, a WebSocket event stream that *pushes* substrate events (you cannot observe [[resonance]] by polling), and an overhauled spatial addressing scheme.
+The frame-semantic graph construction exists **twice**, and the two copies share no code. **[Recurse](https://www.recurse.cc/)** (`rage-backend`) is the production product — it builds the graph for users. **rage-substrate** is the research testbed, where the dynamics primitives live and the substrate-dynamics work happens. Most of what these notes describe is a research programme over rage-substrate, not yet a running system.
 
-The migration goes both ways: port the newer model and event stream back into Recurse so the production graph becomes observable in real time, then run the dynamics experiments over that hardened graph. The end state is one construction pipeline and one modular dynamics layer, talking through a defined protocol.
+## The split
 
-## Where it lives
+| | Recurse (`rage-backend`) | rage-substrate |
+|---|---|---|
+| Role | commercial product | research testbed |
+| Construction | OpenAI structured outputs → Pydantic → Neo4j | LLM tool calls → recursive [[frame]] nesting → SQLite |
+| Storage | Neo4j (graph + vector indexes) | SQLite (local-first, FTS5) |
+| Dynamics | none — static embeddings, no decay | attention, decay, per-frame phase, [[coupling]] |
+| Frame registry | dynamic (hot-reload, auto-discovery) | static defaults |
+| Maturity | production | experimental |
 
-| Repo | Role | Status | Storage |
-|------|------|--------|---------|
-| **Recurse** (rage-backend) | production graph construction — five-stage extraction, dual embeddings, hybrid search, multi-tenant REST API | Production | Neo4j |
-| **rage-substrate** | dynamics testbed — cleaner [[frame]] model, pushed WebSocket event stream, overhauled spatial addressing | Experimental | SQLite |
-| **rage-poc-visualisation** | canvas substrate visualisation (the figures in these notes) | Active | — |
+## What rage-substrate already has
 
-## What we can measure
+Working and tested:
 
-The signals are formalized in [[metrics|the metrics reference]]; which are wired into each implementation's live event stream is part of the migration, not yet uniform. The core health metrics:
+- a typed [[frame]] model — content-addressed IDs, named slots, parent hierarchy, activation tracking;
+- [[coupling]] as explicit edges carrying strength and a **valence** (alignment / interference / neutral) with event counts;
+- per-frame attention and decay (a Hopf / Stuart–Landau oscillator) and per-frame phase (Kuramoto-style);
+- hybrid retrieval (BM25 + semantic fusion, entity-first, reranking) and recursive graph traversal;
+- territories (semantic namespaces with membership), v3 addressing, and a WebSocket event stream that *pushes* substrate events.
 
-| Signal | Reads |
-|--------|-------|
-| [[gini-coefficient|Gini coefficient]] | how unevenly coupling is concentrated across the field |
-| [[hill-diversity|Hill diversity]] / [[frame-type-diversity|frame-type diversity]] | the effective number of frame types in play |
-| Activation entropy | whether focus is fixated, healthy, or unfocused |
-| Territory balance | how evenly [[membranes]] share the field |
-| [[coupling]] valence | alignment vs interference across a region |
+## What isn't built yet
+
+The substrate-dynamics layer is mostly aspirational — the primitives above are the foundation it would be built on:
+
+- **population-level phase** — per-frame Kuramoto/Hopf works; collective synchronization does not;
+- **[[membranes]] as computed permeability** — today there are only static ACLs and territory membership, not phase-signature-based boundaries;
+- **divergence interventions** — interference is detected in coupling valence, but nothing acts on it;
+- **multi-agent coordination** — single-user today, with creator/owner tracking but no write-back across agents or schema negotiation;
+- **the metrics themselves** — convergence measurement, [[gini-coefficient|Gini]] concentration, and [[hill-diversity|Hill diversity]] are *not computed yet*. The phase and coupling data needed to compute them exists; the read-outs do not.
+
+So the honest summary: the substrate's primitives are real and observable in real time, and the dynamics and metrics these notes explore are the work ahead.
