@@ -14,6 +14,8 @@ import { TypeDrift } from "./type-drift";
 import { MembranePermeability } from "./membrane-permeability";
 import { MembraneNesting } from "./membrane-nesting";
 import { MembraneCoordination } from "./membrane-coordination";
+import { ResonanceFigure } from "./resonance";
+import { CouplingPropagation } from "./coupling-propagation";
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
 export type FigureKind = "svg" | "canvas" | "chart";
@@ -103,4 +105,10 @@ export const figures: Record<string, FigureDef> = {
   // Membranes: coordination through drift — co-acting agents wire together and a
   // team membrane forms, then dissolves as coupling decays.
   "membrane-coordination": { kind: "canvas", render: () => <MembraneCoordination /> },
+  // Resonance: phase oscillators — coupled, coherent frames lock into phase and
+  // pulse in unison; weak ties stay out of phase.
+  "resonance": { kind: "canvas", render: () => <ResonanceFigure /> },
+  // Coupling: the hero's propagation + binding with the membrane left out, and a
+  // stronger pull so co-active frames visibly draw together.
+  "coupling-propagation": { kind: "canvas", render: () => <CouplingPropagation /> },
 };

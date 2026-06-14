@@ -16,7 +16,7 @@ show: true
 
 In substrate dynamics, *coupling* is a weighted connection between two frames. It is built by co-activation: frames retrieved and acted on together strengthen the coupling between them (Hebbian), and it relaxes when they go unused. Coupling is the slow variable — distinct from the fast activation that flashes through the graph and fades in moments. It accumulates over many turns, so it is where the substrate keeps the memory of what has been used together.
 
-<Figure id="substrate-hero" margin caption="Coupling building across co-active frames (Hebbian) and relaxing as activity moves on — the slow variable the substrate keeps its structure in." />
+<Figure id="coupling-propagation" margin caption="Activation propagating along couplings, with the membrane left out: each shared firing builds coupling and draws co-active frames closer together." />
 
 ## Valence
 
