@@ -5,3 +5,5 @@ The most direct instrument for reading the cycle is the diversity of the frames 
 The pathology is diversity collapsing while the task still calls for exploration: homogenization drift, the substrate-level analogue of model collapse, which the literature has begun to measure in collective AI output (Doshi & Hauser, 2024; Wenger & Kenett, 2026). The same shape shows up as a belief attractor — the more context that settles around a region, the harder it is for new material to compete.
 
 <Chart id="10-belief-attractors" caption="Belief attractors — stable orbits deepen gravity. Premature convergence seen at the substrate level." />
+
+<Related tags="diversity". />
