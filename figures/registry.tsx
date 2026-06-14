@@ -11,7 +11,7 @@ import { HillTypes } from "./hill-types";
 import { TopoZoom } from "./topo-zoom";
 import { GiniNodes } from "./gini-nodes";
 import { TypeDrift } from "./type-drift";
-import { MembraneChannels } from "./membrane-channels";
+import { MembranePermeability } from "./membrane-permeability";
 import { MembraneSize } from "./membrane-size";
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
@@ -93,8 +93,10 @@ export const figures: Record<string, FigureDef> = {
   // The hero's tunable companion (figure + sliders + captions), embedded into an
   // MDX page. `chart` kind renders raw — no aspect-square wrapper.
   "substrate-playground": { kind: "chart", render: () => <SubstratePlayground /> },
-  // Membranes: semipermeable channels gating flow at thresholds.
-  "membrane-channels": { kind: "canvas", render: () => <MembraneChannels /> },
-  // Membranes: a membrane breathing over a typed field — size sets the variety admitted.
+  // Membranes: permeability as traversal depth — resonance opens a subgraph from
+  // summary to a rich subset of frames.
+  "membrane-permeability": { kind: "canvas", render: () => <MembranePermeability /> },
+  // Membranes: a membrane breathing over a field of subgraphs — size sets the
+  // variety it admits.
   "membrane-size": { kind: "canvas", render: () => <MembraneSize /> },
 };
