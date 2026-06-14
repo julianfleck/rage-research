@@ -169,6 +169,8 @@ Removing a figure: move the file to `TRASH/` and log it in `TRASH-FILES.md`
 | `membrane-coordination` | agents co-acting, wiring together, a team membrane forming then dissolving |
 | `resonance` | phase-angle field — sources align frames into domains that interfere; cursor combs it |
 | `fractal-zoom` | endless zoom into self-similar nested membranes |
+| `frame-graph` | a frame-semantic graph under a co-retrieval sweep; a membrane forms around the co-active region |
+| `belief-attractors` | gravity wells that deepen as they capture — one runs away (premature convergence) |
 | `type-drift` | typed frames flowing in varied and collapsing to one type (homogenization) |
 | `gini-spread`, `hill-types`, `hill-profile` | metric illustrations (concentration, diversity) |
 | `task-spread`, `substrate-spread`, `topo-zoom`, `flow-field` | earlier conceptual sketches |
