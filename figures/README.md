@@ -171,7 +171,7 @@ Removing a figure: move the file to `TRASH/` and log it in `TRASH-FILES.md`
 | `fractal-zoom` | endless zoom into self-similar nested membranes |
 | `substrate-slice` | a 2D ecosystem slice: agents hover over a band of frames and pull frames into context, turn by turn |
 | `frame-slots` | a frame's named slots are the graph's edges; child frames nest, a pulse lights one composition path |
-| `divergence-convergence` | the cycle: frames flow through an envelope that opens (divergence), narrows (constraints), and converges |
+| `divergence-convergence` | the cycle: frames flow through a chain of lobes, fanning open (divergence) and pinching back (convergence), over and over |
 | `belief-attractors` | one membrane grows and siphons off every frame — premature convergence |
 | `type-drift` | typed frames flowing in varied and collapsing to one type (homogenization) |
 | `gini-spread`, `hill-types`, `hill-profile` | metric illustrations (concentration, diversity) |
