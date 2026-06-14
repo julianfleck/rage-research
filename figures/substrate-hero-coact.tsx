@@ -293,39 +293,43 @@ export function SubstrateHeroCoact({
         n.y += n.vy;
       }
 
-      // Membrane: passive paint over the coupling field (warmth splats).
-      fieldArr.fill(0);
-      const sg = 0.05 * z * GRID;
-      const rad = Math.ceil(3 * sg);
-      const inv = 1 / (2 * sg * sg);
-      for (const n of nodes) {
-        const wgt = Math.min(1, n.warm) * 0.9;
-        if (wgt < 0.02) continue;
-        const sf = ((n.x - fx) * z + 0.5) * GRID;
-        const tf = ((n.y - fy) * z + 0.5) * GRID;
-        const gx0 = Math.max(0, Math.floor(sf - rad));
-        const gx1 = Math.min(GRID, Math.ceil(sf + rad));
-        const gy0 = Math.max(0, Math.floor(tf - rad));
-        const gy1 = Math.min(GRID, Math.ceil(tf + rad));
-        for (let gy = gy0; gy <= gy1; gy++) {
-          for (let gx = gx0; gx <= gx1; gx++) {
-            const ddx = gx - sf;
-            const ddy = gy - tf;
-            fieldArr[gy * (GRID + 1) + gx] += wgt * Math.exp(-(ddx * ddx + ddy * ddy) * inv);
+      // Membrane: passive paint over the coupling field (warmth splats). Left
+      // out entirely when showMembrane is false (the coupling-only view).
+      if (showMembraneRef.current) {
+        fieldArr.fill(0);
+        const sg = 0.05 * z * GRID;
+        const rad = Math.ceil(3 * sg);
+        const inv = 1 / (2 * sg * sg);
+        for (const n of nodes) {
+          const wgt = Math.min(1, n.warm) * 0.9;
+          if (wgt < 0.02) continue;
+          const sf = ((n.x - fx) * z + 0.5) * GRID;
+          const tf = ((n.y - fy) * z + 0.5) * GRID;
+          const gx0 = Math.max(0, Math.floor(sf - rad));
+          const gx1 = Math.min(GRID, Math.ceil(sf + rad));
+          const gy0 = Math.max(0, Math.floor(tf - rad));
+          const gy1 = Math.min(GRID, Math.ceil(tf + rad));
+          for (let gy = gy0; gy <= gy1; gy++) {
+            for (let gx = gx0; gx <= gx1; gx++) {
+              const ddx = gx - sf;
+              const ddy = gy - tf;
+              fieldArr[gy * (GRID + 1) + gx] += wgt * Math.exp(-(ddx * ddx + ddy * ddy) * inv);
+            }
           }
         }
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 1;
+        LEVELS.forEach((lv, li) => {
+          ctx.globalAlpha = 0.16 + li * 0.09;
+          ctx.beginPath();
+          contour(lv);
+          ctx.stroke();
+        });
       }
 
+      // Edges: visible only where coupling has formed; flash when firing.
       ctx.strokeStyle = color;
       ctx.lineWidth = 1;
-      LEVELS.forEach((lv, li) => {
-        ctx.globalAlpha = 0.16 + li * 0.09;
-        ctx.beginPath();
-        contour(lv);
-        ctx.stroke();
-      });
-
-      // Edges: visible only where coupling has formed; flash when firing.
       for (const e of edges) {
         const fire = Math.max(nodes[e.i].a, nodes[e.j].a) - FLOOR;
         const alpha = 0.72 * e.c + 0.35 * fire;
