@@ -15,7 +15,7 @@ show: true
 
 Healthy work over the substrate *cycles*. Divergence opens the space — exploration, widening [[frame-type-diversity|diversity]]; convergence closes it around something usable. The cycle repeats at every [[scale|scale]], and reading where a population sits in it is the point of watching [[coordination-phase|coordination phase]].
 
-<Figure id="divergence-convergence" margin caption="The cycle: a seed diverges to open the space, constraints narrow it, and it converges on something usable." />
+<Figure id="divergence-convergence" margin caption="The cycle: the working set fans open (divergence) and narrows back through the constraints (convergence), over and over." />
 
 ## The cycle
 

@@ -2,25 +2,14 @@
 
 import { useEffect, useRef } from "react";
 
-// The divergence/convergence cycle. Frames flow left to right through an
-// envelope that opens then closes: a seed diverges to open the space, a band of
-// constraints narrows it, and it converges on something usable. The classic
-// shape of healthy work, repeated continuously. Black/white, currentColor.
-const N = 90;
-const WMAX = 0.42; // half-height of the widest point
-
-const smooth = (x: number) => {
-  x = Math.max(0, Math.min(1, x));
-  return x * x * (3 - 2 * x);
-};
-
-// Envelope half-width at x (0..1): rise (divergence), plateau (constraints),
-// fall (convergence).
-function widthAt(x: number) {
-  const rise = smooth(x / 0.3);
-  const fall = 1 - smooth((x - 0.52) / 0.43);
-  return Math.max(0, Math.min(rise, fall));
-}
+// The divergence/convergence cycle. Frames flow through an envelope that fans
+// open and pulls back, over and over — each bulge is a divergence (the space
+// opening), each pinch a convergence through the constraints. The repetition is
+// the point: healthy work oscillates between the two rather than running one way.
+// Black/white, currentColor.
+const N = 110;
+const WMAX = 0.4; // half-height at the widest point
+const CYCLES = 2; // diverge/converge lobes across the width
 
 function mulberry32(a: number) {
   return () => {
@@ -31,6 +20,9 @@ function mulberry32(a: number) {
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 }
+
+// Half-width of the envelope at x: a chain of lobes, pinched to a point between.
+const widthAt = (x: number) => WMAX * (0.5 - 0.5 * Math.cos(CYCLES * 2 * Math.PI * x));
 
 export function DivergenceConvergence() {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -49,7 +41,7 @@ export function DivergenceConvergence() {
     const rng = mulberry32(20260615);
 
     type P = { x: number; u: number; spd: number; ph: number };
-    const mk = (x: number): P => ({ x, u: rng() * 2 - 1, spd: 0.003 + rng() * 0.0018, ph: rng() * 6.28 });
+    const mk = (x: number): P => ({ x, u: rng() * 2 - 1, spd: 0.0028 + rng() * 0.0016, ph: rng() * 6.28 });
     const parts: P[] = Array.from({ length: N }, () => mk(rng()));
 
     const resize = () => {
@@ -69,31 +61,31 @@ export function DivergenceConvergence() {
       ctx.clearRect(0, 0, w, h);
       const t = frame * 0.01;
 
-      // Envelope outline.
+      // Envelope outline — the chain of lobes.
       ctx.strokeStyle = color;
-      ctx.globalAlpha = 0.32;
       ctx.lineWidth = 1;
       for (const sign of [-1, 1]) {
+        ctx.globalAlpha = 0.3;
         ctx.beginPath();
-        const STEPS = 60;
+        const STEPS = 120;
         for (let i = 0; i <= STEPS; i++) {
           const x = i / STEPS;
-          const y = 0.5 + sign * WMAX * widthAt(x);
+          const y = 0.5 + sign * widthAt(x);
           if (i) ctx.lineTo(x * w, y * h);
           else ctx.moveTo(x * w, y * h);
         }
         ctx.stroke();
       }
 
-      // Frames flowing through, riding their lane within the envelope.
+      // Frames flowing through: spread at the bulges, gather at the pinches.
       ctx.fillStyle = color;
       for (const p of parts) {
         p.x += p.spd;
-        if (p.x > 1.04) Object.assign(p, mk(-0.04));
+        if (p.x > 1.03) Object.assign(p, mk(-0.03));
         const env = widthAt(p.x);
-        const y = 0.5 + p.u * WMAX * env + 0.004 * Math.sin(t * 2 + p.ph);
-        // Brighten as the space converges (right side), dim while wide.
-        ctx.globalAlpha = 0.3 + 0.55 * (1 - env);
+        const y = 0.5 + p.u * env + 0.004 * Math.sin(t * 2 + p.ph);
+        const nw = env / WMAX; // 0 at a pinch, 1 at a bulge
+        ctx.globalAlpha = 0.3 + 0.55 * (1 - nw); // brighter where it has converged
         ctx.beginPath();
         ctx.arc(p.x * w, y * h, 1.5, 0, Math.PI * 2);
         ctx.fill();
@@ -119,14 +111,5 @@ export function DivergenceConvergence() {
     };
   }, []);
 
-  return (
-    <div className="relative h-full w-full">
-      <canvas ref={ref} className="block h-full w-full" aria-hidden />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-between font-mono text-[9px] uppercase tracking-[0.1em] text-muted-foreground">
-        <span>divergence</span>
-        <span>constraints</span>
-        <span>convergence</span>
-      </div>
-    </div>
-  );
+  return <canvas ref={ref} className="block h-full w-full" aria-hidden />;
 }
