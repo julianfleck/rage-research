@@ -58,3 +58,9 @@ tags: [reference]
   its slot structure: which relationships it expects, and toward which types. The
   same per-type expectations that lay down edges also guide how the graph is later
   traversed.
+
+## From the notes
+
+Pulled automatically from each note's `definition` — hover a link for the full note.
+
+<Definitions />
