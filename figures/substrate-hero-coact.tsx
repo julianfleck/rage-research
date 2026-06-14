@@ -36,6 +36,7 @@ export function SubstrateHeroCoact({
   restLen = 0.065,
   injMin = 0.4,
   injMax = 1.3,
+  showMembrane = true,
 }: {
   actDecay?: number;
   coupDecay?: number;
@@ -44,6 +45,7 @@ export function SubstrateHeroCoact({
   restLen?: number;
   injMin?: number;
   injMax?: number;
+  showMembrane?: boolean;
 }) {
   const ref = useRef<HTMLCanvasElement>(null);
   const actDecayRef = useRef(actDecay);
