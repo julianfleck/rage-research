@@ -66,7 +66,7 @@ The migration goes both ways: port the newer model and event stream back into Re
 A mechanism earns a place only after it shows a measurable, reproducible effect on a small, fully observable problem. A substrate signal counts if it precedes the visible failure with a usable lead and beats trace-level baselines — tested at small scale first.
 
 - **Attractor onset** — repeated similarity-driven write-back over a fixed corpus; does diversity decline and coupling concentration lead the visible output repetition?
-- **Decay against collapse** — drive co-retrieval to a tight cluster, stop, and let decay run; do long-tail frames re-enter the default context without erasing the learned coherence?
+- **Decay against collapse** — drive co-retrieval to a tight membrane, stop, and let decay run; do long-tail frames re-enter the default context without erasing the learned coherence?
 - **Contamination propagation** — seed one wrong frame; is the contaminated region identifiable from substrate state before outputs visibly degrade?
 - **Coherence across hierarchies** — do higher-order frames stay consistent with their constituents under write-back, and how deep does the consistency reach?
 
