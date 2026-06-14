@@ -11,6 +11,8 @@ import { HillTypes } from "./hill-types";
 import { TopoZoom } from "./topo-zoom";
 import { GiniNodes } from "./gini-nodes";
 import { TypeDrift } from "./type-drift";
+import { MembraneChannels } from "./membrane-channels";
+import { MembraneAperture } from "./membrane-aperture";
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
 export type FigureKind = "svg" | "canvas" | "chart";
@@ -91,4 +93,8 @@ export const figures: Record<string, FigureDef> = {
   // The hero's tunable companion (figure + sliders + captions), embedded into an
   // MDX page. `chart` kind renders raw — no aspect-square wrapper.
   "substrate-playground": { kind: "chart", render: () => <SubstratePlayground /> },
+  // Membranes: semipermeable channels gating flow at thresholds.
+  "membrane-channels": { kind: "canvas", render: () => <MembraneChannels /> },
+  // Membranes: size as an intervention surface — variety inside sets reasoning room.
+  "membrane-aperture": { kind: "chart", render: () => <MembraneAperture /> },
 };
