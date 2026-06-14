@@ -13,8 +13,8 @@ const GRID = 30;
 const LEVELS = [0.3, 0.62];
 const FLOOR = 0.06;
 const HOME_K = 0.005;
-const PULL = 0.05;
-const REST = 0.1;
+const PULL = 0.03;
+const REST = 0.11;
 const COUP_THRESH = 0.12;
 const REPEL_D = 0.07;
 
@@ -143,7 +143,7 @@ export function MembraneCoordination() {
       for (let i = 0; i < NA; i++) {
         for (let j = i + 1; j < NA; j++) {
           const co = (agents[i].a - FLOOR) * (agents[j].a - FLOOR);
-          coup[i][j] = Math.min(1, coup[i][j] * 0.97 + 0.06 * co);
+          coup[i][j] = Math.min(1, coup[i][j] * 0.97 + 0.045 * co);
         }
       }
 
@@ -193,8 +193,8 @@ export function MembraneCoordination() {
         }
       }
       for (const a of agents) {
-        a.vx *= 0.86;
-        a.vy *= 0.86;
+        a.vx *= 0.8;
+        a.vy *= 0.8;
         a.x += a.vx;
         a.y += a.vy;
       }
