@@ -14,17 +14,36 @@ tags:
 show: true
 ---
 
-In substrate dynamics, *membrane* is meant in the cell-biology sense: a **semipermeable boundary** — not a wall (nothing crosses) and not an open door (everything crosses), but a surface whose **channels open and close at thresholds**. The gating is the point: flow across the boundary is conditional, set by what has accumulated on either side.
+In substrate dynamics, *membrane* is meant in the cell-biology sense: a **semipermeable boundary** — not a wall (nothing crosses) and not an open door (everything crosses). Over the substrate it is the surface drawn at a moment around a co-active region: the frames, and the agents working over them, bound more tightly to each other than to what surrounds them. A membrane is drawn and released, not a fixed group.
 
 <Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
 
-Over the substrate, a membrane is that surface drawn at a moment around a co-active region — the frames and the agents working over them. What opens its channels is local alignment between frames. How we currently raise that alignment: frames carry an initial phase seeded from their content, and attention events drive them toward each other from there — one mechanism among possible others, and still being worked out. Decay pulls the alignment back down and lets the channels close. A membrane is drawn and released, not a fixed group.
+## What it's drawn over
 
 A membrane encloses both the information and the actors working on it, not one or the other. An agent, in this reading, is itself a frame — an aggregation over the context it currently holds, its harness plus what it has in play this turn. It carries an activation pattern like any other frame, so computing that fingerprint over frames picks out the membrane: two agents on the same codebase fall inside one naturally, and two people with overlapping research interests are grouped just as organically — close enough on the substrate to be put in touch.
 
-Membranes over shared substrate are an active interest across a few projects, each coming at them from a different direction — from [selectively permeable communication](https://www.julianfleck.net/articles/spirits-dark-forest) to trust-scoped coordination across teams. We mostly want a membrane to do two things at once. It **mediates context availability**: deciding what context a turn can reach, and at what granularity. How deep a retrieval traverses into a subgraph is set by its [[resonance]] — the coupling already built across a region, weighted by how well it coheres with what the recipient is doing — so a low-resonance recipient receives only the summary at the top of a subgraph, while a high-resonance one can navigate in and pull a rich subset of frames (see [[fractal-composition]]). And it is a **coordination surface**: agents that share a membrane coordinate through it — each one's writes change the coupled region the others retrieve from next, so they align by acting on shared state rather than by messaging each other.
+## How it's drawn and released
+
+Membranes are established over the continuous evolution of the graph, not minted in discrete steps. Whenever context is retrieved from the substrate, the membrane is the region picked out by the current coupling density — the dense neighbourhood the retrieval draws on, set off against the sparser coupling around it.
+
+What raises that coupling is co-attention — an agent reading, then writing, over a set of frames. It strengthens the coupling across the frames it draws together and sets the requisite variety inside the boundary: how much, and how varied, the context in play is (cf. [[frame-type-diversity]]). The rule we currently use is Hebbian — build on co-activation, decay otherwise — but the underlying mechanism is still being worked out: frames carry an initial phase seeded from their content, and attention events drive them toward alignment from there, one candidate among others.
+
+The agent acts — acting is closing the loop, writing back — and the next retrieval re-draws the boundary at the coupling density it then finds. Read and write are the same event class: both feed coupling. Decay runs against coupling and lets the membrane close again; without it a membrane would lock open and never reset.
+
+## What crosses it
+
+A membrane is semipermeable: its channels open and close at thresholds, so flow across the boundary is conditional, set by what has accumulated on either side. What crosses is gated on more than one dimension.
+
+How *deep* a retrieval reaches is set by the region's [[resonance]] — the coupling already built across it, weighted by how well it coheres with what the recipient is doing. Low resonance returns only the summary at the top of a subgraph; higher resonance lets the recipient navigate in and pull a rich subset of frames. Resonance is the knob behind granularity — how coarse or fine the context that crosses is (see [[fractal-composition]]).
 
 <Figure id="membrane-permeability" margin caption="Resonance sets how deep a retrieval reaches: low resonance returns the summary at the top of a subgraph; higher resonance opens the way in, down to a rich subset of frames." />
+
+Beyond depth, a membrane regulates two axes, and the work here can read it through either.
+
+- **Density.** A membrane modulates the density of flow through its channels — the requisite variety crossing in and out — and through that the capacity to act. On this reading, disclosure policies and decision rights are emergent rather than primitive: the boundary's permeability and the variety it admits produce an effective distribution of disclosure and authority, instead of that distribution being assigned agent by agent.
+- **Access.** A membrane is semipermeable in the access-control sense — scoped, caveated, revertible exchange: who may pass which channel, granted in small reversible amounts. This is the reading developed in *Mythic Membranes* by [Kenneth Bruskiewicz](https://www.linkedin.com/in/kenneth-bruskiewicz) and [Christina Bowen](https://www.knowledgeecologist.me/) ([Atlas Research Group](https://atlasresear.ch)).
+
+The two are complementary — one gates how much, the other gates who. The open question is which axis dominates for which problem, and whether they are two views of one gating mechanism or two mechanisms sharing a boundary.
 
 ## Membranes over membranes
 
@@ -32,24 +51,13 @@ A membrane is not a cluster. Clusters partition: each node lands in one group. M
 
 <Figure id="substrate-hero" margin caption="Several membranes forming at once over shared frames — nesting and overlapping rather than partitioning into tiles." />
 
-## How a membrane is defined
+## As an intervention surface
 
-Membranes are established over the continuous evolution of the graph, not minted in discrete steps. Whenever context is retrieved from the substrate, the membrane is the region picked out by the current coupling density — the dense neighbourhood the retrieval draws on, set off against the sparser coupling around it. Co-attention — an agent reading, then writing, over a set of frames — feeds that density back: it strengthens the coupling across the frames it draws together (the rule we currently use is Hebbian — build on co-activation, decay otherwise), and sets the requisite variety inside the boundary: how much, and how varied, the context in play is (cf. [[frame-type-diversity]]).
+Membranes over shared substrate are an active interest across a few projects, each coming at them from a different direction — from [selectively permeable communication](https://www.julianfleck.net/articles/spirits-dark-forest) to trust-scoped coordination across teams. We mostly want a membrane to do two things at once. It **mediates context availability** — deciding what context a turn can reach, and (through [[resonance]]) at what granularity. And it is a **coordination surface** — agents that share a membrane coordinate through it: each one's writes change the coupled region the others retrieve from next, so they align by acting on shared state rather than by messaging each other.
 
-The agent acts — acting is closing the loop, writing back — and the next retrieval re-draws the boundary at the coupling density it then finds. Read and write are the same event class: both feed coupling. Decay runs against coupling and closes the channels again; without it a membrane would lock open and never reset.
-
-## Membranes as intervention surface
-
-The variety a membrane admits is what we act through. Context width bounds what an agent can do: narrow context, limited reasoning and limited agency; broader inputs, broader reasoning and more room to act. So modulating the variety — the size and density of a membrane — is how we act on the agents inside it without touching them one by one. The same boundary makes their state legible from outside: read the membrane and you read what the agents have to work with.
+Because the membrane is that surface, it is also where we intervene. The variety it admits bounds what an agent can do: narrow context, limited reasoning and limited agency; broader inputs, broader reasoning and more room to act. So modulating the variety — the size and density of a membrane — is how we act on the agents inside it without touching them one by one. The same boundary makes their state legible from outside: read the membrane and you read what the agents have to work with.
 
 <Figure id="membrane-size" margin caption="Widening the membrane takes in more whole subgraphs — and more frame-types; tightening it narrows the context back down." />
-
-A membrane regulates two axes, and the work here can read it through either.
-
-- **Density.** A membrane modulates the density of flow through its channels — the requisite variety crossing in and out — and through that the capacity to act. On this reading, disclosure policies and decision rights are emergent rather than primitive: the boundary's permeability and the variety it admits produce an effective distribution of disclosure and authority, instead of that distribution being assigned agent by agent.
-- **Access.** A membrane is semipermeable in the access-control sense — scoped, caveated, revertible exchange: who may pass which channel, granted in small reversible amounts. This is the reading developed in *Mythic Membranes* by [Kenneth Bruskiewicz](https://www.linkedin.com/in/kenneth-bruskiewicz) and [Christina Bowen](https://www.knowledgeecologist.me/) ([Atlas Research Group](https://atlasresear.ch)).
-
-The two are complementary — one gates how much, the other gates who. The open question is which axis dominates for which problem, and whether they are two views of one gating mechanism or two mechanisms sharing a boundary.
 
 ## Open Questions
 
