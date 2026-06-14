@@ -1,3 +1,4 @@
+
 ## Frame-type diversity
 
 The most direct instrument for reading the cycle is the diversity of the frames a query returns: measure the spread and compare it to what the task should produce. A long-running deep-research task should pull a wide spread — high diversity is the signature of healthy exploration. A narrowly scoped task should pull a tight set; wide spread there would be noise, not health. Diversity is only meaningful against an expectation set by the task.
