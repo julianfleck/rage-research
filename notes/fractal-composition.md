@@ -11,8 +11,10 @@ author: Julian Fleck
 tags: [substrate, structure]
 ---
 
-# Fractal composition
-
 Frames compose the same way at every size. Structurally, a paragraph's frames make up a section, sections a document, documents a corpus; semantically, a claim with its evidence and sources makes up an argument, arguments an argumentation. A section is built like a document, an argument like a single supported claim — so a larger stretch of the graph tends to look like a smaller one.
 
-It is not a strict fractal: the levels are not identical copies, the recursion bottoms out at primitive frames, and not everything on the substrate is a tier in this nesting — a [[terms|membrane]] is a dynamic boundary over what is co-activated at a step, not a fixed level. The point is only that composition recurs, which is what lets the graph be read across [[scale|scales]].
+<Figure id="fractal-zoom" margin caption="Zooming in: every membrane is a ring of frames, and its centre opens into another membrane of frames — the same motif at every scale." />
+
+The recursion is not only structural. A [[membranes|membrane]] — a boundary drawn around a co-active region — is itself a frame: collapse it to a point and it behaves as one. An agent is a membrane, the bounded bundle of its current context, so an agent is a frame one scale up. Frame, membrane, and agent are the same kind of object at different grain. Because they are, the same mechanics run at every level — activation, [[coupling]], [[resonance]], decay — and the same metrics can be read over a membrane as over a leaf frame.
+
+It is not a strict fractal: the levels are not identical copies, the recursion bottoms out at primitive frames, and a membrane is a dynamic boundary over what is co-activated at a step, not a fixed tier. The point is only that the same compositional move, and the same dynamics, recur — which is what lets the graph be read across [[scale|scales]], and a retrieval set its depth by how far down the nesting it reaches (see [[resonance]]).
