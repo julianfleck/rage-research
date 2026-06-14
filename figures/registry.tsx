@@ -17,7 +17,9 @@ import { MembraneCoordination } from "./membrane-coordination";
 import { ResonanceFigure } from "./resonance";
 import { CouplingPropagation } from "./coupling-propagation";
 import { FractalZoom } from "./fractal-zoom";
-import { FrameGraph } from "./frame-graph";
+import { SubstrateSlice } from "./substrate-slice";
+import { FrameSlots } from "./frame-slots";
+import { DivergenceConvergence } from "./divergence-convergence";
 import { BeliefAttractors } from "./belief-attractors";
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
@@ -116,10 +118,15 @@ export const figures: Record<string, FigureDef> = {
   "coupling-propagation": { kind: "canvas", render: () => <CouplingPropagation /> },
   // Fractal composition: an endless zoom into self-similar nested membranes.
   "fractal-zoom": { kind: "canvas", render: () => <FractalZoom /> },
-  // The frame graph: typed frames under a co-retrieval sweep, a membrane forming
-  // around the co-active region.
-  "frame-graph": { kind: "canvas", render: () => <FrameGraph /> },
-  // Belief attractors: wells that deepen as they capture, one running away —
+  // Substrate ecosystem slice: agents hovering over a band of frames, pulling
+  // frames up into context turn by turn.
+  "substrate-slice": { kind: "canvas", render: () => <SubstrateSlice /> },
+  // Frame slot structure: a frame's slots are the graph's edges; frames nest.
+  "frame-slots": { kind: "canvas", render: () => <FrameSlots /> },
+  // The divergence/convergence cycle: a seed opens, constraints narrow, it
+  // converges — the classic shape of healthy work.
+  "divergence-convergence": { kind: "canvas", render: () => <DivergenceConvergence /> },
+  // Belief attractor: one membrane grows and siphons off every frame —
   // premature convergence.
   "belief-attractors": { kind: "canvas", render: () => <BeliefAttractors /> },
 };
