@@ -1,5 +1,6 @@
 ---
 title: Task-appropriate behavior
+definition: "How much diversity a task should produce — we can measure a task's spread, but cannot yet say what spread is right for it. Still open."
 description: We can measure the semantic diversity of what a task produces; deciding what diversity a task should have is still open.
 date: 2026-06-13
 series: Lab notes
