@@ -12,7 +12,7 @@ import { useEffect, useRef } from "react";
 const R = 0.46; // each level is R× the size of its parent
 const LEVELS = 8;
 const M = 6; // frames per membrane
-const GA = 2.39996; // golden angle — per-level rotation
+const TWIST = 0.5; // gentle per-level rotation (radians)
 const PERIOD = 3.0; // seconds per level of zoom
 
 function mulberry32(a: number) {
@@ -81,7 +81,7 @@ export function FractalZoom() {
 
       const phase = (t % PERIOD) / PERIOD; // 0 → 1 over one level of zoom
       const base = 0.6 * m;
-      const spin = t * 0.05;
+      const spin = t * 0.02;
 
       for (let i = 0; i < LEVELS; i++) {
         // Continuous depth: ring i at phase 1 lands exactly where ring i−1 sat at
@@ -90,7 +90,7 @@ export function FractalZoom() {
         const scale = base * Math.pow(R, depth);
         const op = smooth(scale / (0.07 * m)) * smooth((0.55 * m - scale) / (0.26 * m));
         if (op < 0.02) continue;
-        const rot = depth * GA + spin;
+        const rot = depth * TWIST + spin;
 
         // Membrane: an irregular closed blob.
         ctx.strokeStyle = color;
