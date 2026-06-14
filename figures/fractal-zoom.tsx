@@ -4,13 +4,16 @@ import { useEffect, useRef } from "react";
 
 // Fractal composition. A continuous zoom into the substrate: every membrane is a
 // cluster of frames around a centre, and the centre opens into another membrane
-// of frames, the same motif at every scale. The zoom advances one level per
-// cycle and wraps, so the nesting appears endless — self-similar across scales.
-// Each membrane is an irregular blob (multi-harmonic), not a clean ring, and the
-// outermost fades out before it reaches the edge. Black/white, currentColor.
+// of frames, the same motif at every scale. The zoom is a true endless loop —
+// shape, rotation, and opacity are driven by a continuous depth (level − phase),
+// so a ring at the end of a cycle is identical to the next ring at the start and
+// nothing pops. Each membrane is an irregular blob, and the outermost fades out
+// before the edge. Black/white, currentColor.
 const R = 0.46; // each level is R× the size of its parent
-const LEVELS = 7;
+const LEVELS = 8;
 const M = 6; // frames per membrane
+const GA = 2.39996; // golden angle — per-level rotation
+const PERIOD = 3.0; // seconds per level of zoom
 
 function mulberry32(a: number) {
   return () => {
@@ -22,13 +25,18 @@ function mulberry32(a: number) {
   };
 }
 
-// Per-level harmonic coefficients so each membrane is its own irregular shape.
+// One shared irregular shape (same at every level → exact self-similarity).
 const HARM = (() => {
   const rng = mulberry32(99);
-  return Array.from({ length: LEVELS }, () =>
-    Array.from({ length: 3 }, (_, k) => ({ k: 2 + k + Math.floor(rng() * 2), amp: 0.05 + rng() * 0.07, phase: rng() * Math.PI * 2 })),
-  );
+  return Array.from({ length: 4 }, (_, k) => ({ k: 2 + k + Math.floor(rng() * 2), amp: 0.04 + rng() * 0.06, phase: rng() * Math.PI * 2 }));
 })();
+
+// Polar blob radius at angle a, rotated by rot.
+const blob = (a: number, rot: number) => {
+  let r = 1;
+  for (const hm of HARM) r += hm.amp * Math.sin(hm.k * a - hm.k * rot + hm.phase);
+  return r;
+};
 
 const smooth = (x: number) => {
   x = Math.max(0, Math.min(1, x));
@@ -71,24 +79,18 @@ export function FractalZoom() {
       const cx = w / 2;
       const cy = h / 2;
 
-      const period = 3.0; // quicker zoom
-      const phase = (t % period) / period;
-      const globalScale = Math.pow(1 / R, phase);
+      const phase = (t % PERIOD) / PERIOD; // 0 → 1 over one level of zoom
       const base = 0.6 * m;
-
-      const blob = (a: number, i: number, rot: number) => {
-        let r = 1;
-        for (const hm of HARM[i % HARM.length]) r += hm.amp * Math.sin(hm.k * a + hm.phase + rot * 0.4);
-        return r;
-      };
+      const spin = t * 0.05;
 
       for (let i = 0; i < LEVELS; i++) {
-        const scale = base * Math.pow(R, i) * globalScale; // membrane radius (px)
-        // Fade in while small, and out well before the edge so the outer blob
-        // dissolves rather than clipping off-canvas.
+        // Continuous depth: ring i at phase 1 lands exactly where ring i−1 sat at
+        // phase 0, so everything that depends on depth carries through the wrap.
+        const depth = i - phase;
+        const scale = base * Math.pow(R, depth);
         const op = smooth(scale / (0.07 * m)) * smooth((0.55 * m - scale) / (0.26 * m));
         if (op < 0.02) continue;
-        const rot = i * 2.39996 + t * 0.08;
+        const rot = depth * GA + spin;
 
         // Membrane: an irregular closed blob.
         ctx.strokeStyle = color;
@@ -98,7 +100,7 @@ export function FractalZoom() {
         const STEPS = 80;
         for (let k = 0; k <= STEPS; k++) {
           const a = (k / STEPS) * Math.PI * 2;
-          const rr = scale * blob(a, i, rot);
+          const rr = scale * blob(a, rot);
           const x = cx + Math.cos(a) * rr;
           const y = cy + Math.sin(a) * rr;
           if (k) ctx.lineTo(x, y);
@@ -111,8 +113,9 @@ export function FractalZoom() {
         const nodeR = scale * 0.58;
         for (let j = 0; j < M; j++) {
           const a = rot + (j / M) * Math.PI * 2 + 0.2 * Math.sin(rot + j);
-          const nx = cx + Math.cos(a) * nodeR * blob(a, i, rot);
-          const ny = cy + Math.sin(a) * nodeR * blob(a, i, rot);
+          const rr = nodeR * blob(a, rot);
+          const nx = cx + Math.cos(a) * rr;
+          const ny = cy + Math.sin(a) * rr;
           ctx.globalAlpha = op * 0.26;
           ctx.lineWidth = 1;
           ctx.beginPath();
