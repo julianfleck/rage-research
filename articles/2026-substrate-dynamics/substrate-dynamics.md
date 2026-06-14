@@ -8,7 +8,7 @@ show: true
 status: draft
 version: 1
 author: Julian Fleck
-tags: [substrate, dynamics]
+tags: [dynamics]
 ---
 
 Companion to the paper *Frame-Semantic Graph Construction for Knowledge

@@ -8,7 +8,7 @@ show: true
 status: draft
 version: 1
 author: Julian Fleck
-tags: [substrate, frame-semantics, construction]
+tags: [frame-semantics, construction]
 ---
 
 ## Abstract

@@ -7,7 +7,7 @@ show: true
 status: draft
 version: 1
 author: Julian Fleck
-tags: [substrate, overview]
+tags: [overview]
 ---
 **We study substrate dynamics: the dynamics that emerge when a population of humans and agents both reads from and writes to a shared knowledge base.**
 

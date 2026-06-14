@@ -8,7 +8,7 @@ status: draft
 version: 1
 show: true
 author: Julian Fleck
-tags: [metric, substrate]
+tags: [metric]
 ---
 
 # Gini coefficient

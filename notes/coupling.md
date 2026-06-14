@@ -8,7 +8,6 @@ status: draft
 version: 1
 author: Julian Fleck
 tags:
-  - substrate
   - coupling
   - structure
 show: true
@@ -40,4 +39,4 @@ Coupling density over a region is what a [[membranes|membrane]] is drawn around 
 - How pairwise coupling aggregates into the density a membrane is read from.
 - The timescale separation between activation and coupling — tuned so structure neither freezes into a permanent attractor nor decays before it can form.
 
-<Related tags="coupling, substrate, membrane" />
+<Related tags="coupling, membrane" />

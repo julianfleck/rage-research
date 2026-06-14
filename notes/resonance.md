@@ -8,7 +8,6 @@ status: draft
 version: 1
 author: Julian Fleck
 tags:
-  - substrate
   - resonance
   - retrieval
 show: true
@@ -28,4 +27,4 @@ There is no privileged recipient in this. It does not matter whether what retrie
 - Whether resonance is best read per-edge, per-frame, or per-subgraph, and how those aggregate.
 - How resonance relates to the [[frame-type-diversity|variety]] a retrieval admits: depth and breadth may trade off, or move together.
 
-<Related tags="resonance, substrate, membrane" />
+<Related tags="resonance, membrane" />

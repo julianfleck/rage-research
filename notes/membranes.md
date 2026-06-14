@@ -8,7 +8,6 @@ status: draft
 version: 1
 author: Julian Fleck
 tags:
-  - substrate
   - membrane
   - structure
 show: true
@@ -69,4 +68,4 @@ The membrane is also where we intervene. The variety it admits bounds what an ag
 - How to measure a membrane's permeability, and the variety it admits.
 - How nesting and overlap interact with any [[gini-coefficient|metric]] read over a membrane: the boundary drawn is the population measured.
 
-<Related tags="membrane, substrate" />
+<Related tags="membrane" />

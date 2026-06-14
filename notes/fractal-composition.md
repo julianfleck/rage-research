@@ -8,7 +8,7 @@ status: draft
 version: 1
 show: true
 author: Julian Fleck
-tags: [substrate, structure]
+tags: [structure]
 ---
 
 Frames compose the same way at every size. Structurally, a paragraph's frames make up a section, sections a document, documents a corpus; semantically, a claim with its evidence and sources makes up an argument, arguments an argumentation. A section is built like a document, an argument like a single supported claim — so a larger stretch of the graph tends to look like a smaller one.
