@@ -16,9 +16,11 @@ show: true
 
 In substrate dynamics, *membrane* is meant in the cell-biology sense: a **semipermeable boundary** — not a wall (nothing crosses) and not an open door (everything crosses), but a surface whose **channels open and close at thresholds**. The gating is the point: flow across the boundary is conditional, set by what has accumulated on either side.
 
-<Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
+<Figure id="membrane-channels" margin caption="A channel opens only once enough has accumulated on its side, lets a burst across, then closes again as the pressure decays." />
 
 Over the substrate, a membrane is that surface drawn at a moment around a co-active region — the frames and the agents working over them. What opens its channels is local alignment between frames. How we currently raise that alignment: frames carry an initial phase seeded from their content, and attention events drive them toward each other from there — one mechanism among possible others, and still being worked out. Decay pulls the alignment back down and lets the channels close. A membrane is drawn and released, not a fixed group.
+
+<Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
 
 A membrane encloses both the information and the actors working on it, not one or the other. An agent, in this reading, is itself a frame — an aggregation over the context it currently holds, its harness plus what it has in play this turn. It carries an activation pattern like any other frame, so computing that fingerprint over frames picks out the membrane: two agents on the same codebase fall inside one naturally, and two people with overlapping research interests are grouped just as organically — close enough on the substrate to be put in touch.
 
@@ -33,6 +35,8 @@ A membrane is not a cluster. Clusters partition: each node lands in one group. M
 Membranes are established over the continuous evolution of the graph, not minted in discrete steps. Whenever context is retrieved from the substrate, the membrane is the region picked out by the current coupling density — the dense neighbourhood the retrieval draws on, set off against the sparser coupling around it. Co-attention — an agent reading, then writing, over a set of frames — feeds that density back: it strengthens the coupling across the frames it draws together (the rule we currently use is Hebbian — build on co-activation, decay otherwise), and sets the requisite variety inside the boundary: how much, and how varied, the context in play is (cf. [[frame-type-diversity]]).
 
 That variety is the intervention surface. Context width bounds what an agent can do: narrow context, limited reasoning and limited agency; broader inputs, broader reasoning and more room to act. So modulating the variety — the size and density of a membrane — is how we act on the agents inside it without touching them one by one. The same boundary makes their state legible from outside: read the membrane and you read what the agents have to work with. The agent acts — acting is closing the loop, writing back — and the next retrieval re-draws the boundary at the coupling density it then finds. Read and write are the same event class: both feed coupling. Decay runs against coupling and closes the channels again; without it a membrane would lock open and never reset.
+
+<Figure id="membrane-aperture" />
 
 ## What a membrane regulates
 
