@@ -1,6 +1,6 @@
 ---
 title: Scale
-definition: "Reading the substrate as a topography at many zoom levels — whole store, cluster, single membrane — that interconnect rather than nest neatly."
+definition: "Reading the substrate as a topography at many zoom levels — from the whole store down to a single concept — where the boundaries between levels are membranes that nest and overlap rather than nest neatly."
 description: Knowledge as a topography read at many scales — from the whole substrate down to a single concept — interconnected across levels rather than neatly nested.
 date: 2026-06-13
 series: Lab notes

@@ -19,10 +19,12 @@ tags: [reference]
 - **Coupling** — a connection between frames that strengthens when they are
   retrieved and acted on together (Hebbian) and relaxes when they are not. Carries
   a valence: alignment, interference, or neutral.
-- **Membrane** — a dynamically adjusted boundary over a densely co-activated
-  region of frames and the agents retrieving over them, surrounded by sparser
-  coupling. At a given step it delineates a co-working population of agents and
-  their active context from the rest of the substrate. Membranes are where the
+- **[[membranes|Membrane]]** — a dynamically adjusted boundary over a densely
+  co-activated region of frames and the agents retrieving over them, surrounded by
+  sparser coupling. At a given step it delineates a co-working population of agents
+  and their active context from the rest of the substrate. Membranes **nest and
+  overlap** rather than partition — membranes over membranes — so a membrane is a
+  boundary you draw at a moment, not a fixed group. Membranes are where the
   substrate's influence is exercised — they modulate what context crosses into an
   agent's next turn — so interventions act on membranes, not on agents.
 - **Coordination phase** — the dynamical regime a population of agents over the
