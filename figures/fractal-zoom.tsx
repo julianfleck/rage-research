@@ -3,13 +3,37 @@
 import { useEffect, useRef } from "react";
 
 // Fractal composition. A continuous zoom into the substrate: every membrane is a
-// ring of frames around a centre, and the centre opens into another membrane of
-// frames, the same motif at every scale. The zoom advances by one level per
+// cluster of frames around a centre, and the centre opens into another membrane
+// of frames, the same motif at every scale. The zoom advances one level per
 // cycle and wraps, so the nesting appears endless — self-similar across scales.
-// Black/white, currentColor.
+// Each membrane is an irregular blob (multi-harmonic), not a clean ring, and the
+// outermost fades out before it reaches the edge. Black/white, currentColor.
 const R = 0.46; // each level is R× the size of its parent
 const LEVELS = 7;
 const M = 6; // frames per membrane
+
+function mulberry32(a: number) {
+  return () => {
+    a |= 0;
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+// Per-level harmonic coefficients so each membrane is its own irregular shape.
+const HARM = (() => {
+  const rng = mulberry32(99);
+  return Array.from({ length: LEVELS }, () =>
+    Array.from({ length: 3 }, (_, k) => ({ k: 2 + k + Math.floor(rng() * 2), amp: 0.05 + rng() * 0.07, phase: rng() * Math.PI * 2 })),
+  );
+})();
+
+const smooth = (x: number) => {
+  x = Math.max(0, Math.min(1, x));
+  return x * x * (3 - 2 * x);
+};
 
 export function FractalZoom() {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -47,52 +71,49 @@ export function FractalZoom() {
       const cx = w / 2;
       const cy = h / 2;
 
-      // Zoom grows by a factor of 1/R over one cycle, then wraps — so after a
-      // cycle each level looks exactly like its parent did. Seamless.
-      const period = 4.2;
+      const period = 3.0; // quicker zoom
       const phase = (t % period) / period;
       const globalScale = Math.pow(1 / R, phase);
-      const base = 0.62 * m;
+      const base = 0.6 * m;
 
-      const sMin = 0.01 * m;
-      const sMax = 0.95 * m;
-      const fade = 0.5;
+      const blob = (a: number, i: number, rot: number) => {
+        let r = 1;
+        for (const hm of HARM[i % HARM.length]) r += hm.amp * Math.sin(hm.k * a + hm.phase + rot * 0.4);
+        return r;
+      };
 
       for (let i = 0; i < LEVELS; i++) {
         const scale = base * Math.pow(R, i) * globalScale; // membrane radius (px)
-        if (scale < sMin || scale > sMax) continue;
-        // Fade in while small (just appearing at centre), out while large.
-        const inF = Math.min(1, (scale - sMin) / (base * fade));
-        const outF = Math.min(1, (sMax - scale) / (base * fade));
-        const op = Math.max(0, Math.min(1, inF) * Math.min(1, outF));
+        // Fade in while small, and out well before the edge so the outer blob
+        // dissolves rather than clipping off-canvas.
+        const op = smooth(scale / (0.07 * m)) * smooth((0.78 * m - scale) / (0.4 * m));
         if (op < 0.02) continue;
-        const rot = i * 2.39996 + t * 0.06;
+        const rot = i * 2.39996 + t * 0.08;
 
-        // Membrane: a gently wobbling ring.
+        // Membrane: an irregular closed blob.
         ctx.strokeStyle = color;
         ctx.globalAlpha = op * 0.5;
         ctx.lineWidth = 1.25;
         ctx.beginPath();
-        const STEPS = 70;
+        const STEPS = 80;
         for (let k = 0; k <= STEPS; k++) {
           const a = (k / STEPS) * Math.PI * 2;
-          const wob = 1 + 0.04 * Math.sin(a * 3 + rot);
-          const x = cx + Math.cos(a) * scale * wob;
-          const y = cy + Math.sin(a) * scale * wob;
+          const rr = scale * blob(a, i, rot);
+          const x = cx + Math.cos(a) * rr;
+          const y = cy + Math.sin(a) * rr;
           if (k) ctx.lineTo(x, y);
           else ctx.moveTo(x, y);
         }
         ctx.closePath();
         ctx.stroke();
 
-        // Frames on the ring, with spokes to the centre (which holds the next
-        // membrane down).
-        const nodeR = scale * 0.6;
+        // Frames around the centre, with spokes; the centre holds the next level.
+        const nodeR = scale * 0.58;
         for (let j = 0; j < M; j++) {
-          const a = rot + (j / M) * Math.PI * 2;
-          const nx = cx + Math.cos(a) * nodeR;
-          const ny = cy + Math.sin(a) * nodeR;
-          ctx.globalAlpha = op * 0.28;
+          const a = rot + (j / M) * Math.PI * 2 + 0.2 * Math.sin(rot + j);
+          const nx = cx + Math.cos(a) * nodeR * blob(a, i, rot);
+          const ny = cy + Math.sin(a) * nodeR * blob(a, i, rot);
+          ctx.globalAlpha = op * 0.26;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(cx, cy);
@@ -101,7 +122,7 @@ export function FractalZoom() {
           ctx.fillStyle = color;
           ctx.globalAlpha = op * 0.85;
           ctx.beginPath();
-          ctx.arc(nx, ny, Math.max(1, 0.01 * scale + 1.2), 0, Math.PI * 2);
+          ctx.arc(nx, ny, Math.max(1, 0.01 * scale + 1.1), 0, Math.PI * 2);
           ctx.fill();
         }
       }
