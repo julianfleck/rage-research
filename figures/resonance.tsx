@@ -11,7 +11,7 @@ import { useEffect, useRef } from "react";
 // the stroke direction. Black/white, currentColor.
 const COLS = 16;
 const SOFT = 0.02; // softening so a source's pull stays finite at its centre
-const MOUSE_W = 1.2; // cursor source strength
+const MOUSE_W = 1.4; // cursor source strength
 
 function mulberry32(a: number) {
   return () => {
