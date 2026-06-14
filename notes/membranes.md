@@ -43,7 +43,7 @@ The two are complementary — one gates how much, the other gates who. The open 
 
 ## Open
 
-- What sets the right size and permeability of a membrane for a task — the same unsettled referent as [[task-appropriate-behavior]].
+- What sets a channel's threshold — the size and permeability a membrane should have for a task, the same unsettled referent as [[task-appropriate-behavior]].
 - How to measure a membrane's permeability, and the variety it admits.
 - How nesting and overlap interact with any [[gini-coefficient|metric]] read over a membrane: the boundary drawn is the population measured.
 
