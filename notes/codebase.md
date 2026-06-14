@@ -16,14 +16,13 @@ The frame-semantic graph construction exists **twice**, and the two copies share
 
 ## The split
 
-| | Recurse (`rage-backend`) | rage-substrate |
-|---|---|---|
-| Role | commercial product | research testbed |
-| Construction | OpenAI structured outputs → Pydantic → Neo4j | LLM tool calls → recursive [[frame]] nesting → SQLite |
-| Storage | Neo4j (graph + vector indexes) | SQLite (local-first, FTS5) |
-| Dynamics | none — static embeddings, no decay | attention, decay, per-frame phase, [[coupling]] |
-| Frame registry | dynamic (hot-reload, auto-discovery) | static defaults |
-| Maturity | production | experimental |
+|                | Recurse (`rage-backend`)                     | rage-substrate                                        |
+| -------------- | -------------------------------------------- | ----------------------------------------------------- |
+| Construction   | OpenAI structured outputs → Pydantic → Neo4j | LLM tool calls → recursive [[frame]] nesting → SQLite |
+| Storage        | Neo4j (graph + vector indexes)               | SQLite (local-first, FTS5)                            |
+| Dynamics       | none — static embeddings, no decay           | attention, decay, per-frame phase, [[coupling]]       |
+| Frame registry | dynamic (hot-reload, auto-discovery)         | static defaults                                       |
+| Maturity       | production                                   | experimental                                          |
 
 ## What rage-substrate already has
 
