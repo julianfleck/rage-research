@@ -2,17 +2,16 @@
 
 import { useEffect, useRef } from "react";
 
-// Belief attractors. A few wells pull drifting frames; whatever a well captures
-// adds to its mass, so it pulls harder and captures more — rich-get-richer. One
-// well runs away and swallows the field: premature convergence. After it
-// dominates, the cycle resets and the field redistributes, so the collapse plays
-// out again. Black/white, currentColor.
-const NA = 3; // attractors
-const NP = 64; // drifting frames
-const G = 0.00008; // gravity
-const SOFT = 0.012;
-const CAPTURE = 0.045;
-const RESET = 9; // seconds before the field redistributes
+// Belief attractor / premature convergence. A single membrane grows outward over
+// a field of frames; whatever its growing edge reaches is captured and siphoned
+// inward, so the region thickens as everything else thins, until one membrane has
+// swallowed the whole field. Then it resets and plays out again. Black/white,
+// currentColor.
+const NF = 80;
+const CYCLE = 9; // seconds for one membrane to swallow the field
+const CX = 0.5;
+const CY = 0.5;
+const MAXR = 0.62;
 
 function mulberry32(a: number) {
   return () => {
@@ -24,11 +23,22 @@ function mulberry32(a: number) {
   };
 }
 
-const ATTR = [
-  { x: 0.32, y: 0.4 },
-  { x: 0.68, y: 0.38 },
-  { x: 0.5, y: 0.7 },
-];
+const smooth = (x: number) => {
+  x = Math.max(0, Math.min(1, x));
+  return x * x * (3 - 2 * x);
+};
+
+// Deterministic scattered frames (home positions + capture order by distance).
+const FRAMES = (() => {
+  const rng = mulberry32(20260615);
+  return Array.from({ length: NF }, () => {
+    const a = rng() * Math.PI * 2;
+    const r = Math.sqrt(rng()) * 0.46;
+    const hx = CX + Math.cos(a) * r;
+    const hy = CY + Math.sin(a) * r;
+    return { hx, hy, x: hx, y: hy, d0: r, captured: false };
+  });
+})();
 
 export function BeliefAttractors() {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -40,22 +50,11 @@ export function BeliefAttractors() {
     if (!ctx) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     let raf = 0;
-    let t = 0;
-    let lastReset = 0;
     let w = 0;
     let h = 0;
     let frame = 0;
     let color = "#888";
-    const rng = mulberry32(20260615);
-
-    const mass = new Float32Array(NA).fill(1);
-    type P = { x: number; y: number; vx: number; vy: number };
-    const spawn = (): P => {
-      const a = rng() * Math.PI * 2;
-      const r = 0.34 + rng() * 0.12;
-      return { x: 0.5 + Math.cos(a) * r, y: 0.5 + Math.sin(a) * r, vx: (rng() - 0.5) * 0.004, vy: (rng() - 0.5) * 0.004 };
-    };
-    const parts: P[] = Array.from({ length: NP }, spawn);
+    let prevG = 0;
 
     const resize = () => {
       const r = canvas.getBoundingClientRect();
@@ -70,72 +69,62 @@ export function BeliefAttractors() {
     ro.observe(canvas);
 
     const draw = () => {
-      t += 0.01;
       if (frame++ % 40 === 0) color = getComputedStyle(canvas).color;
       ctx.clearRect(0, 0, w, h);
+      const t = frame * 0.01;
       const m = Math.min(w, h);
 
-      // Reset the cycle once a well has run away.
-      if (t - lastReset > RESET) {
-        lastReset = t;
-        for (let k = 0; k < NA; k++) mass[k] = 1;
-        for (const p of parts) Object.assign(p, spawn());
+      // Growth phase 0..1; reset (release everything) when it wraps.
+      const g = (t % CYCLE) / CYCLE;
+      if (g < prevG) {
+        for (const f of FRAMES) {
+          f.captured = false;
+          f.x = f.hx;
+          f.y = f.hy;
+        }
       }
+      prevG = g;
+      const radius = smooth(g) * MAXR; // growing membrane radius (normalized)
 
       const sx = (x: number) => x * w;
       const sy = (y: number) => y * h;
 
-      // Particles fall toward the wells; capture feeds the well's mass.
-      for (const p of parts) {
-        let ax = 0;
-        let ay = 0;
-        for (let k = 0; k < NA; k++) {
-          const dx = ATTR[k].x - p.x;
-          const dy = ATTR[k].y - p.y;
-          const d2 = dx * dx + dy * dy + SOFT;
-          const f = (G * mass[k]) / d2;
-          ax += f * dx;
-          ay += f * dy;
-          if (d2 < CAPTURE * CAPTURE + SOFT) {
-            mass[k] += 0.05;
-            Object.assign(p, spawn());
-            ax = ay = 0;
-            break;
-          }
+      // The growing edge captures frames; captured ones are siphoned inward.
+      let captured = 0;
+      for (const f of FRAMES) {
+        if (!f.captured && f.d0 <= radius) f.captured = true;
+        if (f.captured) {
+          f.x += (CX - f.x) * 0.025;
+          f.y += (CY - f.y) * 0.025;
+          captured++;
         }
-        p.vx = (p.vx + ax) * 0.99;
-        p.vy = (p.vy + ay) * 0.99;
-        p.x += p.vx;
-        p.y += p.vy;
       }
+      const frac = captured / NF;
 
-      // Wells: concentric rings whose depth and brightness grow with mass.
-      const total = mass.reduce((a, b) => a + b, 0);
-      for (let k = 0; k < NA; k++) {
-        const share = mass[k] / total; // 0..1 dominance
-        const rings = 2 + Math.round(share * 5);
-        const rad = (0.04 + 0.13 * share) * m;
-        ctx.strokeStyle = color;
-        for (let i = 1; i <= rings; i++) {
-          ctx.globalAlpha = (0.1 + 0.5 * share) * (1 - (i - 1) / (rings + 1));
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.arc(sx(ATTR[k].x), sy(ATTR[k].y), (rad * i) / rings, 0, Math.PI * 2);
-          ctx.stroke();
-        }
-        ctx.fillStyle = color;
-        ctx.globalAlpha = 0.3 + 0.6 * share;
-        ctx.beginPath();
-        ctx.arc(sx(ATTR[k].x), sy(ATTR[k].y), 1.6 + 2.4 * share, 0, Math.PI * 2);
-        ctx.fill();
+      // Membrane: a wobbling boundary that grows and brightens as it fills.
+      ctx.strokeStyle = color;
+      ctx.globalAlpha = 0.25 + 0.4 * frac;
+      ctx.lineWidth = 1.25;
+      ctx.beginPath();
+      const STEPS = 90;
+      for (let i = 0; i <= STEPS; i++) {
+        const a = (i / STEPS) * Math.PI * 2;
+        const wob = 1 + 0.05 * Math.sin(a * 3 + t) + 0.03 * Math.cos(a * 5 - t * 0.6);
+        const rr = radius * m * wob;
+        const x = sx(CX) + Math.cos(a) * rr;
+        const y = sy(CY) + Math.sin(a) * rr;
+        if (i) ctx.lineTo(x, y);
+        else ctx.moveTo(x, y);
       }
+      ctx.closePath();
+      ctx.stroke();
 
-      // Drifting frames.
+      // Frames: captured ones bright and pulled in; free ones faint at home.
       ctx.fillStyle = color;
-      for (const p of parts) {
-        ctx.globalAlpha = 0.55;
+      for (const f of FRAMES) {
+        ctx.globalAlpha = f.captured ? 0.85 : 0.22;
         ctx.beginPath();
-        ctx.arc(sx(p.x), sy(p.y), 1.4, 0, Math.PI * 2);
+        ctx.arc(sx(f.x), sy(f.y), f.captured ? 1.6 : 1.4, 0, Math.PI * 2);
         ctx.fill();
       }
       ctx.globalAlpha = 1;
