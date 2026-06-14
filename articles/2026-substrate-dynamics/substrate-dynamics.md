@@ -13,6 +13,8 @@ tags: [dynamics]
 
 Companion to the paper *Frame-Semantic Graph Construction for Knowledge Substrates*. This piece ties the substrate-dynamics notes into one picture: a [[substrate]] built of [[frame|frames]] that a population of agents continuously reads from and writes back into, what sustained two-way use does to it, what can be read off it before behaviour fails, and how to intervene on the medium rather than on the agents. Each mechanism has its own note; this is the synthesis that links them. Where the implementation currently stands is its own note too — see [[codebase|state of the codebase]].
 
+<Figure id="divergence-convergence" margin caption="Healthy work cycles: a seed diverges to open the space, constraints narrow it, and it converges on something usable." />
+
 ## Terms
 
 Each term has its own note; the glosses below are the short form.
@@ -30,7 +32,7 @@ The substrate is a frame-semantic knowledge graph: typed [[frame|frame]] instanc
 
 The consequence for dynamics research: the graph is not a passive data structure that dynamics get bolted onto. Its topology, vocabulary, and traversal behavior all evolve with use — which makes it the right object for studying what sustained multi-agent use does to a shared knowledge medium, and a harder object to reason about with static graph theory alone.
 
-<Figure id="frame-graph" margin caption="A frame-semantic graph under co-retrieval: a query lights a connected region of typed frames, and a membrane forms around the ones in play." />
+<Figure id="substrate-slice" margin caption="A slice of the substrate: agents hover over a band of frames and pull frames up into the context they run on, turn by turn." />
 
 ## Coordination phase
 
@@ -54,13 +56,6 @@ Both halves of that loop run on machinery the notes cover. What counts as health
 
 Diversity is one read; concentration is its dual. We measure the spread as an effective number of types ([[hill-diversity|Hill diversity]]) and the unevenness of coupling as a single coefficient ([[gini-coefficient|Gini]]), and we read both at every [[scale]]. Neither number means anything on its own — each is a signal only against what the task should produce ([[task-appropriate-behavior|task-appropriate behaviour]]).
 
-## Validation: minimal experiments
+## Validation
 
-A mechanism earns a place only after it shows a measurable, reproducible effect on a small, fully observable problem. A substrate signal counts if it precedes the visible failure with a usable lead and beats trace-level baselines — tested at small scale first.
-
-- **Attractor onset** — repeated similarity-driven write-back over a fixed corpus; does [[frame-type-diversity|diversity]] decline and [[coupling]] concentration lead the visible output repetition?
-- **Decay against collapse** — drive co-retrieval to a tight [[membranes|membrane]], stop, and let decay run; do long-tail frames re-enter the default context without erasing the learned coherence?
-- **Contamination propagation** — seed one wrong frame; is the contaminated region identifiable from substrate state before outputs visibly degrade?
-- **Coherence across hierarchies** — do higher-order frames stay consistent with their constituents under write-back, and how deep does the consistency reach?
-
-Cross-cutting all four: every result is conditional on the embedding model that seeds initial positions — a sensitivity study of its own.
+How any of this gets validated is a separate, still-forming list — a handful of small, fully observable [[experiments|minimal experiments]], to be aligned on with the team. A signal earns its place only if it precedes the visible failure with a usable lead and beats trace-level baselines.
