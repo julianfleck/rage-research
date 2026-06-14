@@ -2,12 +2,12 @@
 
 import { useEffect, useRef } from "react";
 
-// Permeability as traversal depth. A single subgraph drawn as a small tree: a
-// summary node at the centre, then two levels of detail fanning out. Resonance
-// rises and falls; the retrieval frontier follows it. At low resonance only the
-// summary is delivered; as resonance climbs, the frontier opens deeper and a
-// richer subset of frames lights up. Illustrative, not interactive. Black/white,
-// currentColor.
+// Permeability as retrieval depth. A single subgraph drawn as a small tree: a
+// summary node at the centre, then two levels of detail fanning out. A retrieval
+// threshold on resonance sweeps up and down and the frontier follows: held high,
+// only the most resonant node (the summary) comes back; as the threshold drops,
+// the frontier reaches deeper and a richer subset of frames clears the bar.
+// Illustrative, not interactive. Black/white, currentColor.
 
 type Node = { x: number; y: number; level: number; parent: number };
 
@@ -70,9 +70,10 @@ export function MembranePermeability() {
       ctx.clearRect(0, 0, w, h);
       const m = Math.min(w, h);
 
-      // Resonance breathes 0..1; the retrieval frontier follows it.
-      const res = 0.5 + 0.5 * Math.sin(t * 0.3);
-      const frontier = res * MAX_LEVEL;
+      // Retrieval reach breathes 0..1 (the threshold dropping and rising); the
+      // frontier follows it.
+      const reach = 0.5 + 0.5 * Math.sin(t * 0.3);
+      const frontier = reach * MAX_LEVEL;
       // How fully each node is retrieved (soft frontier).
       const lit = (level: number) => smooth(frontier - level + 0.6);
 
