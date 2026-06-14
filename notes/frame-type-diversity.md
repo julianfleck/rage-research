@@ -7,7 +7,6 @@ order: 10
 author: Julian Fleck
 tags: [substrate, metric, diversity]
 show: true
-unlisted: true
 ---
 
 The variety of frame *types* in play — the kinds of framing a region of the substrate is holding, not just how much activation it carries — is the most direct read-out of where a population sits in the divergence/convergence cycle. Exploration widens the set of types; convergence narrows it deliberately; the failures are a set that stays narrow when the task still needs range, or never settles. ^read-out
