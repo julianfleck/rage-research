@@ -36,7 +36,7 @@ Membranes are established over the continuous evolution of the graph, not minted
 
 That variety is the intervention surface. Context width bounds what an agent can do: narrow context, limited reasoning and limited agency; broader inputs, broader reasoning and more room to act. So modulating the variety — the size and density of a membrane — is how we act on the agents inside it without touching them one by one. The same boundary makes their state legible from outside: read the membrane and you read what the agents have to work with. The agent acts — acting is closing the loop, writing back — and the next retrieval re-draws the boundary at the coupling density it then finds. Read and write are the same event class: both feed coupling. Decay runs against coupling and closes the channels again; without it a membrane would lock open and never reset.
 
-<Figure id="membrane-aperture" />
+<Figure id="membrane-size" margin caption="Widening the membrane takes in more frames — and more frame-types; tightening it narrows the context back down." />
 
 ## What a membrane regulates
 
