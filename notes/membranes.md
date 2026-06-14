@@ -20,7 +20,9 @@ In substrate dynamics, *membrane* is meant in the cell-biology sense: a **semipe
 
 ## Constituents
 
-A membrane encloses both the information and the actors working on it, not one or the other. An agent, in this reading, is itself a frame — an aggregation over the context it currently holds, its harness and currently retrieved context. It carries an activation pattern like any other frame, so computing that fingerprint over frames picks out the membrane: two agents on the same codebase fall inside one naturally, and two people with overlapping research interests are grouped just as organically — close enough on the substrate to be put in touch.
+A membrane encloses both the information and the actors working on it, not one or the other. And the levels are not fixed: a membrane is itself a frame — collapse a co-active region to a point and it behaves as one — while an agent is a membrane, the bounded bundle of its harness and currently retrieved context. So an agent is a frame too, one scale up. Frame, membrane, and agent are the same kind of object seen at different grain.
+
+Because they are the same kind of object, the same mechanics run at every level — activation, coupling, resonance, decay — and the same metrics can be read over a membrane as over an atomic leaf frame (see [[fractal-composition]]). Computing that fingerprint over frames is what picks out a membrane: two agents on the same codebase fall inside one naturally, and two people with overlapping research interests are grouped just as organically — close enough on the substrate to be put in touch.
 
 ## Formation and dissolution
 
@@ -55,7 +57,7 @@ A membrane is not a cluster. Clusters partition: each node lands in one group. M
 
 Membranes over shared substrate are an active interest across a few projects, each coming at them from a different direction — from [selectively permeable communication](https://www.julianfleck.net/articles/spirits-dark-forest) to trust-scoped coordination across teams. We mostly want a membrane to do two things at once. It **mediates context availability** — deciding what context a turn can reach, and (through [[resonance]]) at what granularity. And it is a **coordination surface** — agents that share a membrane coordinate through it: each one's writes change the coupled region the others retrieve from next, so they align by acting on shared state rather than by messaging each other.
 
-Because an agent is itself a frame, the rule that builds any membrane builds these too: agents that fire together wire together. Co-acting agents accumulate coupling and are drawn together; the membrane around a team forms from the coordinating itself, bottom-up, rather than being drawn around an org chart — and decay dissolves it again once the coordinating stops.
+Because an agent is itself a membrane, the rule that builds any membrane builds these too: agents that fire together wire together. Co-acting agents accumulate coupling and are drawn together; the membrane around a team is a membrane over membranes, formed from the coordinating itself, bottom-up, rather than drawn around an org chart — and decay dissolves it again once the coordinating stops.
 
 <Figure id="membrane-coordination" margin caption="Agents are frames too: when a set of them co-acts, coupling builds and a membrane closes around them — a team that forms from the coordinating itself, then dissolves as the coupling decays." />
 
