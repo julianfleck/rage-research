@@ -19,12 +19,14 @@ implementation is split, and what could be built next.
 
 ## Terms
 
-- **Frame** — the primitive: a typed knowledge unit with named slots, instantiated from content (not from a fixed ontology). A frame can be a sentence-level claim or a whole document; frames nest.
-- **Substrate** — the shared frame-graph medium a population of agents reads from and writes back into. What makes it a substrate rather than a static scaffold is the write-back feedback: each write reshapes what other agents retrieve on the next turn.
-- **Coupling** — a connection between frames that strengthens when they are retrieved and acted on together (Hebbian) and relaxes when they are not. Carries a valence: alignment, interference, or neutral.
-- **Membrane** — a boundary region where context is densely co-activated, surrounded by sparser coupling. Membranes are where the substrate's influence is exercised: they modulate what context crosses into an agent's next turn. Interventions act on membranes, not on agents.
-- **Coordination phase** — the dynamical regime a population of agents over the substrate currently occupies: exploration, stabilization, lock-in, or drift. "Phase" in the phase-transition sense, not the oscillator sense.
-- **Divergence/convergence cycle** — the healthy oscillation between opening the space (divergence) and closing it around something usable (convergence). Pathologies are cycle failures: premature convergence (lock-in) or failure to converge (drift).
+Each term has its own note; the glosses below are the short form.
+
+- [[frame|Frame]] — a typed knowledge unit with named slots, instantiated from content (not a fixed ontology); frames nest.
+- [[substrate|Substrate]] — the shared frame-graph medium a population reads from and writes back into; the write-back feedback is what makes it a substrate rather than a static scaffold.
+- [[coupling|Coupling]] — a connection between frames that strengthens when they are retrieved and acted on together (Hebbian) and relaxes otherwise; carries a valence.
+- [[membranes|Membrane]] — a boundary over a densely co-activated region; interventions act on membranes, not on agents.
+- [[coordination-phase|Coordination phase]] — the regime the population currently occupies: exploration, stabilization, lock-in, or drift.
+- [[divergence-convergence-cycle|Divergence/convergence cycle]] — the healthy oscillation between opening the space and closing it; the pathologies are cycle failures.
 
 ## The frame graph
 
@@ -32,20 +34,17 @@ The substrate is a frame-semantic knowledge graph: typed frame instances with na
 
 The consequence for dynamics research: the graph is not a passive data structure that dynamics get bolted onto. Its topology, vocabulary, and traversal behavior all evolve with use — which makes it the right object for studying what sustained multi-agent use does to a shared knowledge medium, and a harder object to reason about with static graph theory alone.
 
-<Chart id="20-substrate" caption="Semantic frame graph and substrate co-retrieval dynamics. Activation shown as heat; the active agent population works inside the membrane." />
+<Figure id="frame-graph" margin caption="A frame-semantic graph under co-retrieval: a query lights a connected region of typed frames, and a membrane forms around the ones in play." />
 
 ## Coordination phase
 
-**Coordination phase** is the regime a population of agents working over a shared substrate currently occupies — phase in the dynamical-systems sense (as in phase transition), not the oscillator sense. A frame's phase angle is a lower-level quantity; coordination phase is what we read off the population. Four candidate states:
+[[coordination-phase|Coordination phase]] is the regime a population of agents working over a shared substrate currently occupies — phase in the dynamical-systems sense (as in phase transition), not the oscillator sense. A frame's [[resonance|phase angle]] is a lower-level quantity; coordination phase is what we read off the population. Four candidate states:
 
-- **Exploration** — active regions expanding, couplings forming and dissolving, frame-type diversity rising
-- **Stabilization** — couplings consolidating around structures that are proving useful; diversity narrowing deliberately
-- **Lock-in** — coupling so concentrated that retrieval keeps returning the same configurations; new content arrives but cannot compete
-- **Drift** — couplings decaying without consolidation; activity without accumulation
+![[coordination-phase#The states]]
 
-None of these states is a failure by itself. Healthy work **cycles**: divergence opens the space, convergence closes it around something usable, and the cycle repeats at every scale. The pathologies are cycle failures — premature convergence (collapse into lock-in before exploration has done its job) or the inability to converge at all (drift). And what counts as healthy is **role-relative**: a brainstorming agent should spend most of its time in exploration, a verification agent in stabilization. There is no universal healthy profile, only a match or mismatch between the substrate's phase and the role and stakes of the task.
+![[divergence-convergence-cycle#The cycle]]
 
-**The operating loop.** The substrate is not queried once and then left alone. On every agent turn it assembles and injects the context that turn will run on — and that injection point is the leverage. Membranes modulate what crosses in: which frames are pulled, which are held back, which contradicting or long-tail frames are deliberately mixed in. Raising coupling promotes convergence; widening the aperture promotes divergence. Reading phase and acting on it happen at the same point: the per-turn assembly of context.
+![[coordination-phase#The operating loop]]
 
 ## Frame-type diversity
 
