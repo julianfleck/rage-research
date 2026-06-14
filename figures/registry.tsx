@@ -47,8 +47,8 @@ const DISTS: number[][] = [
 const DOMAIN = Math.max(...DISTS.flat());
 
 // Hold on each state long enough to read its coefficient, then morph to the next.
-const HOLD = 2400;
-const TRANSITION = 1000;
+const HOLD = 1400;
+const TRANSITION = 600;
 
 function GiniAnimated() {
   // Interpolate the bar values ourselves and derive the coefficient from the

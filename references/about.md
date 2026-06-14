@@ -4,7 +4,7 @@ description: A small research team studying substrate dynamics — how a shared 
 date: 2026-06-11
 series: References
 order: 0
-author: Julian Fleck
+author: attractor.space
 tags: [overview]
 show: true
 ---
