@@ -19,7 +19,7 @@ What resonance does is set what gets retrieved together. A retrieval gathers the
 
 <Figure id="resonance" margin caption="Each frame drawn as its phase angle. Frames that resonate line up to the same angle; where regions of different angle meet, the field interferes." />
 
-There is no privileged recipient in this. It does not matter whether what retrieves is an agent, a person, a document, or a set of instructions — the same resonance is read, the same threshold applies. This is the quantity a [[membranes|membrane]]'s channels gate: the membrane is the boundary, the threshold on resonance is what opens a channel, and how far the threshold drops is how deep retrieval reaches. Permeability, depth, and granularity are the same gate read at different grains.
+The usual move is to treat semantic similarity as the sole measure of what belongs together. Resonance does not stop there: it layers co-retrieval and action — what gets used and worked on together — on top of semantic similarity and structural composition. Belonging is set by use and structure as much as by meaning. This is the quantity a [[membranes|membrane]]'s channels gate: the membrane is the boundary, the threshold on resonance is what opens a channel, and how far the threshold drops is how deep retrieval reaches. Permeability, depth, and granularity are the same gate read at different grains.
 
 ## Open problems
 
