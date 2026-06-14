@@ -52,18 +52,14 @@ Both halves of that loop run on machinery the notes cover. What counts as health
 
 <Figure id="type-drift" margin caption="Homogenization drift: frames arrive varied and collapse toward a single dominant type as write-back concentrates." />
 
-## State of the codebase
-
-The frame-semantic graph construction currently exists **twice**, and the two copies have diverged. The original implementation, **Recurse**, is production-grade: a five-stage extraction pipeline emitting to Neo4j, dual embeddings, hybrid search, a multi-tenant REST API. When the dynamics work started, those production requirements made it hard to iterate, so a lighter implementation — **rage-substrate**, over SQLite — was rewritten to move faster. It is architecturally ahead in three places: a cleaner frame model, a WebSocket event stream that *pushes* substrate events (you cannot observe resonance by polling), and an overhauled spatial addressing scheme.
-
-The migration goes both ways: port the newer model and event stream back into Recurse so the production graph becomes observable in real time, then run the dynamics experiments over that hardened graph. The end state is one construction pipeline and one modular dynamics layer, talking through a defined protocol.
+Diversity is one read; concentration is its dual. We measure the spread as an effective number of types ([[hill-diversity|Hill diversity]]) and the unevenness of coupling as a single coefficient ([[gini-coefficient|Gini]]), and we read both at every [[scale]]. Neither number means anything on its own — each is a signal only against what the task should produce ([[task-appropriate-behavior|task-appropriate behaviour]]).
 
 ## Validation: minimal experiments
 
 A mechanism earns a place only after it shows a measurable, reproducible effect on a small, fully observable problem. A substrate signal counts if it precedes the visible failure with a usable lead and beats trace-level baselines — tested at small scale first.
 
-- **Attractor onset** — repeated similarity-driven write-back over a fixed corpus; does diversity decline and coupling concentration lead the visible output repetition?
-- **Decay against collapse** — drive co-retrieval to a tight membrane, stop, and let decay run; do long-tail frames re-enter the default context without erasing the learned coherence?
+- **Attractor onset** — repeated similarity-driven write-back over a fixed corpus; does [[frame-type-diversity|diversity]] decline and [[coupling]] concentration lead the visible output repetition?
+- **Decay against collapse** — drive co-retrieval to a tight [[membranes|membrane]], stop, and let decay run; do long-tail frames re-enter the default context without erasing the learned coherence?
 - **Contamination propagation** — seed one wrong frame; is the contaminated region identifiable from substrate state before outputs visibly degrade?
 - **Coherence across hierarchies** — do higher-order frames stay consistent with their constituents under write-back, and how deep does the consistency reach?
 
