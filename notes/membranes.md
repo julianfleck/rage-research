@@ -1,13 +1,16 @@
 ---
 title: Membranes
-definition: "The dynamically drawn, selectively permeable boundary over a co-active region of the substrate — the agents and frames working together at a moment. Membranes nest and overlap rather than partition; co-attention forms them and decay releases them."
+definition: The dynamically drawn, selectively permeable boundary over a co-active region of the substrate — the agents and frames working together at a given moment. Membranes nest and overlap rather than partition; co-attention forms them and decay releases them.
 description: Membranes as the substrate's working boundaries — how co-attention instantiates them, what they regulate (the density of context, and the capacity to act), and why they nest and overlap rather than cluster.
 date: 2026-06-14
 series: Lab notes
 status: draft
 version: 1
 author: Julian Fleck
-tags: [substrate, membrane, structure]
+tags:
+  - substrate
+  - membrane
+  - structure
 show: true
 ---
 
