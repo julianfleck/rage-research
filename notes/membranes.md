@@ -30,7 +30,7 @@ A membrane is not a cluster. Clusters partition: each node lands in one group. M
 
 A membrane is instantiated per turn. Co-attention — an agent reading, then writing, over a set of frames — does two things at once. It aligns phase across those frames and the agent, which is the membrane forming. And it sets the requisite variety inside the boundary: how much, and how varied, the context in play is (cf. [[frame-type-diversity]]).
 
-That variety bounds what follows. Narrow context: a limited degree of reasoning, limited agency. Broader inputs: broader reasoning, more room to act. The agent acts — acting is closing the loop, writing back — and the next turn's co-attention re-draws the boundary. Read and write are the same event class: both trigger alignment. Decay runs against alignment and releases the membrane; without it, boundaries would harden and never reopen.
+That variety bounds what follows. Narrow context: a limited degree of reasoning, limited agency. Broader inputs: broader reasoning, more room to act. The agent acts — acting is closing the loop, writing back — and the next turn's co-attention re-draws the boundary. Read and write are the same event class: both trigger alignment. Decay runs against alignment and closes the channels again; without it a membrane would lock open and never reset.
 
 ## What a membrane regulates
 
