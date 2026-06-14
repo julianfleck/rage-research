@@ -1,6 +1,6 @@
 ---
 title: Resonance
-definition: How strongly a recipient couples to a region of the substrate when it retrieves from it — the coupling already built across that region (Hebbian) weighted by how well it coheres with what the recipient is doing. Resonance sets how deep a retrieval traverses into a subgraph: low resonance returns the summary at the top, high resonance lets the recipient navigate in and pull a rich subset of frames.
+definition: How strongly a recipient couples to a region of the substrate when it retrieves from it — the coupling already built across that region (Hebbian) weighted by how well it coheres with what the recipient is doing. Resonance sets how deep a retrieval traverses into a subgraph — low resonance returns the summary at the top, high resonance lets the recipient navigate in and pull a rich subset of frames.
 description: Resonance in substrate dynamics — Hebbian coupling weighted by semantic coherence — and how it sets the traversal depth, and so the granularity, of what a retrieval returns.
 date: 2026-06-14
 series: Lab notes
