@@ -10,6 +10,7 @@ import { TaskSpread } from "./task-spread";
 import { HillTypes } from "./hill-types";
 import { TopoZoom } from "./topo-zoom";
 import { GiniNodes } from "./gini-nodes";
+import { TypeDrift } from "./type-drift";
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
 export type FigureKind = "svg" | "canvas" | "chart";
@@ -73,6 +74,8 @@ export const figures: Record<string, FigureDef> = {
   "substrate-spread": { kind: "canvas", render: () => <SubstrateField /> },
   // Task spread: a narrow run vs an open run — measurable difference in spread.
   "task-spread": { kind: "canvas", render: () => <TaskSpread /> },
+  // Frame-type diversity: typed frames flow in varied and homogenize to one type.
+  "type-drift": { kind: "canvas", render: () => <TypeDrift /> },
   // Topography: zooming into the graph exposes finer nodes (progressive disclosure).
   "topo-zoom": { kind: "canvas", render: () => <TopoZoom /> },
   // Mechanical: how a distribution's shape maps to the coefficient.
