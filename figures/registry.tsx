@@ -12,7 +12,7 @@ import { TopoZoom } from "./topo-zoom";
 import { GiniNodes } from "./gini-nodes";
 import { TypeDrift } from "./type-drift";
 import { MembranePermeability } from "./membrane-permeability";
-import { MembraneSize } from "./membrane-size";
+import { MembraneCoordination } from "./membrane-coordination";
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
 export type FigureKind = "svg" | "canvas" | "chart";
@@ -96,7 +96,7 @@ export const figures: Record<string, FigureDef> = {
   // Membranes: permeability as traversal depth — resonance opens a subgraph from
   // summary to a rich subset of frames.
   "membrane-permeability": { kind: "canvas", render: () => <MembranePermeability /> },
-  // Membranes: a membrane breathing over a field of subgraphs — size sets the
-  // variety it admits.
-  "membrane-size": { kind: "canvas", render: () => <MembraneSize /> },
+  // Membranes: coordination through drift — co-acting agents wire together and a
+  // team membrane forms, then dissolves as coupling decays.
+  "membrane-coordination": { kind: "canvas", render: () => <MembraneCoordination /> },
 };
