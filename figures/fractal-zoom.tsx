@@ -86,7 +86,7 @@ export function FractalZoom() {
         const scale = base * Math.pow(R, i) * globalScale; // membrane radius (px)
         // Fade in while small, and out well before the edge so the outer blob
         // dissolves rather than clipping off-canvas.
-        const op = smooth(scale / (0.07 * m)) * smooth((0.78 * m - scale) / (0.4 * m));
+        const op = smooth(scale / (0.07 * m)) * smooth((0.55 * m - scale) / (0.26 * m));
         if (op < 0.02) continue;
         const rot = i * 2.39996 + t * 0.08;
 

@@ -11,7 +11,7 @@ import { useEffect, useRef } from "react";
 // the stroke direction. Black/white, currentColor.
 const COLS = 16;
 const SOFT = 0.02; // softening so a source's pull stays finite at its centre
-const MOUSE_W = 0.5; // cursor source strength
+const MOUSE_W = 1.2; // cursor source strength
 
 function mulberry32(a: number) {
   return () => {
@@ -106,14 +106,33 @@ export function ResonanceFigure() {
       const m = Math.min(w, h);
 
       // Decay the cursor's pull when it stops moving.
-      mStr *= 0.94;
-      const cursorOn = t - mLast < 1.5 && mStr > 0.02;
+      mStr *= 0.93;
+      const realActive = t - mLast < 0.6 && mStr > 0.05;
+      // Active pointer: the real cursor while it's moving, otherwise a virtual one
+      // that roams the field on its own — so there's always some movement combing
+      // the frames.
+      let px: number;
+      let py: number;
+      let pAng: number;
+      let pPull: number;
+      if (realActive) {
+        px = mx;
+        py = my;
+        pAng = mAng;
+        pPull = Math.min(1, 0.45 + mStr);
+      } else {
+        px = 0.5 + 0.36 * Math.sin(t * 0.5);
+        py = 0.5 + 0.34 * Math.sin(t * 0.71 + 1.3);
+        pAng = Math.atan2(0.34 * 0.71 * Math.cos(t * 0.71 + 1.3), 0.36 * 0.5 * Math.cos(t * 0.5));
+        pPull = 0.6;
+      }
 
       // Current source orientations (slowly turning).
       const sa = SOURCES.map((s) => 2 * (s.ang + s.rate * t));
 
       ctx.strokeStyle = color;
       ctx.lineCap = "round";
+      const PR = 0.24; // pointer influence radius (for the width highlight)
       for (const [x, y] of PTS) {
         let vx = 0;
         let vy = 0;
@@ -125,20 +144,22 @@ export function ResonanceFigure() {
           vy += wt * Math.sin(sa[s]);
           wsum += wt;
         }
-        if (cursorOn) {
-          const d2 = (x - mx) ** 2 + (y - my) ** 2;
-          const wt = (mStr * MOUSE_W) / (d2 + 0.01);
-          vx += wt * Math.cos(2 * mAng);
-          vy += wt * Math.sin(2 * mAng);
-          wsum += wt;
-        }
+        // The pointer combs the field toward its stroke direction.
+        const pd2 = (x - px) ** 2 + (y - py) ** 2;
+        const pw = (pPull * MOUSE_W) / (pd2 + 0.01);
+        vx += pw * Math.cos(2 * pAng);
+        vy += pw * Math.sin(2 * pAng);
+        wsum += pw;
+
         const angle = 0.5 * Math.atan2(vy, vx);
         const coh = wsum > 0 ? Math.hypot(vx, vy) / wsum : 0; // 1 = aligned, low = interference
-        const hl = (0.012 + 0.016 * coh) * m;
+        const hl = (0.013 + 0.007 * coh) * m;
         const dx = Math.cos(angle) * hl;
         const dy = Math.sin(angle) * hl;
-        ctx.globalAlpha = 0.18 + 0.62 * coh;
-        ctx.lineWidth = 1 + 1.1 * coh;
+        // Width tracks the pointer alone: thick under the cursor, base elsewhere.
+        const prox = pPull * Math.max(0, 1 - Math.sqrt(pd2) / PR);
+        ctx.globalAlpha = 0.2 + 0.6 * coh;
+        ctx.lineWidth = 1 + 2 * prox;
         ctx.beginPath();
         ctx.moveTo(x * w - dx, y * h - dy);
         ctx.lineTo(x * w + dx, y * h + dy);
