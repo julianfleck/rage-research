@@ -18,7 +18,7 @@ tags:
 
 Knowledge here is a topography, not a flat field — and not a clean tree either. Frames compose two ways: structurally (a file holds sections, a section holds concepts) and argumentatively (a claim with its evidence and sources makes an argument). See [[graph-construction|graph construction]] for the composition and [[fractal-composition|fractal composition]] for why it recurs.
 
-<Figure id="topo-zoom" margin caption="A map of the substrate: clusters at the surface, their connected children revealed as you zoom into one." />
+<Figure id="topo-zoom" margin caption="A map of the substrate read at different zoom levels: membranes nesting and overlapping, finer ones revealed as you zoom in." />
 
 The substrate runs across many scales. A rough ordering, large to small:
 
