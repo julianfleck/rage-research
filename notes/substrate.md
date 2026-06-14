@@ -14,7 +14,7 @@ show: true
 
 The *substrate* is the shared [[frame]]-graph medium a population of agents reads from and writes back into. What makes it a substrate rather than a static scaffold is the write-back feedback: each write reshapes what other agents retrieve on the next turn, so the medium conditions what can be thought next.
 
-<Figure id="substrate-slice" margin caption="A slice of the substrate: agents hover over a band of frames and, turn by turn, pull frames up into the context they run on." />
+<Figure id="substrate-slice" margin caption="Each retrieval strikes a different chord: an agent pulls a particular configuration of frames — a subgraph — out of the substrate; the next turn pulls another." />
 
 Treated this way, the store is not a record but an active medium — its topology, vocabulary, and traversal behaviour all evolve with use. That is what makes its [[coordination-phase|dynamics]] worth studying, and a harder object to reason about with static graph theory alone. The rest of these notes are about what sustained, two-way use does to such a medium.
 

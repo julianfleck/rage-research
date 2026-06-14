@@ -30,7 +30,7 @@ The substrate is a frame-semantic knowledge graph: typed [[frame|frame]] instanc
 
 The consequence for dynamics research: the graph is not a passive data structure that dynamics get bolted onto. Its topology, vocabulary, and traversal behavior all evolve with use — which makes it the right object for studying what sustained multi-agent use does to a shared knowledge medium, and a harder object to reason about with static graph theory alone.
 
-<Figure id="substrate-slice" margin caption="A slice of the substrate: agents hover over a band of frames and pull frames up into the context they run on, turn by turn." />
+<Figure id="substrate-slice" margin caption="Each retrieval strikes a different chord: an agent pulls a particular configuration of frames — a subgraph — out of the substrate; the next turn pulls another." />
 
 ## Coordination phase
 
