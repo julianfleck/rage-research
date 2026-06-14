@@ -1,5 +1,6 @@
 ---
 title: Fractal composition
+definition: "The substrate is assembled by the same compositional move at every level — frames nesting into frames — so its structure is roughly self-similar across scales."
 description: The substrate is built by the same compositional move at every level, making its structure roughly self-similar across scales.
 date: 2026-06-13
 series: Lab notes
