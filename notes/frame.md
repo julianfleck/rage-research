@@ -17,30 +17,37 @@ In substrate dynamics, a *frame* is the primitive unit: a typed knowledge unit w
 
 <Figure id="frame-slots" margin caption="A frame is a typed box with named slots; a slot's value is another frame, so slots are the graph's edges and frames nest." />
 
-The slots are what make the structure legible. Each slot is named and typed, and its filler is itself a frame — so a slot is an edge in the graph, and following slots is how composition and traversal work. A claim, for instance, carries its support inline, each slot pointing at another frame:
+The slots are what make the structure legible. Each slot is named, and its filler is itself a frame — so a slot is an edge in the graph, and following slots is how composition and traversal work. An observation, for instance, points at its source and the frames it relates to and supports, each slot an edge into the graph:
 
-```yaml
-# a Claim frame — every slot's value is another frame
-Claim:
-  text:     "Hebbian coupling concentrates retrieval over time."
-  evidence: [ Observation#diversity-decline, Observation#repetition ]
-  source:   Source#doshi-hauser-2024
-  supports: Argument#homogenization-drift
+```json
+{
+  "id": "/research/llm-memory",
+  "type": "observation",
+  "content": "LLMs struggle with long-context recall.",
+  "slots": {
+    "source": "paper:arxiv/2401.12345",
+    "related": ["/research/attention-mechanisms"],
+    "supports": "/research/claim-1"
+  }
+}
 ```
 
 Because a frame carries its type and slots explicitly, the relationship between two frames is legible in their structure, not only in their proximity in embedding space. That is what lets [[coupling]] carry a valence — alignment or interference, not just strength — and it is the material a [[membranes|membrane]] is ultimately drawn over.
 
-## Common types
+## Types
 
-| Type | Typical slots | Holds |
-|------|---------------|-------|
-| Claim | subject, predicate, evidence, source | an assertion with its support |
-| Entity | name, kind, attributes | a thing referred to |
-| Event | actor, action, object, time | something that happened |
-| Argument | thesis, claims, rebuttals | a structure of supporting claims |
-| Document | title, sections, source | a whole source, nesting everything under it |
-| Source | author, work, locator | the provenance a claim points back to |
+The registry runs to around forty types; a representative few:
 
-The registry is not fixed: types are negotiated at ingestion rather than imposed, so this set is a working vocabulary, not a closed ontology.
+| Type | Holds |
+|------|-------|
+| `observation` | raw facts, notes, things noticed |
+| `claim` | an assertion that could be true or false |
+| `insight` | synthesized understanding |
+| `decision` | a choice made, with its rationale |
+| `question` | an open question or uncertainty |
+| `territory` | a container for related frames |
+| `collection` | a grouping without spatial semantics |
+
+The registry is not fixed: in rage-substrate it is a static default set. Either way it is a working vocabulary, not a closed ontology.
 
 <Related tags="frame, structure" />
