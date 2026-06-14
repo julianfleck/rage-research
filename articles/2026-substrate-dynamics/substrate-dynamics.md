@@ -11,11 +11,7 @@ author: Julian Fleck
 tags: [dynamics]
 ---
 
-Companion to the paper *Frame-Semantic Graph Construction for Knowledge
-Substrates*. The motivation is substrate-level signals that precede behavioral
-failure, and reversible interventions on the medium rather than the agents — so
-these notes skip the why and give a picture of what is implemented, where the
-implementation is split, and what could be built next.
+Companion to the paper *Frame-Semantic Graph Construction for Knowledge Substrates*. This piece ties the substrate-dynamics notes into one picture: a [[substrate]] built of [[frame|frames]] that a population of agents continuously reads from and writes back into, what sustained two-way use does to it, what can be read off it before behaviour fails, and how to intervene on the medium rather than on the agents. Each mechanism has its own note; this is the synthesis that links them. Where the implementation currently stands is its own note too — see [[codebase|state of the codebase]].
 
 ## Terms
 
@@ -30,7 +26,7 @@ Each term has its own note; the glosses below are the short form.
 
 ## The frame graph
 
-The substrate is a frame-semantic knowledge graph: typed frame instances with named slots, composing recursively along a structural axis (paragraph → section → document) and a semantic axis (claim + evidence + source → argument support structure). Three properties make it self-governing rather than merely self-updating: structure is discovered rather than imposed, the type registry is negotiated at ingestion time, and frames carry their own traversal instructions.
+The substrate is a frame-semantic knowledge graph: typed [[frame|frame]] instances with named slots, composing recursively along a structural axis (paragraph → section → document) and a semantic axis (claim + evidence + source → argument). That recursion is the same compositional move at every level — [[fractal-composition|frames nesting into frames]] — so the graph can be read across [[scale|scales]], and a [[membranes|membrane]] drawn at one scale behaves as a frame at the next. Three properties make it self-governing rather than merely self-updating: structure is discovered rather than imposed, the type registry is negotiated at ingestion time, and frames carry their own traversal instructions.
 
 The consequence for dynamics research: the graph is not a passive data structure that dynamics get bolted onto. Its topology, vocabulary, and traversal behavior all evolve with use — which makes it the right object for studying what sustained multi-agent use does to a shared knowledge medium, and a harder object to reason about with static graph theory alone.
 
@@ -46,7 +42,9 @@ The consequence for dynamics research: the graph is not a passive data structure
 
 ![[coordination-phase#The operating loop]]
 
-## Frame-type diversity
+Both halves of that loop run on machinery the notes cover. What counts as healthy is read from [[coupling]] density and its valence and from [[frame-type-diversity|frame-type diversity]]; what gets acted on is the [[membranes|membrane]], whose permeability — a threshold on [[resonance]] — sets how much, and how deep, the context that crosses in is.
+
+## What we can read
 
 ![[frame-type-diversity#^read-out]]
 
