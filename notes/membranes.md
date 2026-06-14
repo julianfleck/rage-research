@@ -14,7 +14,7 @@ tags:
 show: true
 ---
 
-In substrate dynamics, *membrane* is meant in the cell-biology sense: a **semipermeable boundary** — not a wall (nothing crosses) and not an open door (everything crosses), but a surface whose **channels open and close at thresholds**, setting what passes and how much. The point of the metaphor is the gating: flow across the boundary is conditional, and driven by what has accumulated on either side.
+In substrate dynamics, *membrane* is meant in the cell-biology sense: a **semipermeable boundary** — not a wall (nothing crosses) and not an open door (everything crosses), but a surface whose **channels open and close at thresholds**. The gating is the point: flow across the boundary is conditional, set by what has accumulated on either side.
 
 <Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
 
