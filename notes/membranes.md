@@ -26,11 +26,11 @@ Membranes over information are an active interest across a few projects, each re
 
 A membrane is not a cluster. Clusters partition: each node lands in one group. Membranes nest and overlap — one can sit inside another, and two can share frames without either containing the other. An agent's active context, a project's working set, and a team's shared region are membranes at different [[scale|scales]], drawn at the same moment over overlapping material. The object of study is membranes over membranes: boundaries layered and crossing, not tiles.
 
-## Membrane instantiation
+## How a membrane is defined
 
-A membrane is instantiated per turn. Co-attention — an agent reading, then writing, over a set of frames — does two things at once. It aligns phase across those frames and the agent, which is the membrane forming. And it sets the requisite variety inside the boundary: how much, and how varied, the context in play is (cf. [[frame-type-diversity]]).
+Membranes are established over the continuous evolution of the graph, not minted in discrete steps. Whenever context is retrieved from the substrate, the membrane is the region picked out by the current coupling density — the dense neighbourhood the retrieval draws on, set off against the sparser coupling around it. Co-attention — an agent reading, then writing, over a set of frames — feeds that density back: it strengthens the coupling across the frames it draws together (Hebbian), and sets the requisite variety inside the boundary: how much, and how varied, the context in play is (cf. [[frame-type-diversity]]).
 
-That variety bounds what follows. Narrow context: a limited degree of reasoning, limited agency. Broader inputs: broader reasoning, more room to act. The agent acts — acting is closing the loop, writing back — and the next turn's co-attention re-draws the boundary. Read and write are the same event class: both trigger alignment. Decay runs against alignment and closes the channels again; without it a membrane would lock open and never reset.
+That variety bounds what follows. Narrow context: a limited degree of reasoning, limited agency. Broader inputs: broader reasoning, more room to act. The agent acts — acting is closing the loop, writing back — and the next retrieval re-draws the boundary at the coupling density it then finds. Read and write are the same event class: both feed coupling. Decay runs against coupling and closes the channels again; without it a membrane would lock open and never reset.
 
 ## What a membrane regulates
 
