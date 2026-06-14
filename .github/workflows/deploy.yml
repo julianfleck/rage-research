@@ -1,0 +1,27 @@
+name: Trigger attractor.space deploy
+
+# Content lives here; the attractor.space renderer pulls it at build time.
+# Vercel only auto-builds on pushes to the attractor.space repo, so on every
+# push to this repo's main we ping a Vercel Deploy Hook to publish the change.
+#
+# Setup: Vercel → attractor.space project → Settings → Git → Deploy Hooks →
+# create one for the `main` branch, then add its URL as the repo secret
+# VERCEL_DEPLOY_HOOK (Settings → Secrets and variables → Actions).
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Vercel deploy hook
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -n "$HOOK" ]; then
+            curl -fsS -X POST "$HOOK" && echo "Triggered Vercel deploy."
+          else
+            echo "VERCEL_DEPLOY_HOOK secret not set — skipping (configure it to enable auto-deploy)."
+          fi
