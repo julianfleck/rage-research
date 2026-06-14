@@ -1,7 +1,7 @@
 ---
 title: State of the codebase
-definition: The frame-graph construction exists twice — Recurse (production, over Neo4j) and rage-substrate (the experimental testbed, over SQLite, where the dynamics primitives live). The substrate-dynamics layer and its metrics are mostly not built yet; rage-substrate provides the foundation.
-description: Where the implementation stands — Recurse vs rage-substrate, the dynamics primitives that already work in the testbed, and the substrate-dynamics layer and metrics that are still aspirational.
+definition: RAGE has had two versions — v1 (Recursive Agentic Graph Embeddings), the production graph construction behind recurse.cc and the subject of the companion paper; and v2 (Recursive Attention-Guided Explorations), the current dynamics testbed, now being modularized so we can experiment over different metrics.
+description: The two versions of RAGE — the production graph builder behind recurse.cc and the attention-driven dynamics testbed — what each does, and what in the dynamics layer is still to build.
 date: 2026-06-15
 series: Lab notes
 status: draft
@@ -12,36 +12,26 @@ tags:
 show: true
 ---
 
-The frame-semantic graph construction exists **twice**, and the two copies share no code. **[Recurse](https://www.recurse.cc/)** (`rage-backend`) is the production product — it builds the graph for users. **rage-substrate** is the research testbed, where the dynamics primitives live and the substrate-dynamics work happens. Most of what these notes describe is a research programme over rage-substrate, not yet a running system.
+RAGE has had two lives. The first — *Recursive Agentic Graph Embeddings* — is the production system behind [recurse.cc](https://www.recurse.cc/): it builds a frame-semantic knowledge graph out of documents and serves it to users. What that system can do is written up in the companion paper, *Frame-Semantic Graph Construction for Knowledge Substrates*.
 
-## The split
+The second version came out of getting interested in what happens to such a graph under sustained use — its dynamics. So RAGE became *Recursive Attention-Guided Explorations*: a separate, lighter testbed, rebuilt to move quickly and watch the substrate behave. That is where the work in these notes happens, and the near-term plan is to modularize it so we can swap in and compare different metrics over the same substrate.
 
-|                | Recurse (`rage-backend`)                     | rage-substrate                                        |
-| -------------- | -------------------------------------------- | ----------------------------------------------------- |
-| Construction   | OpenAI structured outputs → Pydantic → Neo4j | LLM tool calls → recursive [[frame]] nesting → SQLite |
-| Storage        | Neo4j (graph + vector indexes)               | SQLite (local-first, FTS5)                            |
-| Dynamics       | none — static embeddings, no decay           | attention, decay, per-frame phase, [[coupling]]       |
-| Frame registry | dynamic (hot-reload, auto-discovery)         | static defaults                                       |
-| Maturity       | production                                   | experimental                                          |
+## What the testbed already does
 
-## What rage-substrate already has
-
-Working and tested:
-
-- a typed [[frame]] model — content-addressed IDs, named slots, parent hierarchy, activation tracking;
-- [[coupling]] as explicit edges carrying strength and a **valence** (alignment / interference / neutral) with event counts;
-- per-frame attention and decay (a Hopf / Stuart–Landau oscillator) and per-frame phase (Kuramoto-style);
-- hybrid retrieval (BM25 + semantic fusion, entity-first, reranking) and recursive graph traversal;
-- territories (semantic namespaces with membership), v3 addressing, and a WebSocket event stream that *pushes* substrate events.
+- builds the typed [[frame]] graph, with named slots and frames nesting inside frames;
+- records [[coupling]] between frames, including whether a pairing reinforces or conflicts — its valence;
+- gives each frame an activation that decays over time and a phase, so attention and rhythm are first-class rather than bolted on;
+- retrieves by a mix of keywords and meaning, and can walk the graph along its own structure;
+- streams its changes live, so the substrate can be watched as it moves rather than polled after the fact.
 
 ## What isn't built yet
 
-The substrate-dynamics layer is mostly aspirational — the primitives above are the foundation it would be built on:
+The dynamics layer these notes describe is still mostly ahead of the code. The building blocks above are the foundation for it:
 
-- **population-level phase** — per-frame Kuramoto/Hopf works; collective synchronization does not;
-- **[[membranes]] as computed permeability** — today there are only static ACLs and territory membership, not phase-signature-based boundaries;
-- **divergence interventions** — interference is detected in coupling valence, but nothing acts on it;
-- **multi-agent coordination** — single-user today, with creator/owner tracking but no write-back across agents or schema negotiation;
-- **the metrics themselves** — convergence measurement, [[gini-coefficient|Gini]] concentration, and [[hill-diversity|Hill diversity]] are *not computed yet*. The phase and coupling data needed to compute them exists; the read-outs do not.
+- reading the dynamics across a whole population of agents, not one frame at a time;
+- [[membranes]] as boundaries computed from the substrate's own state, rather than fixed access rules;
+- acting on what's detected — today a conflict is recorded, but nothing yet responds to it;
+- many agents reading from and writing to the same substrate at once;
+- and the [[gini-coefficient|metrics]] themselves — [[hill-diversity|diversity]], concentration, convergence — are not computed yet. The data needed to compute them is there; the read-outs are not.
 
-So the honest summary: the substrate's primitives are real and observable in real time, and the dynamics and metrics these notes explore are the work ahead.
+So the building blocks are real and observable live; the dynamics and the metrics these notes explore are the work ahead, and the next step is making the testbed modular enough to run those experiments.
