@@ -25,3 +25,5 @@ The notes are deliberately partial. They track open questions as much as results
 Most AI memory today is flat: facts, chunks, or text blocks that lose the structure of where they came from. We think the harder and more interesting object is the *substrate* — a shared knowledge store that many participants maintain together, where each write reshapes what everyone else retrieves next.
 
 Eventually we want to understand that object well enough to keep it healthy: to tell when a substrate is converging too early or drifting without resolving, to read its state across scales, and to intervene through its membranes rather than on individual agents. These notes are the early, in-the-open steps toward that.
+
+testing deploy hook
