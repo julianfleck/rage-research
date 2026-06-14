@@ -22,6 +22,9 @@ where they conflict. The aim: simple, honest, no fluff.
   sentence genuinely needs the scope.
 - No AI scaffolding: "delve", "unpack", "navigate the landscape", "it's not just
   X — it's Y", "why this matters", "at its core", "a few dense neighborhoods".
+- Never write **"load-bearing"** (as in "load-bearing assumption / primitive").
+  It's a Claude tell-tale. There is always a plainer word — "central", "the
+  sentence the argument rests on", "what this depends on".
 - Don't pad endings with a reflective flourish. End when the point ends.
 
 ## Be honest
