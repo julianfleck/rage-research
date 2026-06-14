@@ -13,7 +13,7 @@ show: true
 
 Membranes are the boundaries the substrate works through. A membrane is not a container or a tier — it is a boundary drawn at a moment over whatever is co-active: the agents and the frames they are reading and writing together, surrounded by sparser coupling. Interventions act on the membrane, not on the agents inside it.
 
-The construct predates this project. It descends from [the dark forest](https://www.julianfleck.net/articles/spirits-dark-forest) and the case for *selectively permeable* channels — ones that "unfold and envelop certain people in one moment and then fold back into a tight-knit sphere for the next message." A membrane is that channel drawn over a knowledge substrate rather than a social graph.
+Membranes over information are an active interest across a few projects, each researching them from a different direction — from [selectively permeable communication](https://www.julianfleck.net/articles/spirits-dark-forest) to trust-scoped coordination across teams. We are mostly interested in using a membrane for two things at once: **context assembly** — the boundary that decides what context a turn runs on — and a **coordination surface** — the boundary through which separate populations of agents align without explicit messaging.
 
 <Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
 
