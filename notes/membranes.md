@@ -32,7 +32,7 @@ That variety bounds what follows. Narrow context: a limited degree of reasoning,
 A membrane regulates two axes, and the work here can read it through either.
 
 - **Density.** A membrane modulates the density of information flow — the requisite variety crossing in and out — and through that the capacity to act. On this reading, disclosure policies and decision rights are emergent rather than primitive: the boundary's permeability and the variety it admits produce an effective distribution of disclosure and authority, instead of that distribution being assigned agent by agent.
-- **Access.** A membrane is semi-permeable in the access-control sense — scoped, caveated, revertible exchange: who may see what, granted in small reversible amounts. This is the reading developed in Kenneth Bruskiewicz's *Mythic Membranes* ([Atlas Research Group](https://atlasresear.ch)).
+- **Access.** A membrane is semi-permeable in the access-control sense — scoped, caveated, revertible exchange: who may see what, granted in small reversible amounts. This is the reading developed in *Mythic Membranes* by [Kenneth Bruskiewicz](https://www.linkedin.com/in/kenneth-bruskiewicz) and [Christina Bowen](https://www.knowledgeecologist.me/) ([Atlas Research Group](https://atlasresear.ch)).
 
 The two are complementary. The open question is which axis is load-bearing for which problem — and whether density and access are two views of one mechanism or two mechanisms sharing a boundary.
 
