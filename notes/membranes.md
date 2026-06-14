@@ -18,11 +18,11 @@ In substrate dynamics, *membrane* is meant in the cell-biology sense: a **semipe
 
 <Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
 
-## What it's drawn over
+## Constituents
 
 A membrane encloses both the information and the actors working on it, not one or the other. An agent, in this reading, is itself a frame — an aggregation over the context it currently holds, its harness and currently retrieved context. It carries an activation pattern like any other frame, so computing that fingerprint over frames picks out the membrane: two agents on the same codebase fall inside one naturally, and two people with overlapping research interests are grouped just as organically — close enough on the substrate to be put in touch.
 
-## How it's drawn and released
+## Formation and dissolution
 
 Membranes are established over the continuous evolution of the graph, not minted in discrete steps. Whenever context is retrieved from the substrate, the membrane is the region picked out by the current coupling density — the dense neighbourhood the retrieval draws on, set off against the sparser coupling around it.
 
@@ -30,7 +30,7 @@ What raises that coupling is co-attention — an agent reading, then writing, ov
 
 The agent acts — acting is closing the loop, writing back — and the next retrieval re-draws the boundary at the coupling density it then finds. Read and write are the same event class: both feed coupling. Decay runs against coupling and lets the membrane close again; without it a membrane would lock open and never reset.
 
-## What crosses it
+## Selective permeability
 
 A membrane is semipermeable: its channels open and close at thresholds, so flow across the boundary is conditional, set by what has accumulated on either side. What crosses is gated on more than one dimension.
 
