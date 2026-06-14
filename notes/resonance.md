@@ -14,7 +14,7 @@ tags:
 show: true
 ---
 
-In substrate dynamics, *resonance* is a measure on the substrate itself, not on any reader: how strongly a set of frames belongs together. It has two ingredients — the coupling already built across them (Hebbian, accumulated by co-activation over time) and the semantic coherence of their content. Coupling carries the history of use; coherence carries the fit of meaning. Resonance is the two together, which is why frames that have been worked together *and* are about the same thing resonate most.
+In substrate dynamics, *resonance* is a measure on the substrate itself, not on any reader: how strongly a set of frames belongs together. It has two ingredients — the [[coupling]] already built across them (Hebbian, accumulated by co-activation over time) and the semantic coherence of their content. Coupling carries the history of use; coherence carries the fit of meaning. Resonance is the two together, which is why frames that have been worked together *and* are about the same thing resonate most.
 
 What resonance does is set what gets retrieved together. A retrieval gathers the units whose resonance clears a threshold — resonant units come back as a group. Held high, the threshold returns only the most resonant: the coarse summary at the top of a subgraph. Lowered, retrieval reaches deeper and more of the detail below clears the bar, down to fine grain. So resonance, read through a threshold, is the knob behind granularity — how coarse or fine the retrieved context is (see [[fractal-composition]]). Concretely, the threshold is a setting in the re-ranker.
 

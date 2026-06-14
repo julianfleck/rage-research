@@ -24,7 +24,7 @@ A membrane encloses both the information and the actors working on it, not one o
 
 ## Formation and dissolution
 
-Membranes are established over the continuous evolution of the graph, not minted in discrete steps. Whenever context is retrieved from the substrate, the membrane is the region picked out by the current coupling density — the dense neighbourhood the retrieval draws on, set off against the sparser coupling around it.
+Membranes are established over the continuous evolution of the graph, not minted in discrete steps. Whenever context is retrieved from the substrate, the membrane is the region picked out by the current [[coupling]] density — the dense neighbourhood the retrieval draws on, set off against the sparser coupling around it.
 
 What raises that coupling is co-attention — an agent reading, then writing, over a set of frames. It strengthens the coupling across the frames it draws together and sets the requisite variety inside the boundary: how much, and how varied, the context in play is (see also [[frame-type-diversity]]). The rule we currently use is Hebbian — build on co-activation, decay otherwise — but the underlying mechanism is still being worked out: frames carry an initial phase seeded from their content, and attention events drive them toward alignment from there, one candidate among others.
 
