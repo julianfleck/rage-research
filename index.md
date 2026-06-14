@@ -13,7 +13,7 @@ tags: [substrate, overview]
 
 By *substrate* we mean such a store treated as a medium rather than a record — a structure that holds what is known and, in doing so, conditions what each agent can retrieve and act on. By *dynamics* we mean how that structure behaves under sustained, bidirectional use: which connections are reinforced and which weaken, how retrieval concentrates or disperses across the store, and how its contents shift over time as each write conditions subsequent reads.
 
-We currently plan to carry this out over [[graph-construction.mdx|frame-semantic knowledge graphs]], which give the store a typed structure with composable nested units. The questions around dynamics we follow here are, however, not specific to that representation; they apply to any knowledge store a population of agents maintains in common, and to the conditions under which such a store stays coherent and interpretable.
+We currently plan to carry this out over [[graph-construction|frame-semantic knowledge graphs]], which give the store a typed structure with composable nested units. The questions around dynamics we follow here are, however, not specific to that representation; they apply to any knowledge store a population of agents maintains in common, and to the conditions under which such a store stays coherent and interpretable.
 
 These notes document the project as it proceeds. They record open problems alongside results and should be read as provisional. And yes, much of this is written with the help of AI, so don't expect perfect prose, especially not on anything flagged as draft :)
 

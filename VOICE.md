@@ -36,7 +36,7 @@ where they conflict. The aim: simple, honest, no fluff.
   something false with confidence is worse than one that marks the open question.
   (Real miss: "membranes gather into clusters" was invented and wrong — a
   membrane is a dynamic co-activation boundary, not a structural tier. When you
-  don't know, check `references/terms.mdx` or ask.)
+  don't know, check `references/terms.md` or ask.)
 
 ## Don't pretend it's built
 

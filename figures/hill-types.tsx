@@ -130,7 +130,7 @@ export function HillTypes() {
       ctx.clearRect(0, 0, w, h);
 
       const c = 0.5 - 0.5 * Math.cos(t * 0.3); // 0 = diverse, 1 = collapsed
-      const base = 0.024 * Math.min(w, h);
+      const base = 0.019 * Math.min(w, h);
       const freq = new Array(6).fill(0);
 
       // Edges.

@@ -324,9 +324,9 @@ export function SubstrateHeroCoact({
       // Edges: visible only where coupling has formed; flash when firing.
       for (const e of edges) {
         const fire = Math.max(nodes[e.i].a, nodes[e.j].a) - FLOOR;
-        const alpha = 0.5 * e.c + 0.25 * fire;
+        const alpha = 0.72 * e.c + 0.35 * fire;
         if (alpha < 0.04) continue;
-        ctx.globalAlpha = Math.min(0.7, alpha);
+        ctx.globalAlpha = Math.min(0.9, alpha);
         ctx.beginPath();
         ctx.moveTo(...toScreen(nodes[e.i].x, nodes[e.i].y));
         ctx.lineTo(...toScreen(nodes[e.j].x, nodes[e.j].y));
@@ -339,7 +339,7 @@ export function SubstrateHeroCoact({
         const [sxp, syp] = toScreen(n.x, n.y);
         if (sxp < -6 || sxp > w + 6 || syp < -6 || syp > h + 6) continue;
         const warm = Math.min(1, n.warm);
-        ctx.globalAlpha = 0.13 + 0.87 * Math.max(n.a * n.a, 0.32 * warm);
+        ctx.globalAlpha = 0.22 + 0.78 * Math.max(n.a * n.a, 0.45 * warm);
         ctx.beginPath();
         ctx.arc(sxp, syp, 0.8 + 1.4 * n.a + 0.5 * warm, 0, Math.PI * 2);
         ctx.fill();

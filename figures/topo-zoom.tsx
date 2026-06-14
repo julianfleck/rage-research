@@ -113,7 +113,7 @@ export function TopoZoom() {
       CC.forEach(([cx, cy], k) => {
         const rings = k === ci ? [0.05, 0.09, 0.14, 0.2] : [0.07, 0.12];
         rings.forEach((rr, ri) => {
-          ctx.globalAlpha = 0.06;
+          ctx.globalAlpha = k === ci ? 0.16 : 0.09;
           ctx.beginPath();
           const steps = 40;
           for (let s = 0; s <= steps; s++) {
