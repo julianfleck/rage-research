@@ -23,14 +23,17 @@ function mulberry32(a: number) {
   };
 }
 
-// Slightly jittered grid of sample points (not a rigid lattice).
+// Slightly jittered grid of sample points, clipped to a disc so the field reads
+// as a circle rather than a square.
 const PTS: [number, number][] = (() => {
   const rng = mulberry32(20260615);
   const cell = 1 / COLS;
   const out: [number, number][] = [];
   for (let r = 0; r < COLS; r++) {
     for (let c = 0; c < COLS; c++) {
-      out.push([(c + 0.5) * cell + (rng() - 0.5) * cell * 0.5, (r + 0.5) * cell + (rng() - 0.5) * cell * 0.5]);
+      const x = (c + 0.5) * cell + (rng() - 0.5) * cell * 0.5;
+      const y = (r + 0.5) * cell + (rng() - 0.5) * cell * 0.5;
+      if ((x - 0.5) ** 2 + (y - 0.5) ** 2 <= 0.46 * 0.46) out.push([x, y]);
     }
   }
   return out;
