@@ -12,6 +12,7 @@ import { TopoZoom } from "./topo-zoom";
 import { GiniNodes } from "./gini-nodes";
 import { TypeDrift } from "./type-drift";
 import { MembranePermeability } from "./membrane-permeability";
+import { MembraneNesting } from "./membrane-nesting";
 import { MembraneCoordination } from "./membrane-coordination";
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
@@ -96,6 +97,9 @@ export const figures: Record<string, FigureDef> = {
   // Membranes: permeability as traversal depth — resonance opens a subgraph from
   // summary to a rich subset of frames.
   "membrane-permeability": { kind: "canvas", render: () => <MembranePermeability /> },
+  // Membranes: nesting and overlap — three membranes over one field, one nested,
+  // one overlapping, boundaries that layer and cross.
+  "membrane-nesting": { kind: "canvas", render: () => <MembraneNesting /> },
   // Membranes: coordination through drift — co-acting agents wire together and a
   // team membrane forms, then dissolves as coupling decays.
   "membrane-coordination": { kind: "canvas", render: () => <MembraneCoordination /> },

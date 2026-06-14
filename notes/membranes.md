@@ -49,7 +49,7 @@ The two are complementary — one gates how much, the other gates who. The open 
 
 A membrane is not a cluster. Clusters partition: each node lands in one group. Membranes nest and overlap — one can sit inside another, and two can share frames without either containing the other. A membrane need not be semantically coherent: co-activation defines it, not similarity, so one can span diverse regions of the substrate, holding frames pulled together by use rather than by meaning. An agent's active context, a project's working set, and a team's shared region are membranes at different [[scale|scales]], drawn at the same moment over overlapping material. The object of study is membranes over membranes: boundaries layered and crossing, not tiles.
 
-<Figure id="substrate-hero" margin caption="Several membranes forming at once over shared frames — nesting and overlapping rather than partitioning into tiles." />
+<Figure id="membrane-nesting" margin caption="Three membranes over one field: one nested inside another, a third overlapping it — boundaries that layer and cross, not a partition into tiles." />
 
 ## Intervention and coordination
 
