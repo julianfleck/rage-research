@@ -4,7 +4,7 @@ description: What happens to a frame-semantic knowledge graph once a population 
 date: 2026-06-11
 series: Articles
 order: 2
-show: true
+show: false
 status: draft
 version: 1
 author: Julian Fleck
