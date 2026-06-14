@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
-import { Bar, BarChart, Cell, Line, LineChart, XAxis, YAxis } from "recharts";
+import { type ReactNode } from "react";
+import { Line, LineChart, XAxis, YAxis } from "recharts";
 import { FlowField } from "@/components/flow-field";
 import { SubstrateHeroCoact } from "./substrate-hero-coact";
 import { SubstratePlayground } from "./substrate-playground";
@@ -9,6 +9,7 @@ import { SubstrateField } from "./substrate-field";
 import { TaskSpread } from "./task-spread";
 import { HillTypes } from "./hill-types";
 import { TopoZoom } from "./topo-zoom";
+import { GiniNodes } from "./gini-nodes";
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
 export type FigureKind = "svg" | "canvas" | "chart";
@@ -18,96 +19,6 @@ export interface FigureDef {
   render: () => ReactNode;
 }
 
-// ---- Gini, animated (recharts / shadcn chart) ---------------------------
-// One bar per frame. The distribution morphs from flat to concentrated and
-// back; the coefficient is computed from the live values and shown above, so
-// the figure shows how concentration drives G without any prose.
-const oneSeries = { v: { label: "Activation", color: "var(--foreground)" } } satisfies ChartConfig;
-
-// Mean absolute difference over twice the mean — the plain Gini definition.
-function gini(xs: number[]): number {
-  const n = xs.length;
-  const sum = xs.reduce((a, b) => a + b, 0);
-  if (sum <= 0 || n === 0) return 0;
-  let diff = 0;
-  for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) diff += Math.abs(xs[i] - xs[j]);
-  return diff / (2 * n * sum);
-}
-
-// Each distribution holds the SAME total (50), spread increasingly unevenly and
-// looping. A fixed y-domain (DOMAIN) keeps the scale constant, so concentration
-// shows as one bar rising while the rest fall — not everything pinned to the top.
-const DISTS: number[][] = [
-  [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-  [9, 8, 7, 6, 5, 4, 3, 3, 3, 2],
-  [14, 10, 7, 5, 4, 3, 2, 2, 2, 1],
-  [24, 8, 5, 4, 3, 2, 1, 1, 1, 1],
-  [41, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-];
-const DOMAIN = Math.max(...DISTS.flat());
-
-// Hold on each state long enough to read its coefficient, then morph to the next.
-const HOLD = 1400;
-const TRANSITION = 600;
-
-function GiniAnimated() {
-  // Interpolate the bar values ourselves and derive the coefficient from the
-  // same per-frame values, so the bars and the readout move in exact lockstep
-  // (recharts' own tween is disabled). Loops flat → concentrated → flat.
-  const [vals, setVals] = useState(DISTS[0]);
-  useEffect(() => {
-    let raf = 0;
-    let hold = 0;
-    let from = DISTS[0];
-    let step = 0;
-    const animate = (target: number[]) => {
-      const t0 = performance.now();
-      const tick = (now: number) => {
-        const k = Math.min(1, (now - t0) / TRANSITION);
-        const e = 1 - Math.pow(1 - k, 3);
-        setVals(target.map((to, i) => from[i] + (to - from[i]) * e));
-        if (k < 1) {
-          raf = requestAnimationFrame(tick);
-        } else {
-          from = target;
-          hold = window.setTimeout(next, HOLD);
-        }
-      };
-      raf = requestAnimationFrame(tick);
-    };
-    const next = () => {
-      step = (step + 1) % DISTS.length;
-      animate(DISTS[step]);
-    };
-    hold = window.setTimeout(next, HOLD);
-    return () => {
-      cancelAnimationFrame(raf);
-      clearTimeout(hold);
-    };
-  }, []);
-
-  const g = gini(vals);
-  const data = vals.map((v, i) => ({ name: `${i}`, v }));
-
-  return (
-    <div className="relative">
-      <div className="absolute left-0 top-0 z-10 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-        G = <span className="text-foreground tabular-nums">{g.toFixed(2)}</span>
-      </div>
-      <ChartContainer config={oneSeries} className="aspect-square w-full">
-        <BarChart data={data} margin={{ top: 26, right: 2, bottom: 0, left: 2 }} barCategoryGap={2}>
-          <XAxis dataKey="name" hide />
-          <YAxis hide domain={[0, DOMAIN]} />
-          <Bar dataKey="v" radius={1} isAnimationActive={false}>
-            {data.map((d, i) => (
-              <Cell key={i} fill="var(--foreground)" fillOpacity={0.3 + 0.7 * (d.v / DOMAIN)} />
-            ))}
-          </Bar>
-        </BarChart>
-      </ChartContainer>
-    </div>
-  );
-}
 
 // ---- Hill diversity profile (recharts / shadcn chart) -------------------
 // The effective count plotted against order q. A few dominant types make the
