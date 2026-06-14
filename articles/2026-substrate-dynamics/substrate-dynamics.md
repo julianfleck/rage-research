@@ -49,7 +49,11 @@ None of these states is a failure by itself. Healthy work **cycles**: divergence
 
 ## Frame-type diversity
 
-![[frame-type-diversity]]
+![[frame-type-diversity#^read-out]]
+
+![[frame-type-diversity#^drift]]
+
+<Figure id="type-drift" margin caption="Homogenization drift: frames arrive varied and collapse toward a single dominant type as write-back concentrates." />
 
 ## State of the codebase
 
