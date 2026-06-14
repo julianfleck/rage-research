@@ -16,7 +16,7 @@ tags:
 
 # Scale
 
-Knowledge here is a topography, not a flat field — and not a clean tree either. Frames compose two ways: structurally (a file holds sections, a section holds concepts) and argumentatively (a claim with its evidence and sources makes an argument). See [[graph-construction|graph construction]] for the composition and [[fractal-composition|fractal composition]] for why it recurs.
+Knowledge in a [[graph-construction|frame sema]] is a topography, not a flat field — and not a clean tree either. Frames compose two ways: structurally (a file holds sections, a section holds concepts) and argumentatively (a claim with its evidence and sources makes an argument). See [[graph-construction|graph construction]] for the composition and [[fractal-composition|fractal composition]] for why it recurs.
 
 <Figure id="topo-zoom" margin caption="A map of the substrate read at different zoom levels: membranes nesting and overlapping, finer ones revealed as you zoom in." />
 
