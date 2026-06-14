@@ -34,9 +34,9 @@ The agent acts — acting is closing the loop, writing back — and the next ret
 
 A membrane is semipermeable: its channels open and close at thresholds, so flow across the boundary is conditional, set by what has accumulated on either side. What crosses is gated on more than one dimension.
 
-How *deep* a retrieval reaches is set by the region's [[resonance]] — the coupling already built across it, weighted by how well it coheres with what the recipient is doing. Low resonance returns only the summary at the top of a subgraph; higher resonance lets the recipient navigate in and pull a rich subset of frames. Resonance is the knob behind granularity — how coarse or fine the context that crosses is (see [[fractal-composition]]).
+How *deep* a retrieval reaches is a threshold on [[resonance]] — the coupling frames have built by use (Hebbian) together with their semantic coherence. Resonant units are retrieved together, and nothing about the boundary privileges a reader: what retrieves can be an agent, a person, a document, a set of instructions. Held high, the threshold returns only the most resonant — the summary at the top of a subgraph; lowered, retrieval reaches deeper and a richer subset of the frames below clears the bar. Concretely it is a setting in the re-ranker. The threshold is the knob behind granularity — how coarse or fine the retrieved context is (see [[fractal-composition]]).
 
-<Figure id="membrane-permeability" margin caption="Resonance sets how deep a retrieval reaches: low resonance returns the summary at the top of a subgraph; higher resonance opens the way in, down to a rich subset of frames." />
+<Figure id="membrane-permeability" margin caption="A retrieval thresholds on resonance: held high, only the most resonant frame — the summary at the top of a subgraph — comes back; lowered, retrieval reaches deeper and a richer subset clears the bar." />
 
 Beyond depth, a membrane regulates two axes, and the work here can read it through either.
 
