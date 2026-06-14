@@ -40,9 +40,9 @@ const PTS: [number, number][] = (() => {
 })();
 
 const SOURCES = [
-  { x: 0.27, y: 0.3, ang: 0.4, rate: 0.05 },
-  { x: 0.74, y: 0.38, ang: 1.9, rate: -0.037 },
-  { x: 0.48, y: 0.76, ang: 2.7, rate: 0.028 },
+  { x: 0.27, y: 0.3, ang: 0.4, rate: 0.22 },
+  { x: 0.74, y: 0.38, ang: 1.9, rate: -0.18 },
+  { x: 0.48, y: 0.76, ang: 2.7, rate: 0.15 },
 ];
 
 export function ResonanceFigure() {
@@ -67,6 +67,7 @@ export function ResonanceFigure() {
     let pmx = 0;
     let pmy = 0;
     let mInside = false;
+    let mLast = -10;
     const onMove = (e: MouseEvent) => {
       const r = canvas.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width;
@@ -76,6 +77,7 @@ export function ResonanceFigure() {
         return;
       }
       mInside = true;
+      mLast = t;
       const dx = x - pmx;
       const dy = y - pmy;
       if (Math.hypot(dx, dy) > 0.001) {
@@ -110,7 +112,9 @@ export function ResonanceFigure() {
 
       // Active pointer: the real cursor while it's over the figure, otherwise a
       // virtual one that roams the field on its own — so there's always movement.
-      const hovering = mInside;
+      // Hover only counts while the real cursor is over the figure AND has moved
+      // recently; otherwise the virtual cursor takes over so movement never stops.
+      const hovering = mInside && t - mLast < 1.5;
       let px: number;
       let py: number;
       let pAng: number;
@@ -119,12 +123,12 @@ export function ResonanceFigure() {
         px = mx;
         py = my;
         pAng = mAng;
-        pPull = 0.9;
+        pPull = 1.1;
       } else {
         px = 0.5 + 0.4 * Math.sin(t * 0.9);
         py = 0.5 + 0.36 * Math.sin(t * 1.2 + 1.3);
         pAng = Math.atan2(0.36 * 1.2 * Math.cos(t * 1.2 + 1.3), 0.4 * 0.9 * Math.cos(t * 0.9));
-        pPull = 0.7;
+        pPull = 1.1;
       }
 
       // Current source orientations (slowly turning).
