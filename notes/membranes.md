@@ -1,7 +1,7 @@
 ---
 title: Membranes
-definition: The dynamically drawn, selectively permeable boundary over a co-active region of the substrate — the agents and frames working together at a given moment. Membranes nest and overlap rather than partition; co-attention forms them and decay releases them.
-description: Membranes as the substrate's working boundaries — how co-attention instantiates them, what they regulate (the density of context, and the capacity to act), and why they nest and overlap rather than cluster.
+definition: A semipermeable boundary in the cell-membrane sense — drawn around a co-active region of the substrate (the frames and agents working together) with channels that open and close at thresholds. Co-attention opens them, decay closes them; membranes nest and overlap rather than partition.
+description: What a membrane is in substrate dynamics — a semipermeable, threshold-gated boundary over a co-active region — how co-attention instantiates it, what it regulates, and why membranes nest and overlap.
 date: 2026-06-14
 series: Lab notes
 status: draft
@@ -14,7 +14,9 @@ tags:
 show: true
 ---
 
-Membranes are the boundaries the substrate works through. A membrane is not a container or a tier — it is a boundary drawn at a moment over whatever is co-active: the agents and the frames they are reading and writing together, surrounded by sparser coupling. Interventions act on the membrane, not on the agents inside it.
+In substrate dynamics, *membrane* is meant in the cell-biology sense: a **semipermeable boundary** — not a wall (nothing crosses) and not an open door (everything crosses), but a surface whose **channels open and close at thresholds**, setting what passes and how much. The load-bearing part of the metaphor is the gating: flow across the boundary is conditional, and driven by what has accumulated on either side.
+
+Over the substrate, a membrane is that surface drawn at a moment around a co-active region — the frames and the agents working over them — with sparser coupling outside. Co-attention raises the local alignment that opens its channels; decay lowers it and lets them close. A membrane is drawn and released, not a fixed group, and interventions act on the membrane rather than on the agents inside it.
 
 Membranes over information are an active interest across a few projects, each researching them from a different direction — from [selectively permeable communication](https://www.julianfleck.net/articles/spirits-dark-forest) to trust-scoped coordination across teams. We are mostly interested in using a membrane for two things at once: **context assembly** — the boundary that decides what context a turn runs on — and a **coordination surface** — the boundary through which separate populations of agents align without explicit messaging.
 
