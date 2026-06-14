@@ -2,14 +2,13 @@
 
 import { useEffect, useRef } from "react";
 
-// A 2D slice of the substrate ecosystem. The substrate is a band of frames along
-// the bottom; agents hover above it and, turn by turn, reach down and pull a
-// frame up into their working context. The pulled frame lights, rises along the
-// tether, then settles back. Successive turns pull different frames from
-// different agents. Black/white, currentColor.
-const NF = 26; // frames along the substrate
-const NA = 4; // hovering agents
-const BASE = 0.8; // substrate surface height
+// A slice of the substrate ecosystem. Frames sit in a band along the bottom,
+// lightly wired into a graph; agents hover above. Each turn an agent retrieves —
+// it strikes a chord: a connected configuration of frames lights up together and
+// is tethered up to the agent. The next turn strikes a different chord, pulling a
+// different subgraph. Black/white, currentColor.
+const NF = 22;
+const NA = 3;
 
 function mulberry32(a: number) {
   return () => {
@@ -21,9 +20,30 @@ function mulberry32(a: number) {
   };
 }
 
-const FRAMES = (() => {
+// Deterministic substrate: frames in a band, wired to nearest neighbours.
+const { frames: FR, adj: ADJ } = (() => {
   const rng = mulberry32(20260615);
-  return Array.from({ length: NF }, (_, i) => ({ x: (i + 0.5) / NF, jx: (rng() - 0.5) * 0.01, a: 0 }));
+  const frames = Array.from({ length: NF }, (_, i) => ({
+    x: 0.06 + ((i + 0.5) / NF) * 0.88 + (rng() - 0.5) * 0.02,
+    y: 0.68 + rng() * 0.24,
+  }));
+  const adj: number[][] = frames.map(() => []);
+  const seen = new Set<string>();
+  for (let i = 0; i < NF; i++) {
+    const order = [...Array(NF).keys()]
+      .filter((j) => j !== i)
+      .sort((p, q) => (frames[i].x - frames[p].x) ** 2 + (frames[i].y - frames[p].y) ** 2 - ((frames[i].x - frames[q].x) ** 2 + (frames[i].y - frames[q].y) ** 2));
+    for (let k = 0; k < 3; k++) {
+      const j = order[k];
+      const key = i < j ? `${i}-${j}` : `${j}-${i}`;
+      if (!seen.has(key)) {
+        seen.add(key);
+        adj[i].push(j);
+        adj[j].push(i);
+      }
+    }
+  }
+  return { frames, adj };
 })();
 
 export function SubstrateSlice() {
@@ -42,17 +62,14 @@ export function SubstrateSlice() {
     let color = "#888";
     const rng = mulberry32(7);
 
-    const surfaceY = (x: number, t: number) => BASE + 0.015 * Math.sin(x * 7 + t * 0.3);
-
-    type Agent = { x: number; ph: number; next: number; pull: { fi: number; t0: number } | null };
+    const act = new Float32Array(NF);
+    type Agent = { x: number; ph: number; next: number; chord: number[] };
     const agents: Agent[] = Array.from({ length: NA }, (_, i) => ({
-      x: 0.14 + (i / (NA - 1)) * 0.72,
+      x: 0.18 + (i / (NA - 1)) * 0.64,
       ph: rng() * 6.28,
-      next: 0.4 + rng() * 1.2,
-      pull: null,
+      next: 0.3 + i * 0.5 + rng() * 0.6,
+      chord: [],
     }));
-    type Traveler = { fi: number; ax: number; ay: number; p: number };
-    const travelers: Traveler[] = [];
 
     const resize = () => {
       const r = canvas.getBoundingClientRect();
@@ -66,92 +83,83 @@ export function SubstrateSlice() {
     const ro = new ResizeObserver(resize);
     ro.observe(canvas);
 
+    // Grow a connected configuration of frames from a seed.
+    const buildChord = (seed: number) => {
+      const set = [seed];
+      const size = 3 + ((rng() * 3) | 0);
+      let guard = 0;
+      while (set.length < size && guard++ < 30) {
+        const from = set[(rng() * set.length) | 0];
+        const opts = ADJ[from].filter((j) => !set.includes(j));
+        if (opts.length) set.push(opts[(rng() * opts.length) | 0]);
+      }
+      return set;
+    };
+
     const draw = () => {
       if (frame++ % 40 === 0) color = getComputedStyle(canvas).color;
       ctx.clearRect(0, 0, w, h);
       const t = frame * 0.01;
       const sx = (x: number) => x * w;
       const sy = (y: number) => y * h;
+      const agentY = (a: Agent) => 0.24 + 0.02 * Math.sin(t * 1.6 + a.ph);
 
-      // Agent positions (hovering + bobbing).
-      const agentY = (a: Agent) => 0.26 + 0.02 * Math.sin(t * 1.6 + a.ph);
-
-      // Each agent pulls a nearby frame on its own clock.
+      // Agents strike chords on their own clocks.
       for (const a of agents) {
         if (t >= a.next) {
-          // pick a frame near the agent's x
-          let best = 0;
+          let seed = 0;
           let bd = 1e9;
           for (let i = 0; i < NF; i++) {
-            const d = Math.abs(FRAMES[i].x + FRAMES[i].jx - a.x) + rng() * 0.15;
+            const d = Math.abs(FR[i].x - a.x) + rng() * 0.2;
             if (d < bd) {
               bd = d;
-              best = i;
+              seed = i;
             }
           }
-          a.pull = { fi: best, t0: t };
-          FRAMES[best].a = 1;
-          travelers.push({ fi: best, ax: a.x, ay: agentY(a), p: 0 });
-          a.next = t + 1.0 + rng() * 1.6;
+          a.chord = buildChord(seed);
+          for (const i of a.chord) act[i] = 1;
+          a.next = t + 1.1 + rng() * 1.4;
         }
-        if (a.pull && t - a.pull.t0 > 0.9) a.pull = null;
       }
+      for (let i = 0; i < NF; i++) act[i] *= 0.965;
 
-      for (const f of FRAMES) f.a *= 0.96;
-
-      // Substrate surface.
+      // Baseline substrate edges (faint), brighter where a chord runs through.
       ctx.strokeStyle = color;
-      ctx.globalAlpha = 0.4;
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      for (let i = 0; i <= 60; i++) {
-        const x = i / 60;
-        if (i) ctx.lineTo(sx(x), sy(surfaceY(x, t)));
-        else ctx.moveTo(sx(x), sy(surfaceY(x, t)));
-      }
-      ctx.stroke();
-
-      // Tethers from agents to the frames they're pulling.
-      for (const a of agents) {
-        if (!a.pull) continue;
-        const f = FRAMES[a.pull.fi];
-        const fx = f.x + f.jx;
-        ctx.globalAlpha = 0.35 * f.a;
-        ctx.beginPath();
-        ctx.moveTo(sx(a.x), sy(agentY(a) + 0.02));
-        ctx.lineTo(sx(fx), sy(surfaceY(fx, t)));
-        ctx.stroke();
-      }
-
-      // Frames sitting in the substrate (brighter when freshly pulled).
-      ctx.fillStyle = color;
-      for (const f of FRAMES) {
-        const fx = f.x + f.jx;
-        ctx.globalAlpha = 0.3 + 0.65 * f.a;
-        ctx.beginPath();
-        ctx.arc(sx(fx), sy(surfaceY(fx, t)), 1.5 + 1.2 * f.a, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      // Travelers: pulled frames rising along the tether toward the agent.
-      for (let i = travelers.length - 1; i >= 0; i--) {
-        const tr = travelers[i];
-        tr.p += 0.03;
-        if (tr.p >= 1) {
-          travelers.splice(i, 1);
-          continue;
+      for (let i = 0; i < NF; i++) {
+        for (const j of ADJ[i]) {
+          if (j < i) continue;
+          const lit = Math.min(act[i], act[j]);
+          ctx.globalAlpha = 0.1 + 0.6 * lit;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(sx(FR[i].x), sy(FR[i].y));
+          ctx.lineTo(sx(FR[j].x), sy(FR[j].y));
+          ctx.stroke();
         }
-        const f = FRAMES[tr.fi];
-        const fx = f.x + f.jx;
-        const x = fx + (tr.ax - fx) * tr.p;
-        const y = surfaceY(fx, t) + (tr.ay + 0.03 - surfaceY(fx, t)) * tr.p;
-        ctx.globalAlpha = 0.8 * (1 - tr.p);
+      }
+
+      // Tethers from each agent up to the frames of its current chord.
+      for (const a of agents) {
+        for (const i of a.chord) {
+          if (act[i] < 0.04) continue;
+          ctx.globalAlpha = 0.4 * act[i];
+          ctx.beginPath();
+          ctx.moveTo(sx(a.x), sy(agentY(a) + 0.02));
+          ctx.lineTo(sx(FR[i].x), sy(FR[i].y));
+          ctx.stroke();
+        }
+      }
+
+      // Frames in the substrate band.
+      ctx.fillStyle = color;
+      for (let i = 0; i < NF; i++) {
+        ctx.globalAlpha = 0.28 + 0.65 * act[i];
         ctx.beginPath();
-        ctx.arc(sx(x), sy(y), 1.6, 0, Math.PI * 2);
+        ctx.arc(sx(FR[i].x), sy(FR[i].y), 1.5 + 1.3 * act[i], 0, Math.PI * 2);
         ctx.fill();
       }
 
-      // Agents hovering above the substrate (open markers).
+      // Hovering agents (open markers).
       ctx.lineWidth = 1.25;
       for (const a of agents) {
         const ax = sx(a.x);
