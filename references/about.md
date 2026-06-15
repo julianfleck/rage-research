@@ -6,7 +6,7 @@ series: References
 order: 0
 author: attractor.space
 tags: [overview]
-show: false
+show: true
 ---
 
 We are a small team of researchers who found each other in the networks around the [Atlas Research Group](https://atlasresear.ch). attractor.space is where we keep our working notes on *substrate dynamics*: what happens to a shared, machine-readable knowledge store once a population of humans and agents continuously reads from and writes back into it.
