@@ -32,6 +32,6 @@ The dynamics layer these notes describe is still mostly ahead of the code. The b
 - [[membranes]] as boundaries computed from the substrate's own state, rather than fixed access rules;
 - acting on what's detected — today a conflict is recorded, but nothing yet responds to it;
 - many agents reading from and writing to the same substrate at once;
-- and the [[gini-coefficient|metrics]] themselves — [[hill-diversity|diversity]], concentration, convergence — are not computed yet. The data needed to compute them is there; the read-outs are not.
+- some of the [[gini-coefficient|metrics]] ([[hill-diversity|diversity]], concentration, convergence) are not computed yet. The data needed to compute them is there; the read-outs are not.
 
 So the building blocks are real and observable live; the dynamics and the metrics these notes explore are the work ahead, and the next step is making the testbed modular enough to run those experiments.
