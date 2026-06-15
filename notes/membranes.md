@@ -60,7 +60,7 @@ Because an agent is itself a membrane, the rule that builds any membrane builds 
 
 <Figure id="membrane-coordination" margin caption="Agents are frames too: when a set of them co-acts, coupling builds and a membrane closes around them — a team that forms from the coordinating itself, then dissolves as the coupling decays." />
 
-The membrane is also an intervene. The variety it admits bounds what an agent can do: narrow context, limited reasoning and limited agency; broader inputs, broader reasoning and more room to act. So modulating the variety — the size and density of a membrane — is how we act on the agents inside it without touching them one by one. The same boundary makes their state legible from outside: read the membrane and you read what the agents have to work with.
+The membrane is also an intervention site. The variety it admits bounds what an agent can do: narrow context, limited reasoning and limited agency; broader inputs, broader reasoning and more room to act. So modulating the variety — the size and density of a membrane — is how we act on the agents inside it without touching them one by one. The same boundary makes their state legible from outside: read the membrane and you read what the agents have to work with.
 
 ## Open problems
 
