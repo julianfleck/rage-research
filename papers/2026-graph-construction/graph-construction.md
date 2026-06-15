@@ -1,5 +1,5 @@
 ---
-title: Frame-Semantic Graph Construction for Knowledge Substrates
+title: Frame-Semantic Graph Construction
 description: Building typed, recursively-composable knowledge graphs from text — the construction layer beneath the substrate-dynamics work.
 date: 2026-06-11
 series: Papers
@@ -8,7 +8,9 @@ show: true
 status: draft
 version: 1
 author: Julian Fleck
-tags: [frame-semantics, construction]
+tags:
+  - frame-semantics
+  - construction
 ---
 
 ## Abstract
