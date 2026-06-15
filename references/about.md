@@ -33,8 +33,8 @@ Daniel Friedman advises the project as senior scientific advisor.
 
 AI is increasingly deployed as populations of agents rather than single assistants, and those agents share memory, context, and retrieval — each one writing back into a store the others read on the next turn. That shared, co-maintained store is what we call the *[[substrate]]*: each write reshapes what everyone else retrieves, so the medium itself begins to carry the coordination. As multi-agent systems become the default, keeping that substrate legible becomes its own problem.
 
-Eventually we want to understand that object well enough to keep it healthy: to tell when a substrate is [[divergence-convergence-cycle|converging too early or drifting]] without resolving, to read its state across [[scale|scales]], and to intervene through its [[membranes]] rather than on individual agents. These notes are the early steps toward that.
+Eventually we want to understand that object well enough to keep it healthy: to tell when a substrate is [[divergence-convergence-cycle|converging too early or drifting]] without resolving, to read its state across [[scale|scales]], and to intervene through its [[membranes]] rather than on individual agents.
 
 ## Get involved
 
-This is early, and better with more people in it. If you are working on shared memory, multi-agent coordination, retrieval, or the formal side of any of it — or you just want to argue with a note — we would like to hear from you. Reach out to [Julian](https://www.julianfleck.net) or anyone through the [Atlas Research Group](https://atlasresear.ch).
+If you are working on shared memory, multi-agent coordination, retrieval, or the formal side of any of it — or you just want to argue with a note — we would like to hear from you. Reach out to [Julian](https://www.julianfleck.net) or anyone through the [Atlas Research Group](https://atlasresear.ch).
