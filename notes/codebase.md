@@ -12,7 +12,7 @@ tags:
 show: true
 ---
 
-RAGE, the technology used f has had two lives. The first — *Recursive Agentic Graph Embeddings* — is the production system behind [recurse.cc](https://www.recurse.cc/): it builds a frame-semantic knowledge graph out of documents and serves it to users. What that system can do is written up in the companion paper, *Frame-Semantic Graph Construction for Knowledge Substrates*.
+RAGE, the technology used for some of what we describe here, has had two lives. The first — *Recursive Agentic Graph Embeddings* — is the production system behind [recurse.cc](https://www.recurse.cc/): it builds a frame-semantic knowledge graph out of documents and serves it to users. What that system can do is written up in the companion paper, *[[graph-cons]]*.
 
 The second version came out of getting interested in what happens to such a graph under sustained use — its dynamics. So RAGE became *Recursive Attention-Guided Explorations*: a separate, lighter testbed, rebuilt to move quickly and watch the substrate behave. That is where the work in these notes happens, and the near-term plan is to modularize it so we can swap in and compare different metrics over the same substrate.
 
