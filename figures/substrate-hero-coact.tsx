@@ -27,6 +27,7 @@ const FIRE = 0.4; // activation above which a node propagates
 const COUP_THRESH = 0.12; // coupling needed before an edge pulls / is drawn
 const REPEL_D = 0.05; // short-range repulsion distance
 const HOME_K = 0.003; // gentle anchor to home position
+const HOVER_R = 0.2; // pointer injection radius, as a fraction of min(w, h)
 
 export function SubstrateHeroCoact({
   actDecay = 0.98,
@@ -78,6 +79,14 @@ export function SubstrateHeroCoact({
     let w = 0;
     let h = 0;
     let color = "#888";
+
+    // Pointer-driven energy injection. Margin figures are pointer-events:none, so
+    // we listen on window and map through the canvas rect (works for the
+    // full-bleed hero too). Hovering a region keeps feeding activation into the
+    // frames under the cursor, which then propagates and builds coupling there.
+    let mx = -1;
+    let my = -1;
+    let mActive = false;
 
     type Node = { hx: number; hy: number; x: number; y: number; vx: number; vy: number; a: number; warm: number };
     const nodes: Node[] = Array.from({ length: N }, (_, i) => {
