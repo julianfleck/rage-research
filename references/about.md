@@ -12,7 +12,7 @@ preview: true
 
 We are a small team of researchers who found each other in the network of the [Atlas Research Group](https://atlasresear.ch). attractor.space is where we keep our working notes on *substrate dynamics*: what happens to a shared, machine-readable knowledge store once a population of humans and agents continuously reads from and writes back into it.
 
-The notes are deliberately partial. They track open questions as much as results, and they will be wrong in places — that is the point of working in the open.
+The notes are deliberately partial. They track open questions as much as results, and they will be wrong in places.
 
 ## Contributors
 
