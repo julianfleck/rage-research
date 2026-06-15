@@ -17,22 +17,34 @@ In substrate dynamics, a *frame* is the primitive unit: a typed knowledge unit w
 
 <Figure id="frame-slots" margin caption="A frame is a typed box with named slots; a slot's value is another frame, so slots are the graph's edges and frames nest." />
 
-The slots are what make the structure legible. Each slot is named, and its filler is itself a frame — so a slot is an edge in the graph, and following slots is how composition and traversal work. An observation, for instance, points at its source and the frames it relates to and supports, each slot an edge into the graph:
+The slots are what make the structure legible. Each slot is named, and its filler is itself a frame — so a slot is an edge in the graph, and following slots is how composition and traversal work. What the names buy is *discursive* structure: a slot records the role one frame plays for another — the claim being made, the evidence for it, the objection it has to answer — not merely that two frames are connected. An argument nests the claim it asserts, the examples that ground it, the references behind those, and the objection it must meet:
 
 ```json
 {
-  "id": "/research/llm-memory",
-  "type": "observation",
-  "content": "LLMs struggle with long-context recall.",
+  "id": "arg/long-context-unreliable",
+  "type": "argument",
+  "content": "Long-context recall isn't reliable enough to depend on yet.",
   "slots": {
-    "source": "paper:arxiv/2401.12345",
-    "related": ["/research/attention-mechanisms"],
-    "supports": "/research/claim-1"
+    "claim": {
+      "type": "claim",
+      "content": "Recall accuracy degrades as the context window grows."
+    },
+    "evidence": [
+      {
+        "type": "example",
+        "content": "On a needle-in-a-haystack test, accuracy fell off past ~32k tokens.",
+        "slots": { "reference": "paper:arxiv/2407.01437" }
+      }
+    ],
+    "objection": {
+      "type": "rebuttal",
+      "content": "Retrieval augmentation recovers most of the accuracy back."
+    }
   }
 }
 ```
 
-Because a frame carries its type and slots explicitly, the relationship between two frames is legible in their structure, not only in their proximity in embedding space. That is what lets [[coupling]] carry a valence — alignment or interference, not just strength — and it is the material a [[membranes|membrane]] is ultimately drawn over.
+Any labeled-property graph can say two nodes are *related*; the work here is in the slot names saying *how* — `claim`, `evidence`, `objection` — so the edges carry the shape of the reasoning, not just adjacency. Because a frame carries its type and slots explicitly, the relationship between two frames is legible in their structure, not only in their proximity in embedding space. That is what lets [[coupling]] carry a valence — alignment or interference, not just strength — and it is the material a [[membranes|membrane]] is ultimately drawn over.
 
 ## Types
 
