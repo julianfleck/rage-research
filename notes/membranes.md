@@ -12,7 +12,6 @@ tags:
   - structure
 show: true
 ---
-
 In substrate dynamics, *membrane* is meant in the cell-biology sense: a **semipermeable boundary** — not a wall (nothing crosses) and not an open door (everything crosses). Over the substrate it is the surface drawn at a moment around a co-active region: the frames, and the agents working over them, bound more tightly to each other than to what surrounds them. A membrane is drawn and released, not a fixed group.
 
 <Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
@@ -67,5 +66,3 @@ The membrane is also an intervention site. The variety it admits bounds what an 
 - What sets a channel's threshold — how much [[resonance]] it takes to open one, and how far past it the channel opens — the size and permeability a membrane should have for a task, the same unsettled referent as [[task-appropriate-behavior]].
 - How to measure a membrane's permeability, and the variety it admits.
 - How nesting and overlap interact with any [[gini-coefficient|metric]] read over a membrane: the boundary drawn is the population measured.
-
-<Related tags="membrane" />
