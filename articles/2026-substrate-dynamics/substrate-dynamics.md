@@ -5,6 +5,7 @@ date: 2026-06-11
 series: Articles
 order: 2
 show: false
+preview: true
 status: draft
 version: 1
 author: Julian Fleck
