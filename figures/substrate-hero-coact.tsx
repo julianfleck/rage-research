@@ -234,6 +234,24 @@ export function SubstrateHeroCoact({
         }
       }
 
+      // Pointer injection: warm the frames under the cursor with a soft falloff,
+      // strongest at the centre. Fed every frame while hovering, so the region
+      // lights up, spreads, and grows coupling.
+      if (mActive) {
+        const R = HOVER_R * Math.min(w, h);
+        const sig = R * 0.6;
+        const inv = 1 / (2 * sig * sig);
+        for (const n of nodes) {
+          const [sxp, syp] = toScreen(n.x, n.y);
+          const dx = sxp - mx;
+          const dy = syp - my;
+          const d2 = dx * dx + dy * dy;
+          if (d2 > R * R) continue;
+          const e = Math.exp(-d2 * inv);
+          if (e > 0.02) n.a = Math.max(n.a, e);
+        }
+      }
+
       // Activation: decay toward floor, then propagate one hop along edges.
       for (let i = 0; i < N; i++) next[i] = FLOOR + (nodes[i].a - FLOOR) * aD;
       for (let i = 0; i < N; i++) {
@@ -366,6 +384,18 @@ export function SubstrateHeroCoact({
     };
     draw();
 
+    const onMove = (e: PointerEvent) => {
+      const r = canvas.getBoundingClientRect();
+      mx = e.clientX - r.left;
+      my = e.clientY - r.top;
+      mActive = mx >= 0 && my >= 0 && mx <= r.width && my <= r.height;
+    };
+    const onLeave = () => {
+      mActive = false;
+    };
+    window.addEventListener("pointermove", onMove, { passive: true });
+    window.addEventListener("pointerleave", onLeave);
+
     const onVis = () => {
       if (document.hidden) {
         cancelAnimationFrame(raf);
@@ -378,6 +408,8 @@ export function SubstrateHeroCoact({
     return () => {
       cancelAnimationFrame(raf);
       ro.disconnect();
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerleave", onLeave);
       document.removeEventListener("visibilitychange", onVis);
     };
   }, []);

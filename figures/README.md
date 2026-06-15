@@ -161,7 +161,7 @@ Removing a figure: move the file to `TRASH/` and log it in `TRASH-FILES.md`
 
 | id | shows |
 |----|-------|
-| `substrate-hero` | activation spreading over an evolving substrate; membranes forming/releasing (also the landing hero) |
+| `substrate-hero` | activation spreading over an evolving substrate; membranes forming/releasing (also the landing hero). Hovering injects energy into the frames under the cursor (window-level pointer listener, mapped through the canvas rect) — enrichment; it reads fine untouched |
 | `substrate-playground` | the hero with its parameters exposed (the one intentional interactive piece, on its own page) |
 | `coupling-propagation` | the hero with the membrane left out — bare propagation + binding |
 | `membrane-permeability` | a channel opening at a threshold; the subgraph reaching through to a depth |
