@@ -42,7 +42,7 @@ How *deep* a retrieval reaches is a threshold on [[resonance]] — the coupling 
 Beyond depth, a membrane regulates two axes, and the work here can read it through either.
 
 - **Density.** A membrane modulates the density of flow through its channels — the requisite variety crossing in and out — and through that the capacity to act. On this reading, disclosure policies and decision rights are emergent rather than primitive: the boundary's permeability and the variety it admits produce an effective distribution of disclosure and authority, instead of that distribution being assigned agent by agent.
-- **Access.** A membrane is semipermeable in the access-control sense — scoped, caveated, revertible exchange: who may pass which channel, granted in small reversible amounts. This is the reading developed in *Mythic Membranes* by [Kenneth Bruskiewicz](https://www.linkedin.com/in/kenneth-bruskiewicz) and [Christina Bowen](https://www.knowledgeecologist.me/) ([Atlas Research Group](https://atlasresear.ch)).
+- **Access.** A membrane is semipermeable in the access-control sense — scoped, caveated, revertible exchange: who may pass which channel, granted in small reversible amounts. This is the reading developed in *Mythic Membranes* by [Kenneth Bruskiewicz](https://bruskiewi.cz/) and [Christina Bowen](https://www.knowledgeecologist.me/) ([Atlas Research Group](https://atlasresear.ch)).
 
 The two are complementary — one gates how much, the other gates who. The open question is which axis dominates for which problem, and whether they are two views of one gating mechanism or two mechanisms sharing a boundary.
 
