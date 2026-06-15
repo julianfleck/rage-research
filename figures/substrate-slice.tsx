@@ -4,9 +4,11 @@ import { useEffect, useRef } from "react";
 
 // A slice of the substrate ecosystem. Frames sit in a band along the bottom,
 // lightly wired into a graph; agents hover above. Each turn an agent retrieves —
-// it strikes a chord: a connected configuration of frames lights up together and
-// is tethered up to the agent. The next turn strikes a different chord, pulling a
-// different subgraph. Black/white, currentColor.
+// it strikes a chord: a connected configuration of frames lights up and is
+// pulled up out of the band toward the agent, the whole subgraph lifting
+// together. As the retrieval decays the frames are released and sink back down
+// into the substrate. The next turn strikes a different chord. Black/white,
+// currentColor.
 const NF = 22;
 const NA = 3;
 
@@ -62,7 +64,12 @@ export function SubstrateSlice() {
     let color = "#888";
     const rng = mulberry32(7);
 
-    const act = new Float32Array(NF);
+    const act = new Float32Array(NF); // how lit a frame is (decays each turn)
+    const dx = new Float32Array(NF); // displacement from home (eased)
+    const dy = new Float32Array(NF);
+    const owner = new Int8Array(NF).fill(-1); // which agent is currently pulling it
+    const K = 0.5; // how far toward the agent a held frame is pulled
+
     type Agent = { x: number; ph: number; next: number; chord: number[] };
     const agents: Agent[] = Array.from({ length: NA }, (_, i) => ({
       x: 0.18 + (i / (NA - 1)) * 0.64,
@@ -105,7 +112,8 @@ export function SubstrateSlice() {
       const agentY = (a: Agent) => 0.24 + 0.02 * Math.sin(t * 1.6 + a.ph);
 
       // Agents strike chords on their own clocks.
-      for (const a of agents) {
+      for (let ai = 0; ai < agents.length; ai++) {
+        const a = agents[ai];
         if (t >= a.next) {
           let seed = 0;
           let bd = 1e9;
@@ -117,13 +125,33 @@ export function SubstrateSlice() {
             }
           }
           a.chord = buildChord(seed);
-          for (const i of a.chord) act[i] = 1;
+          for (const i of a.chord) {
+            act[i] = 1;
+            owner[i] = ai;
+          }
           a.next = t + 1.1 + rng() * 1.4;
         }
       }
-      for (let i = 0; i < NF; i++) act[i] *= 0.965;
+      for (let i = 0; i < NF; i++) act[i] *= 0.97;
 
-      // Baseline substrate edges (faint), brighter where a chord runs through.
+      // Pull held frames up toward their owning agent; released frames sink home.
+      for (let i = 0; i < NF; i++) {
+        let tdx = 0;
+        let tdy = 0;
+        if (act[i] > 0.02 && owner[i] >= 0) {
+          const a = agents[owner[i]];
+          const pull = act[i];
+          tdx = (a.x - FR[i].x) * K * pull;
+          tdy = (agentY(a) + 0.05 - FR[i].y) * K * pull;
+        }
+        dx[i] += (tdx - dx[i]) * 0.1;
+        dy[i] += (tdy - dy[i]) * 0.1;
+      }
+      const fx = (i: number) => FR[i].x + dx[i];
+      const fy = (i: number) => FR[i].y + dy[i];
+
+      // Baseline substrate edges (faint), brighter where a chord runs through —
+      // and they lift with the frames they connect.
       ctx.strokeStyle = color;
       for (let i = 0; i < NF; i++) {
         for (const j of ADJ[i]) {
@@ -132,30 +160,31 @@ export function SubstrateSlice() {
           ctx.globalAlpha = 0.1 + 0.6 * lit;
           ctx.lineWidth = 1;
           ctx.beginPath();
-          ctx.moveTo(sx(FR[i].x), sy(FR[i].y));
-          ctx.lineTo(sx(FR[j].x), sy(FR[j].y));
+          ctx.moveTo(sx(fx(i)), sy(fy(i)));
+          ctx.lineTo(sx(fx(j)), sy(fy(j)));
           ctx.stroke();
         }
       }
 
-      // Tethers from each agent up to the frames of its current chord.
-      for (const a of agents) {
+      // Tethers from each agent up to the frames it is currently holding.
+      for (let ai = 0; ai < agents.length; ai++) {
+        const a = agents[ai];
         for (const i of a.chord) {
-          if (act[i] < 0.04) continue;
+          if (act[i] < 0.04 || owner[i] !== ai) continue;
           ctx.globalAlpha = 0.4 * act[i];
           ctx.beginPath();
           ctx.moveTo(sx(a.x), sy(agentY(a) + 0.02));
-          ctx.lineTo(sx(FR[i].x), sy(FR[i].y));
+          ctx.lineTo(sx(fx(i)), sy(fy(i)));
           ctx.stroke();
         }
       }
 
-      // Frames in the substrate band.
+      // Frames — lifted while held, settling back into the band as they release.
       ctx.fillStyle = color;
       for (let i = 0; i < NF; i++) {
         ctx.globalAlpha = 0.28 + 0.65 * act[i];
         ctx.beginPath();
-        ctx.arc(sx(FR[i].x), sy(FR[i].y), 1.5 + 1.3 * act[i], 0, Math.PI * 2);
+        ctx.arc(sx(fx(i)), sy(fy(i)), 1.5 + 1.3 * act[i], 0, Math.PI * 2);
         ctx.fill();
       }
 
