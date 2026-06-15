@@ -169,7 +169,7 @@ Removing a figure: move the file to `TRASH/` and log it in `TRASH-FILES.md`
 | `membrane-coordination` | agents co-acting, wiring together, a team membrane forming then dissolving |
 | `resonance` | phase-angle field — sources align frames into domains that interfere; cursor combs it |
 | `fractal-zoom` | endless zoom into self-similar nested membranes |
-| `substrate-slice` | a 2D ecosystem slice: agents hover over a band of frames and each turn strike a chord — a connected configuration (subgraph) lifts up out of the band toward the agent, then sinks back as the retrieval decays |
+| `substrate-slice` | a 2D ecosystem slice: agents drift slowly along a line over a band of frames (appearing and leaving over time) and each turn strike a chord — a connected configuration (subgraph) lifts up out of the band toward the agent, then sinks back as the retrieval decays |
 | `frame-slots` | a frame's named slots are the graph's edges; child frames nest, a pulse lights one composition path |
 | `divergence-convergence` | the cycle: frames flow through a chain of lobes, fanning open (divergence) and pinching back (convergence), over and over |
 | `belief-attractors` | one membrane grows and siphons off every frame — premature convergence |

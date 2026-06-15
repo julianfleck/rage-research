@@ -3,14 +3,14 @@
 import { useEffect, useRef } from "react";
 
 // A slice of the substrate ecosystem. Frames sit in a band along the bottom,
-// lightly wired into a graph; agents hover above. Each turn an agent retrieves —
-// it strikes a chord: a connected configuration of frames lights up and is
-// pulled up out of the band toward the agent, the whole subgraph lifting
-// together. As the retrieval decays the frames are released and sink back down
-// into the substrate. The next turn strikes a different chord. Black/white,
-// currentColor.
+// lightly wired into a graph; agents drift slowly along a line above it,
+// appearing and leaving over time. Each turn an agent retrieves — it strikes a
+// chord: a connected configuration of frames lights up and is pulled up out of
+// the band toward the agent, the whole subgraph lifting together. As the
+// retrieval decays the frames are released and sink back down into the
+// substrate. Black/white, currentColor.
 const NF = 22;
-const NA = 3;
+const TARGET_AGENTS = 3; // population the scene drifts back toward
 
 function mulberry32(a: number) {
   return () => {
@@ -21,6 +21,11 @@ function mulberry32(a: number) {
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 }
+
+const smooth = (x: number) => {
+  const c = x < 0 ? 0 : x > 1 ? 1 : x;
+  return c * c * (3 - 2 * c);
+};
 
 // Deterministic substrate: frames in a band, wired to nearest neighbours.
 const { frames: FR, adj: ADJ } = (() => {
@@ -67,16 +72,34 @@ export function SubstrateSlice() {
     const act = new Float32Array(NF); // how lit a frame is (decays each turn)
     const dx = new Float32Array(NF); // displacement from home (eased)
     const dy = new Float32Array(NF);
-    const owner = new Int8Array(NF).fill(-1); // which agent is currently pulling it
+    const owner = new Int32Array(NF).fill(-1); // id of the agent pulling it
     const K = 0.5; // how far toward the agent a held frame is pulled
 
-    type Agent = { x: number; ph: number; next: number; chord: number[] };
-    const agents: Agent[] = Array.from({ length: NA }, (_, i) => ({
-      x: 0.18 + (i / (NA - 1)) * 0.64,
-      ph: rng() * 6.28,
-      next: 0.3 + i * 0.5 + rng() * 0.6,
-      chord: [],
-    }));
+    type Agent = { id: number; x: number; vx: number; ph: number; born: number; life: number; next: number; chord: number[] };
+    let agents: Agent[] = [];
+    let nextId = 0;
+    let nextSpawn = 0;
+
+    // age 0..1 across the agent's life — used for fade in/out and for retirement.
+    const ageFrac = (a: Agent, t: number) => (t - a.born) / a.life;
+    const alphaOf = (a: Agent, t: number) => {
+      const age = t - a.born;
+      return Math.min(smooth(age / 0.6), smooth((a.life - age) / 0.8));
+    };
+    const spawn = (t: number, seedAge = 0) => {
+      agents.push({
+        id: nextId++,
+        x: 0.1 + rng() * 0.8,
+        vx: (rng() - 0.5) * 0.0008, // slow horizontal drift
+        ph: rng() * 6.28,
+        born: t - seedAge,
+        life: 6 + rng() * 6,
+        next: t + 0.3 + rng() * 1.0,
+        chord: [],
+      });
+    };
+    // Seed a staggered initial population so they don't all fade together.
+    for (let i = 0; i < TARGET_AGENTS; i++) spawn(0, rng() * 5);
 
     const resize = () => {
       const r = canvas.getBoundingClientRect();
@@ -111,9 +134,31 @@ export function SubstrateSlice() {
       const sy = (y: number) => y * h;
       const agentY = (a: Agent) => 0.24 + 0.02 * Math.sin(t * 1.6 + a.ph);
 
+      // Population turnover: retire the old, refill toward the target.
+      agents = agents.filter((a) => ageFrac(a, t) < 1);
+      if (agents.length < TARGET_AGENTS && t >= nextSpawn) {
+        spawn(t);
+        nextSpawn = t + 0.8 + rng() * 1.6;
+      }
+
+      // Drift each agent slowly along the line, with a gentle random walk;
+      // reflect at the edges so they stay over the substrate.
+      for (const a of agents) {
+        a.vx += (rng() - 0.5) * 0.00012;
+        if (a.vx > 0.0009) a.vx = 0.0009;
+        if (a.vx < -0.0009) a.vx = -0.0009;
+        a.x += a.vx;
+        if (a.x < 0.08) {
+          a.x = 0.08;
+          a.vx = Math.abs(a.vx);
+        } else if (a.x > 0.92) {
+          a.x = 0.92;
+          a.vx = -Math.abs(a.vx);
+        }
+      }
+
       // Agents strike chords on their own clocks.
-      for (let ai = 0; ai < agents.length; ai++) {
-        const a = agents[ai];
+      for (const a of agents) {
         if (t >= a.next) {
           let seed = 0;
           let bd = 1e9;
@@ -127,22 +172,27 @@ export function SubstrateSlice() {
           a.chord = buildChord(seed);
           for (const i of a.chord) {
             act[i] = 1;
-            owner[i] = ai;
+            owner[i] = a.id;
           }
           a.next = t + 1.1 + rng() * 1.4;
         }
       }
       for (let i = 0; i < NF; i++) act[i] *= 0.97;
 
-      // Pull held frames up toward their owning agent; released frames sink home.
+      const byId = (id: number) => agents.find((a) => a.id === id);
+
+      // Pull held frames up toward their owning agent; released or orphaned
+      // frames (their agent has left) sink home.
       for (let i = 0; i < NF; i++) {
         let tdx = 0;
         let tdy = 0;
         if (act[i] > 0.02 && owner[i] >= 0) {
-          const a = agents[owner[i]];
-          const pull = act[i];
-          tdx = (a.x - FR[i].x) * K * pull;
-          tdy = (agentY(a) + 0.05 - FR[i].y) * K * pull;
+          const a = byId(owner[i]);
+          if (a) {
+            const pull = act[i];
+            tdx = (a.x - FR[i].x) * K * pull;
+            tdy = (agentY(a) + 0.05 - FR[i].y) * K * pull;
+          }
         }
         dx[i] += (tdx - dx[i]) * 0.1;
         dy[i] += (tdy - dy[i]) * 0.1;
@@ -167,11 +217,11 @@ export function SubstrateSlice() {
       }
 
       // Tethers from each agent up to the frames it is currently holding.
-      for (let ai = 0; ai < agents.length; ai++) {
-        const a = agents[ai];
+      for (const a of agents) {
+        const aa = alphaOf(a, t);
         for (const i of a.chord) {
-          if (act[i] < 0.04 || owner[i] !== ai) continue;
-          ctx.globalAlpha = 0.4 * act[i];
+          if (act[i] < 0.04 || owner[i] !== a.id) continue;
+          ctx.globalAlpha = 0.4 * act[i] * aa;
           ctx.beginPath();
           ctx.moveTo(sx(a.x), sy(agentY(a) + 0.02));
           ctx.lineTo(sx(fx(i)), sy(fy(i)));
@@ -188,16 +238,20 @@ export function SubstrateSlice() {
         ctx.fill();
       }
 
-      // Hovering agents (open markers).
+      // Drifting agents (open markers), fading in as they arrive and out as they
+      // leave.
       ctx.lineWidth = 1.25;
       for (const a of agents) {
+        const aa = alphaOf(a, t);
         const ax = sx(a.x);
         const ay = sy(agentY(a));
-        ctx.globalAlpha = 0.85;
+        ctx.strokeStyle = color;
+        ctx.globalAlpha = 0.85 * aa;
         ctx.beginPath();
         ctx.arc(ax, ay, 3, 0, Math.PI * 2);
         ctx.stroke();
-        ctx.globalAlpha = 0.5;
+        ctx.fillStyle = color;
+        ctx.globalAlpha = 0.5 * aa;
         ctx.beginPath();
         ctx.arc(ax, ay, 1, 0, Math.PI * 2);
         ctx.fill();
