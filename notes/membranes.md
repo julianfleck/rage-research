@@ -28,15 +28,17 @@ Over a knowledge substrate, those channels are gated by [[coupling]] density. A 
 
 Membranes are established over the continuous evolution of the graph, not minted in discrete steps. Whenever context is retrieved from the substrate, the membrane is the region picked out by the current [[coupling]] density — the dense neighborhood the retrieval draws on that is set off against the sparser coupling around it.
 
+
 What raises that coupling is co-attention — an agent reading, then writing, over a set of frames. It strengthens the coupling across the frames it draws together and sets the requisite variety inside the boundary: how much, and how varied, the context in play is (see also [[frame-type-diversity]]). The candidate rule we currently use is hebbian — strengthen coupling on co-retrieval events, decay otherwise — but the underlying mechanism is still being worked out: **frames carry an initial phase seeded from their content**, and attention events drive them toward alignment from there.
 
 The agent acts (closes a loop by writing traces back) and the next retrieval re-draws the boundary at the coupling density it then finds. Read and write are the same event class: both feed coupling. A decay clock runs against coupling and lets the membrane close again; without it a membrane would lock open and never reset.
+
+<Figure id="membrane-nesting" margin caption="Three membranes over one field: one nested inside another, a third overlapping it — boundaries that layer and cross, not a partition into tiles." />
 
 ## Constituents
 
 A membrane encloses both the information and the actors working with it, not one or the other (see [[fractal-composition]]). Nesting levels are not fixed: a membrane is itself a type of [[frame]]: collapsing a co-active region of frames to a point makes it legible as a [hole](https://en.wikipedia.org/wiki/Holon_%28philosophy%29). The reverse is also true: an agent in this sense is also a membrane – encompassing a bounded bundle of its harness state and currently active context.
 
-<Figure id="membrane-nesting" margin caption="Three membranes over one field: one nested inside another, a third overlapping it — boundaries that layer and cross, not a partition into tiles." />
 
 Because we treat both actors and content as the same kind of object, we can apply the same mechanics at every level of nesting — activation, coupling, resonance, decay — and utilize the same metrics to read over a membrane as well as over atomic leaf frames. 
 
