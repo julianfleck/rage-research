@@ -12,7 +12,7 @@ tags:
 show: true
 ---
 
-A *substrate* is the shared medium a population of agents reads from and writes back into — their memory, context, retrieval, and tool state. AI is increasingly deployed this way: populations of agents over a common medium, not isolated chatbots. Its defining property is the write-back loop — each write feeds back into the medium, changing what every other agent can retrieve on the next turn, so the medium conditions later action. A static scaffold has no such loop.
+A *substrate* is the shared medium a population of agents reads from and writes back into — their memory, context, retrieval, and tool state. AI is increasingly deployed this way: populations of agents over a common medium, not isolated chatbots. Its defining property is the write-back loop: each write feeds back into the medium, changing what can be retrieved on the next turn. That loop holds for any dynamic knowledge base — a single agent and a store already have it — but our interest is the second-order effects it produces as use accumulates, which a population sharing the medium makes both larger and harder to see.
 
 <Figure id="substrate-slice" margin caption="Each retrieval strikes a different chord: an agent pulls a particular configuration of frames — a subgraph — out of the substrate; the next turn pulls another." />
 
