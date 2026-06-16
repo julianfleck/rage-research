@@ -46,6 +46,10 @@ The slots are what make the structure legible. Each slot is named, and its fille
 
 Any labeled-property graph can say two nodes are *related*; the work here is in the slot names saying *how* — `claim`, `evidence`, `objection` — so the edges carry the shape of the reasoning, not just adjacency. Because a frame carries its type and slots explicitly, the relationship between two frames is legible in their structure, not only in their proximity in embedding space. That is what lets [[coupling]] carry a valence — alignment or interference, not just strength — and it is the material a [[membranes|membrane]] is ultimately drawn over.
 
+## Frames and membranes
+
+A membrane is drawn over frames, but it is not quite a frame itself. A frame's schema is *declared* — a type and named slots, fixed before it is filled, its edges pointing at specific frames. A membrane has none of that: it is a population held together by [[coupling]], composed by co-activation rather than by named slots. What stands in for its schema is *induced* — the fingerprint we measure over it: type spread, coupling structure, phase coherence. So the two are commensurable, not identical. The same mechanics and metrics run over both — the legibility we want — but a frame *is* a composition where a membrane *composes*. The bridge is crystallization: a membrane that recurs and stabilizes can be collapsed to a point, have a schema induced from its population, and promoted to a frame — a new type in the registry below. Same substance at two phases — declared structure and emergent structure — convertible one direction.
+
 ## Types
 
 The registry runs to around forty types; a representative few:
