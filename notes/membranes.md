@@ -47,7 +47,7 @@ A membrane is not a cluster. Clusters partition: each node lands in one group. M
 
 <Figure id="membrane-nesting" margin caption="Three membranes over one field: one nested inside another, a third overlapping it — boundaries that layer and cross, not a partition into tiles." />
 
-A membrane need not be semantically coherent: co-activation defines it, not similarity, so one can span diverse regions of the substrate, holding frames pulled together by use rather than by meaning. An agent's active context, a project's working set, and a team's shared region are membranes at different [[scale|scales]], drawn at the same moment over overlapping material. The object of study is membranes over membranes: boundaries layered and crossing, not tiles.
+A membrane is held by both meaning and use, and the balance shifts over time. Each frame's phase is seeded from its embedding, so a membrane starts semantically coherent — close in meaning, close in phase. Use then bends it: [[coupling]] built by co-attention pulls those phases toward synchrony (and a frame's frequency drifts toward the ones it attends to), so frames drawn together by use can join the same membrane across semantically distant regions. Coherence is the starting point, not the definition — over time a membrane can come to span diverse regions, held by use more than by meaning, though retrieval still reads through embedding similarity, so it never leaves meaning behind entirely. An agent's active context, a project's working set, and a team's shared region are membranes at different [[scale|scales]], drawn at the same moment over overlapping material. The object of study is membranes over membranes: boundaries layered and crossing, not tiles.
 
 ## Selective permeability
 
