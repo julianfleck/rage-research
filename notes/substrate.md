@@ -1,7 +1,7 @@
 ---
 title: Substrate
-definition: The shared frame-graph medium a population of agents reads from and writes back into. The write-back feedback is what makes it a substrate rather than a static scaffold — each write reshapes what others retrieve next.
-description: What the substrate is — the shared frame-graph medium under continuous read and write-back, treated as an active medium whose structure evolves with use rather than a static record.
+definition: The shared medium a population of agents reads from and writes back into — memory, context, retrieval, and tool state — where each write reshapes what every other agent retrieves next. The write-back feedback is what makes it a substrate rather than a static scaffold.
+description: What the substrate is — the shared medium of memory, context, retrieval, and tool state a population of agents reads from and writes back into, treated as an active medium whose structure evolves with use rather than a static record.
 date: 2026-06-15
 series: Lab notes
 status: draft
