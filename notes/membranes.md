@@ -1,6 +1,6 @@
 ---
 title: Membranes
-definition: A semipermeable boundary in the cell-membrane sense — drawn around a co-active region of the substrate (the frames and agents working together) with channels that open and close at thresholds. Co-attention opens them, decay closes them; membranes nest and overlap rather than partition.
+definition: A selective boundary in the cell-membrane sense — it regulates what crosses rather than blocking everything or admitting everything. Over the substrate it is drawn around a co-active region (the frames and agents working together), with channels that open and close at thresholds; membranes nest and overlap rather than partition.
 description: What a membrane is in substrate dynamics — a semipermeable, threshold-gated boundary over a co-active region — how it is defined by coupling density, what it regulates, and why membranes nest and overlap.
 date: 2026-06-14
 series: Lab notes
