@@ -13,7 +13,11 @@ tags:
 show: true
 ---
 
-In substrate dynamics, *membrane* is meant in the cell-biology sense: a **semipermeable boundary** — not a wall (nothing crosses) and not an open door (everything crosses). Over the substrate it is the surface drawn at a moment around a co-active region: the frames, and the agents working over them, bound more tightly to each other than to what surrounds them. A membrane is drawn and released, not a fixed group.
+A *membrane* is a selective boundary: it lets some things through and holds others back — not a wall, where nothing crosses, and not an open door, where everything does. The term is borrowed from cell biology, where a membrane both holds a cell together and governs what passes across its edge. The idea carries to any setting where a group forms around shared work: a boundary appears around the people and material involved, and what crosses it — who is in, how much flows in or out — is regulated rather than fixed.
+
+The boundary is useful in two ways: as a place to read — a working group's state shows at its boundary, without inspecting each member; and as a place to act — you change what the group has to work with by adjusting the boundary rather than directing each member one by one.
+
+Over the substrate, a membrane is the surface drawn at a moment around a co-active region: the frames, and the agents working over them, bound more tightly to each other than to what surrounds them. It is drawn and released, not a fixed group.
 
 <Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
 
