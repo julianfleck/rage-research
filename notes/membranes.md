@@ -32,12 +32,10 @@ What raises that coupling is co-attention — an agent reading, then writing, ov
 
 The agent acts (closes a loop by writing traces back) and the next retrieval re-draws the boundary at the coupling density it then finds. Read and write are the same event class: both feed coupling. A decay clock runs against coupling and lets the membrane close again; without it a membrane would lock open and never reset.
 
-<Figure id="membrane-nesting" margin caption="Three membranes over one field: one nested inside another, a third overlapping it — boundaries that layer and cross, not a partition into tiles." />
 
 ## Constituents
 
 A membrane encloses both the information and the actors working with it, not one or the other (see [[fractal-composition]]). Nesting levels are not fixed: collapse a co-active region of frames to a point and it behaves as a single [[frame]] — a [hole](https://en.wikipedia.org/wiki/Holon_%28philosophy%29) — though a live membrane is not quite a frame: it carries no declared schema, only an induced one (see [[frame]]). The reverse is also true: an agent in this sense is also a membrane – encompassing a bounded bundle of its harness state and currently active context.
-
 
 Because we treat both actors and content as commensurable, we can apply the same mechanics at every level of nesting — activation, coupling, resonance, decay — and utilize the same metrics to read over a membrane as well as over atomic leaf frames. 
 
@@ -45,8 +43,9 @@ Computing these [[metrics]] over subgraphs of frames is what picks out a membran
 
 ## Nesting and overlap
 
-A membrane is not a cluster. Clusters partition: each node lands in one group. Membranes nest and overlap — one can sit inside another, and two can share frames without either containing the other. A membrane need not be semantically coherent: co-activation defines it, not similarity, so one can span diverse regions of the substrate, holding frames pulled together by use rather than by meaning. An agent's active context, a project's working set, and a team's shared region are membranes at different [[scale|scales]], drawn at the same moment over overlapping material. The object of study is membranes over membranes: boundaries layered and crossing, not tiles.
+<Figure id="membrane-nesting" margin caption="Three membranes over one field: one nested inside another, a third overlapping it — boundaries that layer and cross, not a partition into tiles." />
 
+A membrane is not a cluster. Clusters partition: each node lands in one group. Membranes nest and overlap — one can sit inside another, and two can share frames without either containing the other. A membrane need not be semantically coherent: co-activation defines it, not similarity, so one can span diverse regions of the substrate, holding frames pulled together by use rather than by meaning. An agent's active context, a project's working set, and a team's shared region are membranes at different [[scale|scales]], drawn at the same moment over overlapping material. The object of study is membranes over membranes: boundaries layered and crossing, not tiles.
 
 ## Selective permeability
 
