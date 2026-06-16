@@ -17,9 +17,9 @@ Every AI agent already works inside a boundary: its *context* — the instructio
 
 A *membrane* is that boundary treated as a first-class, dynamic object: selectively permeable, with channels that mediate information flow. The term is borrowed from cell biology, where a membrane both holds a cell together and regulates what passes across its edge.
 
-Treating the boundary this way makes it two things: a place to read (the state of whatever works inside it is legible at the boundary, without inspecting each member — and a place to act — adjusting its permeability changes what the enclosed agents have to work with, without steering any of them individually.
+Treating the boundary this way makes it two things: a place to read (the state of whatever works inside it is legible at the boundary, without inspecting each member) – and a place to act (adjusting its permeability changes what the enclosed agents have to work with, without steering any of them individually).
 
-Over the substrate, those channels are gated by [[coupling]] density. A membrane is a temporary, semi-permeable boundary around a co-active region — the frames, and the agents working over them, bound more tightly to each other than to their surroundings. It is drawn where coupling is dense, its channels open on a threshold (see [[resonance]]), and decay releases it again: drawn and released, not a fixed group.
+Over a knowledge substrate, those channels are gated by [[coupling]] density . A membrane is a temporary, semi-permeable boundary around a co-active region — the frames, and the agents working over them, bound more tightly to each other than to their surroundings. It is drawn where coupling is dense, its channels open on a threshold (see [[resonance]]), and decay releases it again: drawn and released, not a fixed group.
 
 <Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
 
