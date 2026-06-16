@@ -27,7 +27,7 @@ Over a knowledge substrate, those channels are gated by [[coupling]] density. A 
 
 A membrane encloses both the information and the actors working on it, not one or the other (see [[fractal-composition]]). Nesting levels are not fixed: a membrane is itself a [[frame]]: collapsing a co-active region of context to a point makes it legible as one bundle. An agent in this sense is also a membrane – encompassing a bounded bundle of its harness state and current active context.
 
-Because they are the same kind of object, the same mechanics can be applied at every level of nesting — activation, coupling, resonance, decay — and the same metrics can be read over a membrane as over an atomic leaf frame. Computing this fingerprint over frames is what picks out a membrane: two agents on the same codebase fall inside a frame naturally, and two people with overlapping research interests are grouped just as organically — close enough on the substrate to be put in touch.
+Because they are the same kind of object, the same mechanics can be applied at every level of nesting — activation, coupling, resonance, decay — and the same metrics can be read over a membrane as well as over an atomic leaf frame. Computing the same  fingerprint over frames is what picks out a membrane: two agents on the same codebase fall inside a frame naturally, and two people with overlapping research interests are grouped just as organically — close enough on the substrate to be put in touch.
 
 ## Formation and dissolution
 
