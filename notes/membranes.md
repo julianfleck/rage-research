@@ -41,7 +41,7 @@ Computing these [metrics] over subgraphs of frames is what picks out a membrane:
 
 ## Selective permeability
 
-A membrane is semipermeable: its channels open and close at thresholds, so flow across the boundary is conditional, set by what has accumulated on either side. What crosses is gated on more than one dimension.
+A membrane is semipermeable: its channels open and close at thresholds, so flow across the boundary is conditional, set by what has accumulated on either side. What crosses should be gated on more than one dimension.
 
 <Figure id="membrane-permeability" margin caption="A channel in the membrane opens when retrieval clears a threshold: the summary always comes back, and the deeper the channel opens, the further into the subgraph it reads — more detail through the same channel." />
 
