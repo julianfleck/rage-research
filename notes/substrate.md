@@ -12,7 +12,7 @@ tags:
 show: true
 ---
 
-AI is increasingly deployed not as isolated chatbots but as populations of agents that read from and write back into a shared medium — the memory, context, retrieval, and tool state each agent works through. That medium is the *substrate*. What makes it a substrate rather than a static scaffold is the write-back: each write reshapes what every other agent retrieves on the next turn, so the medium conditions what can be done next.
+AI is increasingly deployed not as isolated chatbots but as populations of agents that read from and write back into a shared medium — the memory, context, retrieval, and tool state each agent works through. That medium is the *substrate*. What makes it a substrate rather than a static scaffold is the write-back: each write reshapes what every other agent retrieves on the next turn, so the medium conditions any future action.
 
 Failure in such a system tends to be collective, and to surface in the medium before it surfaces in any one agent's output — a population converges too early, a local error is retrieved back as evidence and amplified, the shared store drifts without resolving. So the questions we follow are whether the substrate carries early, measurable signals of coordination health and emerging failure — signals that precede an individual agent's behavioural expression of it — and whether reversible interventions on the medium can restore healthy coordination without overriding the agents themselves. The aim is oversight that scales with the size and depth of a deployment instead of being outpaced by it.
 
