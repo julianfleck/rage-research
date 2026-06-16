@@ -13,7 +13,7 @@ tags:
 show: true
 ---
 
-Every AI agent already works inside a boundary: its *context* — the instructions, memory, and retrieved material it can currently see. In a conventional setup that boundary is fixed: a user pastes in the prompt and reference material, and that constitutes the boundary of that agents working knowledge. The boundary begins to blur once an agent can explore it's knowledge base of its own: the retrieval loops shape what it draws in on one turn and it's output being persisted back to memmo shapes what it draws in next. 
+Every AI agent already works inside a boundary: its *context* — the instructions, memory, and retrieved material it can currently see. In a conventional setup that boundary is fixed: a user pastes in the prompt and reference material, and that constitutes the boundary of that agents working knowledge. This boundary begins to blur once an agent can explore it's knowledge base of its own: the retrieval loops shape what it draws in on one turn and it's output being persisted back to memory shapes what it draws in next. 
 
 A *membrane* is that boundary treated as a first-class, dynamic object: selectively permeable, with channels that mediate information flow. The term is borrowed from cell biology, where a membrane both holds a cell together and regulates what passes across its edge.
 
