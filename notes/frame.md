@@ -54,15 +54,14 @@ A membrane is drawn over frames, but it is not quite a frame itself. A frame's s
 
 The registry runs to around forty types; a representative few:
 
-| Type | Holds |
-|------|-------|
-| `observation` | raw facts, notes, things noticed |
-| `claim` | an assertion that could be true or false |
-| `insight` | synthesized understanding |
-| `decision` | a choice made, with its rationale |
-| `question` | an open question or uncertainty |
-| `territory` | a container for related frames |
-| `collection` | a grouping without spatial semantics |
+| Type          | Holds                                    |
+| ------------- | ---------------------------------------- |
+| `observation` | raw facts, notes, things noticed         |
+| `claim`       | an assertion that could be true or false |
+| `insight`     | synthesized understanding                |
+| `decision`    | a choice made, with its rationale        |
+| `question`    | an open question or uncertainty          |
+| `collection`  | a grouping without spatial semantics     |
 
 The registry is not fixed: in rage-substrate it is a static default set. Either way it is a working vocabulary, not a closed ontology.
 
