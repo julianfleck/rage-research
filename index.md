@@ -11,7 +11,7 @@ tags: [overview]
 ---
 **We study substrate dynamics: the dynamics that emerge when a population of humans and agents both reads from and writes to a shared knowledge base.**
 
-By *[[substrate]]* we mean such a store treated as a medium rather than a record: it holds what is known and, in doing so, conditions what each agent can retrieve and act on. By *dynamics* we mean how it behaves under sustained, two-way use — which connections strengthen, how retrieval concentrates or disperses, how its contents shift as each write conditions the next read.
+By *[[substrate]]* we mean such a store treated as a medium rather than a record: it holds what is known and, in doing so, conditions what each agent can retrieve and act on. By *dynamics* we mean how it behaves under sustained use by many agents at once — which connections strengthen, how retrieval concentrates or disperses, how its contents shift as each write conditions the next read.
 
 We follow this because agents are increasingly deployed as populations that share memory, context, and retrieval — what one writes becomes what the others read next. Failures there tend to be collective, and by the time a single agent's output shows one the others have already built on it. Our wager is that the medium carries earlier signs, readable before behaviour expresses them, and can be acted on directly — changing the substrate the agents draw from rather than correcting each agent in turn.
 
