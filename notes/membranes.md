@@ -23,7 +23,7 @@ Over the substrate, that quantity is [[coupling]] density. A membrane is a tempo
 
 ## Constituents
 
-A membrane encloses both the information and the actors working on it, not one or the other. The nested levels are not fixed: a membrane is itself a frame — collapse a co-active region to a point and it behaves as one entity. An agent is a membrane along with the bounded bundle of its harness and currently retrieved context. Therefore an agent is a frame too, one scale up. Frame, membrane, and agent are the same kind of object seen at different granularity.
+A membrane encloses both the information and the actors working on it, not one or the other. The nested levels are not fixed: a membrane is itself a [[frame]] — collapse a co-active region to a point and it behaves as one entity. An agent is a membrane along with the bounded bundle of its harness and currently retrieved context. Therefore an agent is a frame too, one scale up. Frame, membrane, and agent are the same kind of object seen at different granularity.
 
 Because they are the same kind of object, the same mechanics run at every level — activation, coupling, resonance, decay — and the same metrics can be read over a membrane as over an atomic leaf frame (see [[fractal-composition]]). Computing this fingerprint over frames is what picks out a membrane: two agents on the same codebase fall inside a frame naturally, and two people with overlapping research interests are grouped just as organically — close enough on the substrate to be put in touch.
 
