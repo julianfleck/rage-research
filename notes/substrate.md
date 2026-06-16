@@ -12,7 +12,7 @@ tags:
 show: true
 ---
 
-AI is increasingly deployed not as isolated chatbots but as populations of agents that read from and write back into a shared medium — the memory, context, retrieval, and tool state each agent works through. That medium is the *substrate*. What makes it a substrate rather than a static scaffold is the write-back: each write reshapes what every other agent retrieves on the next turn, so the medium conditions any future action.
+AI is increasingly deployed not as isolated chatbots but as populations of agents that read from and write back into a shared medium — the memory, context, retrieval, and tool state each agent works through. That medium is the *substrate*. What makes it a substrate rather than a static scaffold is a write-back loop: each write back into the medium reshapes what every other agent retrieves on the next turn, so the medium conditions any future action.
 
 <Figure id="substrate-slice" margin caption="Each retrieval strikes a different chord: an agent pulls a particular configuration of frames — a subgraph — out of the substrate; the next turn pulls another." />
 
