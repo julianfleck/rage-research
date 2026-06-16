@@ -14,6 +14,7 @@ show: true
 ---
 
 Every AI agent already works inside a boundary: its *context* — the instructions, memory, and retrieved material it can currently see. In a conventional setup that boundary is fixed: a user pastes in the prompt and reference material, and that constitutes the boundary of that agents working knowledge. This boundary begins to blur once an agent can explore it's knowledge base of its own: the retrieval loops shape what it draws in on one turn and it's output being persisted back to memory shapes what it might draw in next. 
+<Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
 
 A *membrane* is that boundary treated as a first-class, dynamic object: selectively permeable, with channels that mediate information flow. The term is borrowed from cell biology, where a membrane both holds a cell together and regulates what passes across its edge.
 
@@ -21,7 +22,6 @@ Treating the boundary this way makes it two things: a place to read (the state o
 
 Over a knowledge substrate, those channels are gated by [[coupling]] density. A membrane in this definition is a *temporary, semi-permeable boundary around a co-active region of the substrate*:  the collectively held frames, and the agents working over them, bound more tightly to each other than to their surroundings. It is drawn where coupling is dense, its channels open on a threshold (see [[resonance]]), and a decay mechanism releases it again.
 
-<Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
 
 ## Formation and dissolution
 
