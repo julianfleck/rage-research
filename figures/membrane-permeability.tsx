@@ -205,7 +205,8 @@ export function MembranePermeability() {
         ctx.stroke();
       }
 
-      // Flow along the trunk, through the channel, while it is open.
+      // Flow out of the subgraph, through the channel, to the reader, while the
+      // channel is open: detail (right) → channel → summary (left).
       if (open > 0.35) {
         const fp = (t * 0.7) % 1;
         const along = (a: number, b: number, u: number) => a + (b - a) * u;
@@ -213,8 +214,8 @@ export function MembranePermeability() {
         ctx.globalAlpha = 0.55 * open;
         for (let s = 0; s < 3; s++) {
           const u = (fp + s / 3) % 1;
-          const px = u < 0.5 ? along(root.x, MX, u / 0.5) : along(MX, 0.66, (u - 0.5) / 0.5);
-          const py = u < 0.5 ? along(root.y, chY, u / 0.5) : chY;
+          const px = u < 0.5 ? along(0.66, MX, u / 0.5) : along(MX, root.x, (u - 0.5) / 0.5);
+          const py = u < 0.5 ? chY : along(chY, root.y, (u - 0.5) / 0.5);
           ctx.beginPath();
           ctx.arc(sx(px), sy(py), 1.3, 0, Math.PI * 2);
           ctx.fill();
