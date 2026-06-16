@@ -39,9 +39,9 @@ The agent acts (closes the loop, writes traces back) and the next retrieval re-d
 
 A membrane is semipermeable: its channels open and close at thresholds, so flow across the boundary is conditional, set by what has accumulated on either side. What crosses is gated on more than one dimension.
 
-How *deep* a retrieval reaches is a threshold based on [[resonance]] — the coupling that frames have built by using the Hebbian mechanism together with their semantic coherence. Resonant units are retrieved together, and nothing about the boundary gives the reader more power, agency, or importance in creating meaning: what is retrieved can be an agent, a person, a document, or a set of instructions. A high threshold returns only the most resonant — the summary at the top of a subgraph. When the threshold is lowered, retrieval reaches deeper and more of the detail beneath it clears the bar. Technically this is a traversal budget and a threshold setting in the retrieval re-ranker. The threshold steers granularity — how coarse or fine the retrieved context is (see [[fractal-composition]]).
-
 <Figure id="membrane-permeability" margin caption="A channel in the membrane opens when retrieval clears a threshold: the summary always comes back, and the deeper the channel opens, the further into the subgraph it reads — more detail through the same channel." />
+
+How *deep* a retrieval reaches is a threshold based on [[resonance]] — the coupling that frames have built by using the Hebbian mechanism together with their semantic coherence. Resonant units are retrieved together, and nothing about the boundary gives the reader more power, agency, or importance in creating meaning: what is retrieved can be an agent, a person, a document, or a set of instructions. A high threshold returns only the most resonant — the summary at the top of a subgraph. When the threshold is lowered, retrieval reaches deeper and more of the detail beneath it clears the bar. Technically this is a traversal budget and a threshold setting in the retrieval re-ranker. The threshold steers granularity — how coarse or fine the retrieved context is (see [[fractal-composition]]).
 
 Beyond depth, a membrane regulates two axes, and our substrate dynamics work is able to read it through either:
 
