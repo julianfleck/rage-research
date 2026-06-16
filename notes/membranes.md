@@ -39,6 +39,12 @@ Because we treat both agents and content as the same kind of object, we can appl
 
 Computing these [metrics] over subgraphs of frames is what picks out a membrane: two agents on the same codebase fall inside a frame naturally, and two people with overlapping research interests are grouped just as organically – close enough on the substrate to be put in proximity (or in the human case: in touch – you might want to talk).
 
+## Nesting and overlap
+
+A membrane is not a cluster. Clusters partition: each node lands in one group. Membranes nest and overlap — one can sit inside another, and two can share frames without either containing the other. A membrane need not be semantically coherent: co-activation defines it, not similarity, so one can span diverse regions of the substrate, holding frames pulled together by use rather than by meaning. An agent's active context, a project's working set, and a team's shared region are membranes at different [[scale|scales]], drawn at the same moment over overlapping material. The object of study is membranes over membranes: boundaries layered and crossing, not tiles.
+
+<Figure id="membrane-nesting" margin caption="Three membranes over one field: one nested inside another, a third overlapping it — boundaries that layer and cross, not a partition into tiles." />
+
 ## Selective permeability
 
 A membrane is semipermeable: its channels open and close at thresholds, so flow across the boundary is conditional, set by what has accumulated on either side. What crosses should be gated on more than one dimension.
@@ -53,12 +59,6 @@ Beyond depth, a membrane regulates two axes, and our substrate dynamics work is 
 - **Access.** A membrane being semipermeable in the access-control sense — scoped, caveated, revertible exchange: who may pass which channel, granted in small reversible amounts. This is a reading further developed by [Kenneth Bruskiewicz](https://bruskiewi.cz/) and [Christina Bowen](https://www.knowledgeecologist.me/) ([Atlas Research Group](https://atlasresear.ch)) in what they call *Mythic Membranes*.
 
 The two are complementary: one gates what and how much, the other gates who and how. The open question is which axis dominates for which problem, and whether they are two views of one gating mechanism or two mechanisms sharing a boundary.
-
-## Nesting and overlap
-
-A membrane is not a cluster. Clusters partition: each node lands in one group. Membranes nest and overlap — one can sit inside another, and two can share frames without either containing the other. A membrane need not be semantically coherent: co-activation defines it, not similarity, so one can span diverse regions of the substrate, holding frames pulled together by use rather than by meaning. An agent's active context, a project's working set, and a team's shared region are membranes at different [[scale|scales]], drawn at the same moment over overlapping material. The object of study is membranes over membranes: boundaries layered and crossing, not tiles.
-
-<Figure id="membrane-nesting" margin caption="Three membranes over one field: one nested inside another, a third overlapping it — boundaries that layer and cross, not a partition into tiles." />
 
 ## Intervention and coordination
 
