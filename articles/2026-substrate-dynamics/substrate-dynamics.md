@@ -12,7 +12,7 @@ author: Julian Fleck
 tags: [dynamics]
 ---
 
-Companion to the paper *Frame-Semantic Graph Construction for Knowledge Substrates*. This piece ties the substrate-dynamics notes into one picture: a [[substrate]] built of [[frame|frames]] that a population of agents continuously reads from and writes back into, what sustained two-way use does to it, what can be read off it before behaviour fails, and how to intervene on the medium rather than on the agents. Each mechanism has its own note; this is the synthesis that links them. Where the implementation currently stands is its own note too — see [[codebase|state of the codebase]].
+Companion to the paper *Frame-Semantic Graph Construction for Knowledge Substrates*. This piece ties the substrate-dynamics notes into one picture: a [[substrate]] built of [[frame|frames]] that a population of agents continuously reads from and writes back into, what sustained use by that whole population does to it, what can be read off it before behaviour fails, and how to intervene on the medium rather than on the agents. Each mechanism has its own note; this is the synthesis that links them. Where the implementation currently stands is its own note too — see [[codebase|state of the codebase]].
 
 ## Terms
 
