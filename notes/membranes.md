@@ -1,6 +1,6 @@
 ---
 title: Membranes
-definition: A selective boundary in the cell-membrane sense — it regulates what crosses rather than blocking everything or admitting everything. Over the substrate it is drawn around a co-active region (the frames and agents working together), with channels that open and close at thresholds; membranes nest and overlap rather than partition.
+definition: A dynamic, selectively permeable boundary in the cell-membrane sense — its channels open and close on a measurable quantity rather than a fixed rule. Over the substrate it is a temporary boundary drawn around a co-active region (the frames and agents working together) by coupling density; membranes nest and overlap rather than partition.
 description: What a membrane is in substrate dynamics — a semipermeable, threshold-gated boundary over a co-active region — how it is defined by coupling density, what it regulates, and why membranes nest and overlap.
 date: 2026-06-14
 series: Lab notes
@@ -13,19 +13,19 @@ tags:
 show: true
 ---
 
-A *membrane* is a selective boundary: it lets some things through and holds others back — not a wall, where nothing crosses, and not an open door, where everything does. The term is borrowed from cell biology, where a membrane both holds a cell together and governs what passes across its edge. The idea carries to any setting where a group forms around shared work: a boundary appears around the people and material involved, and what crosses it — who is in, how much flows in or out — is regulated rather than fixed.
+Every agent already works inside a boundary: its *context* — the instructions, memory, and retrieved material it can currently see. That boundary is not fixed; what crosses into it shifts from turn to turn. A *membrane* is that boundary treated as a first-class, dynamic object: selectively permeable — some things cross, some are held back — with channels that open and close as a measurable quantity governing them rises and falls, rather than by a fixed rule. The term is borrowed from cell biology, where a membrane both holds a cell together and regulates what passes across its edge.
 
-The boundary is useful in two ways: as a place to read — a working group's state shows at its boundary, without inspecting each member; and as a place to act — you change what the group has to work with by adjusting the boundary rather than directing each member one by one.
+Treating the boundary this way makes it two things at once: a place to read — the state of whatever works inside it is legible at the boundary, without inspecting each member — and a place to act — adjusting its permeability changes what the enclosed agents have to work with, without steering any of them individually.
 
-Over the substrate, a membrane is the surface drawn at a moment around a co-active region: the frames, and the agents working over them, bound more tightly to each other than to what surrounds them. It is drawn and released, not a fixed group.
+Over the substrate, that quantity is [[coupling]] density. A membrane is a temporary, semi-permeable boundary around a co-active region — the frames, and the agents working over them, bound more tightly to each other than to their surroundings. It is drawn where coupling is dense, its channels open on a threshold (see [[resonance]]), and decay releases it again: drawn and released, not a fixed group.
 
 <Figure id="substrate-hero" margin caption="Membranes forming around co-active regions and releasing as coupling decays." />
 
 ## Constituents
 
-A membrane encloses both the information and the actors working on it, not one or the other. The nested levels are not fixed: a membrane is itself a frame — collapse a co-active region to a point and it behaves as one entity. An agent is a membrane along with the bounded bundle of its harness and currently retrieved context. Therefore an agent is a frame too, one scale up. Frame, membrane, and agent are the same kind of object seen at different granularity.
+A membrane encloses both the information and the actors working on it, not one or the other. The nested levels are not fixed: a membrane is itself a frame — collapse a co-active region to a point and it behaves as one entity. An agent is a membrane: the bounded bundle of its harness and currently retrieved context. Therefore an agent is a frame too, one scale up. Frame, membrane, and agent are the same kind of object seen at different granularity.
 
-Because they are the same kind of object, the same mechanics run at every level — activation, coupling, resonance, decay — and the same metrics can be read over a membrane as over an atomic leaf frame (see [[fractal-composition]]). Computing this fingerprint over frames is what picks out a membrane: two agents on the same codebase fall inside a frame naturally, and two people with overlapping research interests are grouped just as organically — close enough on the substrate to be put in touch.
+Because they are the same kind of object, the same mechanics run at every level — activation, coupling, resonance, decay — and the same metrics can be read over a membrane as over an atomic leaf frame (see [[fractal-composition]]). Computing this fingerprint over frames is what picks out a membrane: two agents on the same codebase fall inside one naturally, and two people with overlapping research interests are grouped just as organically — close enough on the substrate to be put in touch.
 
 ## Formation and dissolution
 
