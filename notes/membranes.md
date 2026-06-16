@@ -13,11 +13,11 @@ tags:
 show: true
 ---
 
-Every AI agent already works inside a boundary: its *context* — the instructions, memory, and retrieved material it can currently see. In a conventional setup that boundary is fixed: a user pastes in the prompt and reference material, and that constitutes the boundary of that agents working knowledge. This boundary begins to blur once an agent can explore it's knowledge base of its own: the retrieval loops shape what it draws in on one turn and it's output being persisted back to memory shapes what it draws in next. 
+Every AI agent already works inside a boundary: its *context* — the instructions, memory, and retrieved material it can currently see. In a conventional setup that boundary is fixed: a user pastes in the prompt and reference material, and that constitutes the boundary of that agents working knowledge. This boundary begins to blur once an agent can explore it's knowledge base of its own: the retrieval loops shape what it draws in on one turn and it's output being persisted back to memory shapes what it might draw in next. 
 
 A *membrane* is that boundary treated as a first-class, dynamic object: selectively permeable, with channels that mediate information flow. The term is borrowed from cell biology, where a membrane both holds a cell together and regulates what passes across its edge.
 
-Treating the boundary this way makes it two things at once: a place to read — the state of whatever works inside it is legible at the boundary, without inspecting each member — and a place to act — adjusting its permeability changes what the enclosed agents have to work with, without steering any of them individually.
+Treating the boundary this way makes it two things: a place to read (the state of whatever works inside it is legible at the boundary, without inspecting each member — and a place to act — adjusting its permeability changes what the enclosed agents have to work with, without steering any of them individually.
 
 Over the substrate, those channels are gated by [[coupling]] density. A membrane is a temporary, semi-permeable boundary around a co-active region — the frames, and the agents working over them, bound more tightly to each other than to their surroundings. It is drawn where coupling is dense, its channels open on a threshold (see [[resonance]]), and decay releases it again: drawn and released, not a fixed group.
 
