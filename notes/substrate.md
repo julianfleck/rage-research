@@ -20,6 +20,6 @@ Multi-agent systems have a class of failures that are collective — properties 
 
 We borrow the term from ecology: the medium an organism lives in and grows on, soil or a reef or a culture in a dish. Knowledge in a knowledge substrate is treated the same way: as a living system, not a record. Frames and the agents over them grow, couple, and decay; regions flourish or wither; boundaries form and dissolve. The recurring vocabulary — membrane, coupling, resonance, decay — keeps that ecological sense, and is meant literally.
 
-We build the substrate as a [[frame]]-graph: typed units that compose and nest, so the same structure reads across [[scale|scales]]. Built this way, the store is an active medium, not a record — topology, vocabulary, and traversal behaviour all evolve with use. Its [[coordination-phase|dynamics]] are the object of study, and a poor fit for static graph theory. The rest of these notes concern what sustained use by a whole population does to such a medium.
+We build the substrate as a [[frame]]-graph: typed units that compose and nest, so the same structure reads across [[scale|scales]]. Built this way, the store is an active medium, not a record — topology, vocabulary, and traversal behaviour all evolve with use. Its [[coordination-phase|dynamics]] are the object of study. The rest of these notes concern what sustained use by a whole population does to such a medium.
 
 <Related tags="structure" />
