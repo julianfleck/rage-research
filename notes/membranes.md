@@ -36,6 +36,8 @@ The agent acts (closes a loop by writing traces back) and the next retrieval re-
 
 A membrane encloses both the information and the actors working with it, not one or the other (see [[fractal-composition]]). Nesting levels are not fixed: a membrane is itself a type of [[frame]]: collapsing a co-active region of frames to a point makes it legible as a [hole](https://en.wikipedia.org/wiki/Holon_%28philosophy%29). The reverse is also true: an agent in this sense is also a membrane – encompassing a bounded bundle of its harness state and currently active context.
 
+<Figure id="membrane-nesting" margin caption="Three membranes over one field: one nested inside another, a third overlapping it — boundaries that layer and cross, not a partition into tiles." />
+
 Because we treat both actors and content as the same kind of object, we can apply the same mechanics at every level of nesting — activation, coupling, resonance, decay — and utilize the same metrics to read over a membrane as well as over atomic leaf frames. 
 
 Computing these [[metrics]] over subgraphs of frames is what picks out a membrane: two agents on the same codebase fall inside a frame naturally, and two people with overlapping research interests are grouped just as organically – close enough on the substrate to be put in proximity (or, in the human case, in touch – “you might want to talk”).
@@ -44,7 +46,6 @@ Computing these [[metrics]] over subgraphs of frames is what picks out a membran
 
 A membrane is not a cluster. Clusters partition: each node lands in one group. Membranes nest and overlap — one can sit inside another, and two can share frames without either containing the other. A membrane need not be semantically coherent: co-activation defines it, not similarity, so one can span diverse regions of the substrate, holding frames pulled together by use rather than by meaning. An agent's active context, a project's working set, and a team's shared region are membranes at different [[scale|scales]], drawn at the same moment over overlapping material. The object of study is membranes over membranes: boundaries layered and crossing, not tiles.
 
-<Figure id="membrane-nesting" margin caption="Three membranes over one field: one nested inside another, a third overlapping it — boundaries that layer and cross, not a partition into tiles." />
 
 ## Selective permeability
 
