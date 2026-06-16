@@ -33,7 +33,7 @@ The agent acts (closes the loop, writes traces back) and the next retrieval re-d
 
 ## Constituents
 
-A membrane encloses both the information and the actors working with it, not one or the other (see [[fractal-composition]]). Nesting levels are not fixed: a membrane is itself a type of [[frame]]: collapsing a co-active region of context to a point makes it legible as one hole (or a [Holon](https://en.wikipedia.org/wiki/Holon_(philosophy)). An agent in this sense is also a membrane – encompassing a bounded bundle of its harness state and current active context.
+A membrane encloses both the information and the actors working with it, not one or the other (see [[fractal-composition]]). Nesting levels are not fixed: a membrane is itself a type of [[frame]]: collapsing a co-active region of context to a point makes it legible as one hole (or a [Holon](https://en.wikipedia.org/wiki/Holon_(philosophy)) to be more precise). An agent in this sense is also a membrane – encompassing a bounded bundle of its harness state and current active context.
 
 Because they are the same kind of object, the same mechanics can be applied at every level of nesting — activation, coupling, resonance, decay — and the same metrics can be read over a membrane as well as over an atomic leaf frame. Computing the same metrics over subgraphs of frames is what picks out a membrane: two agents on the same codebase fall inside a frame naturally, and two people with overlapping research interests are grouped just as organically – close enough on the substrate to be put in proximity (or in the human case: in touch – you might want to talk).
 
