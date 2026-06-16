@@ -13,7 +13,9 @@ tags:
 show: true
 ---
 
-Every agent already works inside a boundary: its *context* — the instructions, memory, and retrieved material it can currently see. In a conventional setup that boundary is fixed: a user pastes in the prompt and reference material, and it holds. It begins to move only once the agent can explore a knowledge base of its own — pulling context from a shared store through retrieval loops, so what it draws in on one turn shapes what it draws in next. A *membrane* is that boundary treated as a first-class, dynamic object: selectively permeable — some things cross, some are held back — with channels that open and close as a measurable quantity governing them rises and falls, rather than by a fixed rule. The term is borrowed from cell biology, where a membrane both holds a cell together and regulates what passes across its edge.
+Every agent already works inside a boundary: its *context* — the instructions, memory, and retrieved material it can currently see. In a conventional setup that boundary is fixed: a user pastes in the prompt and reference material, and it holds. It begins to move only once the agent can explore a knowledge base of its own — pulling context from a shared store through retrieval loops, so what it draws in on one turn shapes what it draws in next. 
+
+A *membrane* is that boundary treated as a first-class, dynamic object: selectively permeable — some things cross, some are held back — with channels that open and close as a measurable quantity governing them rises and falls, rather than by a fixed rule. The term is borrowed from cell biology, where a membrane both holds a cell together and regulates what passes across its edge.
 
 Treating the boundary this way makes it two things at once: a place to read — the state of whatever works inside it is legible at the boundary, without inspecting each member — and a place to act — adjusting its permeability changes what the enclosed agents have to work with, without steering any of them individually.
 
