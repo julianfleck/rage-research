@@ -23,7 +23,8 @@ Here it is applied to the substrate — the activation across frames, or the ene
 
 A Gini value is only defined over a chosen set, and the substrate offers several — the whole store, a single membrane, or anything between. The coefficient means different things at each, and within a single membrane the reading even inverts: a low Gini there is coherence, where a low Gini over the whole store is [[metrics#Semantic Heat Death|heat death]]. This is the general problem of [[scale]], and the coefficient should be read with it in mind: compute it across scales, and always say which one you mean.
 
-## How it is computed
+<details>
+<summary>How it is computed</summary>
 
 <Figure id="gini-spread" margin caption="The same total, spread differently — and the coefficient it yields." />
 

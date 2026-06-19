@@ -25,7 +25,8 @@ We expect to use this as a general reading of substrate state — whether a regi
 
 One thing it should expose is a diversity signature that differs by task: a narrow task should range over few framings, an open one over many. Whether that can be turned into a judgment of [[task-appropriate-behavior|task-appropriate behavior]] is a separate and still-open question.
 
-## How it's calculated
+<details>
+<summary>How it's calculated</summary>
 
 Hill numbers are a family, not one number. A single formula, read at different orders $q$, recovers several of the diversity indices used elsewhere as special cases. The order is a dial for how much weight rare types get.
 
@@ -51,5 +52,7 @@ The $q = 1$ case is taken as the limit, ${}^{1}D = \exp\!\left(-\sum_i p_i \ln p
 A small example. Five frame types with frequencies $[0.6, 0.2, 0.1, 0.07, 0.03]$. Richness is ${}^{0}D = 5$. The Shannon number ${}^{1}D$ comes to about 3.2, and the inverse-Simpson ${}^{2}D$ to about 2.4. So although five types are present, the substrate behaves like it holds between two and three — one type carries most of the weight.
 
 Reading the three orders together is the point. When ${}^{0}D$ sits well above ${}^{2}D$, there is a long tail of rare types that the common ones are drowning out. Watching that gap is how we'd tell whether rare framings survive or get buried.
+
+</details>
 
 <Related tags="metric" title="Related metrics" />
