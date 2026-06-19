@@ -57,4 +57,6 @@ In practice:
   global number; restricting to active frames measures concentration among what
   is actually live.
 
+</details>
+
 <Related tags="metric" title="Related metrics" />
