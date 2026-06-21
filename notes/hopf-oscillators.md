@@ -1,7 +1,7 @@
 ---
 title: Oscillators (why Hopf)
 internal: true
-show: false
+show: true
 definition: Each frame is modelled as a Hopf (Stuart-Landau) oscillator — a complex state z = r·e^(iθ) carrying activation (amplitude) and timing (phase) in one variable, with a bifurcation parameter that switches it between decaying-to-silence and self-sustaining. Phase and natural frequency are seeded from the frame's embedding; attention drives the bifurcation parameter up, time drives it down.
 description: What the oscillator layer in rage-substrate actually is — why we model frames as oscillators, why Hopf specifically, how it is seeded from embeddings, what reads it, and where it does and doesn't meet the coupling layer.
 date: 2026-06-22
