@@ -2,8 +2,8 @@
 title: Membrane metrics
 internal: true
 show: true
-definition: How we actually establish and measure a membrane — drawing the boundary from coupling density (which needs no oscillator) and reading metrics over the enclosed subgraph. Compares candidate methods: a scalar-activation + coupling-community baseline, embedding-geometry coherence, and the full Hopf oscillator, which earns its weight only as a synchronization instrument.
-description: Working note on how to establish and measure membranes — what drawing a boundary and reading over it actually require, the candidate metrics (coupling-community, embedding coherence, phase coherence), and where the oscillator does and doesn't help.
+definition: "How we actually establish and measure a membrane — drawing the boundary from coupling density (which needs no oscillator) and reading metrics over the enclosed subgraph. Compares candidate methods: a scalar-activation + coupling-community baseline, embedding-geometry coherence, and the full Hopf oscillator, which earns its weight only as a synchronization instrument."
+description: "Working note on how to establish and measure membranes — what drawing a boundary and reading over it actually require, the candidate metrics (coupling-community, embedding coherence, phase coherence), and where the oscillator does and doesn't help."
 date: 2026-06-22
 series: Lab notes
 status: draft
