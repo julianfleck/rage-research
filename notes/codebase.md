@@ -9,7 +9,8 @@ version: 2
 author: Julian Fleck
 tags:
   - implementation
-show: true
+internal: true
+show: false
 ---
 
 RAGE, the technology used for some of what we describe here, has had two lives. The first — *Recursive Agentic Graph Embeddings* — is the production system behind [recurse.cc](https://www.recurse.cc/): it builds a frame-semantic knowledge graph out of documents and serves it to users. What that system can do is written up in the companion paper, *[[graph-construction]]*.
@@ -38,3 +39,5 @@ The dynamics layer these notes describe is still mostly ahead of the code. The b
 - some of the [[gini-coefficient|metrics]] ([[hill-diversity|diversity]], concentration, convergence) are not computed yet. The data needed to compute them is there; the read-outs are not.
 
 So the building blocks are real and observable live; the dynamics and the metrics these notes explore are the work ahead, and the next step is making the testbed modular enough to run those experiments.
+
+The concrete deltas between what those concept notes describe and what the code actually does — and the proposed changes to close them — are collected in [[codebase-improvements]].
