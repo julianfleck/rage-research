@@ -80,4 +80,7 @@ The membrane is also an intervention site. The variety it admits bounds what an 
 - How to measure a membrane's permeability, and the variety it admits.
 - How nesting and overlap interact with any [[gini-coefficient|metric]] read over a membrane: the boundary drawn is the population measured.
 
+> [!note] Internal — how we'd actually measure this
+> Drawing a membrane from [[coupling]] density and reading metrics over the enclosed subgraph is the open implementation question behind everything above. The candidate methods — coupling-community detection, embedding-geometry coherence, phase coherence over the boundary — and which one is worth its weight are worked through in [[membrane-metrics]].
+
 <Related tags="membrane" />

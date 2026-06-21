@@ -53,6 +53,17 @@ where they conflict. The aim: simple, honest, no fluff.
   we intend or are weighing ("we will need", "this would let us", "one option
   is"). When unsure whether something is built, assume it isn't.
 
+## Referring to code
+
+- Refer to code by its **repository**, not a machine-local path. Write the repo as
+  `owner/repo` (`julianfleck/rage-substrate`), and a file inside it as a
+  repo-relative path (`rage_substrate/attention/hopf.py`). Never paste an absolute
+  local path (`~/Code/...`, `/Users/...`) into a note — it means nothing to a
+  reader and dates instantly.
+- This holds for collaborator repos too. Name them the same neutral way
+  (`owner/repo`); don't single them out or describe them by where they sit on
+  someone's disk.
+
 ## Formatting
 
 - Write each paragraph as one line. Don't hard-wrap with manual newlines
