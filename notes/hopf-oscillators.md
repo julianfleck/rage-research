@@ -1,5 +1,5 @@
 ---
-title: Oscillators (why Hopf)
+title: Oscillators
 internal: true
 show: true
 definition: Each frame is modelled as a Hopf (Stuart-Landau) oscillator — a complex state z = r·e^(iθ) carrying activation (amplitude) and timing (phase) in one variable, with a bifurcation parameter that switches it between decaying-to-silence and self-sustaining. Phase and natural frequency are seeded from the frame's embedding; attention drives the bifurcation parameter up, time drives it down.
@@ -40,6 +40,8 @@ The **Hopf (Stuart-Landau) oscillator** carries both in one complex number `z = 
 - `a = 0` → the Hopf bifurcation, the tipping point between the two.
 
 So one parameter gives us the dormant/awake switch *and* a named, well-studied transition to sit the dynamics on. The lineage is deliberate: whole-brain models (Deco et al., 2024) use exactly this oscillator, which is the same neuroscience analogue the project leans on elsewhere (Cole's activity-flow work). The cost is that it's the heaviest of the three — complex state per frame, an ODE integrated every tick, four parameters to tune.
+
+<Internal>
 
 ## What we actually implemented
 
@@ -93,5 +95,7 @@ So the oscillator is, today, a **downstream display driven by coupling**, not a 
 - **The phase seeding is enormously lossy.** Collapsing a 4096-dimensional embedding to a single angle on a circle destroys almost all of its structure: unrelated frames collide at the same phase often, and the angle itself is arbitrary. "Similar phase ≈ similar meaning" holds only weakly. ω and θ₀ are also two *independent* random shadows of the same vector, correlated only through the source embedding. If the project is about high-dimensional spread collapsing, compressing each frame to one angle before the dynamics even start may throw away exactly what we want to watch — which is why the research direction wanted a phase *signature* (several dimensions), not a scalar. Ties to the embedding-sensitivity study Megan is scoping.
 - **Global coherence is close to meaningless.** The order parameter over *all* frames, seeded at semantically spread phases, sits near its random-phase floor (≈ 1/√N) and barely moves regardless of local dynamics. Coherence is only informative over a bounded population — it should be read **per [[membranes|membrane]]**, where a region tightening is a real, local event. The global number averages out the thing it's meant to detect.
 - **Is the ODE worth its weight** versus a scalar activation plus a coherence read straight off embedding geometry? Open, and the subject of [[membrane-alternatives]].
+
+</Internal>
 
 <Related tags="phase" />
