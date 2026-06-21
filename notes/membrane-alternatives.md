@@ -14,7 +14,8 @@ tags:
   - implementation
 ---
 
-Internal note. Establishing [[membranes]] over the substrate is the task. This note asks a blunt question the [[hopf-oscillators|oscillator]] work raised: how much of the current machinery does a membrane actually need, and is there a simpler implementation that gets there. Written to be argued with, not adopted.
+> [!note] Internal
+> Establishing [[membranes]] over the substrate is the task. This note asks a blunt question the [[hopf-oscillators|oscillator]] work raised: how much of the current machinery does a membrane actually need, and is there a simpler implementation that gets there. Written to be argued with, not adopted.
 
 ## What establishing a membrane actually requires
 
