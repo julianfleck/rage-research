@@ -13,7 +13,8 @@ tags:
   - implementation
 ---
 
-Internal note, paired with [[codebase]]. The published concept notes ([[membranes]], [[coupling]], [[coordination-phase]], [[resonance]]) describe what we *want* the substrate to be, and they should stay that way. This note is the other half: where the code in `~/Code/rage-substrate` falls short of those descriptions, and what to change. Each entry is *what the concept wants → what's built → the proposed change*. Some changes are clear; others are hypotheses, marked as such.
+> [!note] Internal
+> Paired with [[codebase]]. The published concept notes ([[membranes]], [[coupling]], [[coordination-phase]], [[resonance]]) describe what we *want* the substrate to be, and they should stay that way. This note is the other half: where the code in `~/Code/rage-substrate` falls short of those descriptions, and what to change. Each entry is *what the concept wants → what's built → the proposed change*. Some changes are clear; others are hypotheses, marked as such.
 
 ## 1. Embedding richness collapsed to scalars
 

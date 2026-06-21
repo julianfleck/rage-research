@@ -10,7 +10,7 @@ author: Julian Fleck
 tags:
   - implementation
 internal: true
-show: false
+show: true
 ---
 
 RAGE, the technology used for some of what we describe here, has had two lives. The first — *Recursive Agentic Graph Embeddings* — is the production system behind [recurse.cc](https://www.recurse.cc/): it builds a frame-semantic knowledge graph out of documents and serves it to users. What that system can do is written up in the companion paper, *[[graph-construction]]*.
