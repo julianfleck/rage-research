@@ -14,7 +14,7 @@ tags:
 ---
 
 > [!note] Internal
-> Paired with [[codebase]]. The published concept notes ([[membranes]], [[coupling]], [[coordination-phase]], [[resonance]]) describe what we *want* the substrate to be, and they should stay that way. This note is the other half: where the code in `~/Code/rage-substrate` falls short of those descriptions, and what to change. Each entry is *what the concept wants → what's built → the proposed change*. Some changes are clear; others are hypotheses, marked as such.
+> Paired with [[codebase]]. The published concept notes ([[membranes]], [[coupling]], [[coordination-phase]], [[resonance]]) describe what we *want* the substrate to be, and they should stay that way. This note is the other half: where the code in `julianfleck/rage-substrate` falls short of those descriptions, and what to change. Each entry is *what the concept wants → what's built → the proposed change*. Some changes are clear; others are hypotheses, marked as such.
 
 ## 1. Embedding richness collapsed to scalars
 
@@ -34,7 +34,7 @@ This is also where the embedding-model-sensitivity study (Megan's) bites: every 
 
 ## 2. Oscillator and coupling are wired one-directionally
 
-What the concept implies: a single coupled system where structure and rhythm shape each other. What's built (see [[hopf-oscillators]]): coupling *strength* drives the oscillator, but the oscillator never feeds back. Phase and amplitude only tilt retrieval ranking; they never change stored structure. The oscillator reads the substrate, it doesn't shape it.
+What the concept implies: a single coupled system where structure and rhythm shape each other. What's built (see [[oscillator-implementation]]): coupling *strength* drives the oscillator, but the oscillator never feeds back. Phase and amplitude only tilt retrieval ranking; they never change stored structure. The oscillator reads the substrate, it doesn't shape it.
 
 **Proposed change:** either close the loop (let phase relationships inform coupling — two frames that won't phase-lock are evidence of interference) or accept the oscillator as a read-only dynamics instrument and stop implying otherwise in the prose. The decision depends on entry 5.
 
@@ -54,7 +54,7 @@ The order parameter is computed over *all* frames at once. Seeded at semanticall
 
 The boundary itself — taking [[coupling]] density and emitting an *overlapping, nested* membrane (not a partition), plus metrics read over the enclosed subgraph — has no implementation. And the boundary is a coupling-graph problem that doesn't depend on the oscillator at all.
 
-**Proposed direction (full argument in [[membrane-alternatives]]):** build a scalar-activation + overlapping-community baseline for drawing and reading membranes, and measure the Hopf model against it. If phase-coherence over a membrane tells us nothing that coupling density and embedding-cluster tightness don't, the oscillator stays in the dynamics track and out of the membrane path. The full Hopf earns its weight only as an instrument for *synchronization dynamics* — whether a phase signal *leads* visible failure (the Schmidt wager) — not as plumbing for the boundary.
+**Proposed direction (full argument in [[membrane-metrics]]):** build a scalar-activation + overlapping-community baseline for drawing and reading membranes, and measure the Hopf model against it. If phase-coherence over a membrane tells us nothing that coupling density and embedding-cluster tightness don't, the oscillator stays in the dynamics track and out of the membrane path. The full Hopf earns its weight only as an instrument for *synchronization dynamics* — whether a phase signal *leads* visible failure (the Schmidt wager) — not as plumbing for the boundary.
 
 ## 6. Frequency is fixed at seeding
 
