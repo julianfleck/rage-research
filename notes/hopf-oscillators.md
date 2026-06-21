@@ -14,7 +14,9 @@ tags:
   - phase
 ---
 
+<aside>
 Internal note. The published [[codebase|state-of-the-codebase]] note says, in one line, that each frame carries "an activation that decays over time and a phase". This note is what sits behind that line: what the oscillator layer actually is in rage-substrate, why it's built this way, and where it connects to [[coupling]] and where it only looks like it does.
+</aside>
 
 ## Why model a frame as an oscillator at all
 
