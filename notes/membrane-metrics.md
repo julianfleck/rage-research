@@ -15,7 +15,7 @@ tags:
 ---
 
 > [!note] Internal
-> Establishing [[membranes]] over the substrate is the task. This note asks a blunt question the [[hopf-oscillators|oscillator]] work raised: how much of the current machinery does a membrane actually need, and is there a simpler implementation that gets there. Written to be argued with, not adopted.
+> Establishing [[membranes]] over the substrate is the task — and a membrane is only as real as what we can measure over it. This note is about the metrics: what *drawing* a boundary and *reading* over it actually require, and which method does the job most cheaply. It asks a blunt question the [[oscillators|oscillator]] work raised — how much of the current machinery a membrane actually needs. Written to be argued with, not adopted.
 
 ## What establishing a membrane actually requires
 
@@ -24,7 +24,7 @@ From the [[membranes]] definition, a membrane is a temporary, semi-permeable bou
 1. **A density measure over regions** — which frames are bound more tightly to each other than to their surroundings. Coupling strengths in the `couplings` table already give this.
 2. **A boundary-drawing step** — take that density and emit a membrane: a set of frames with an inside and an outside. This must allow **overlap and nesting**, not a partition (a frame can be in two membranes; one membrane can sit inside another). *Not built.* There's no routine that turns coupling density into a boundary.
 3. **A release mechanism** — membranes dissolve as their region falls dormant. Bifurcation decay gives this on the activation side; coupling decay gives it on the structure side.
-4. **A read over the boundary** — coherence, diversity, permeability computed over the enclosed subgraph. *Mostly not built* — coherence exists but only globally (see [[hopf-oscillators]]), diversity isn't computed.
+4. **A read over the boundary** — coherence, diversity, permeability computed over the enclosed subgraph. *Mostly not built* — coherence exists but only globally (see [[oscillator-implementation]]), diversity isn't computed.
 
 The gap is items 2 and 4: drawing an overlapping/nested boundary, and reading metrics over a subgraph. Item 1 is largely there; item 3 partly.
 
