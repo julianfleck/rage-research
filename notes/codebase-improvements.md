@@ -1,7 +1,7 @@
 ---
 title: Codebase improvements
 internal: true
-show: false
+show: true
 definition: The internal backlog of deltas between what the concept notes describe and what rage-substrate actually does, with the proposed change for each. Companion to the state-of-the-codebase note; the concept notes stay aspirational, this one stays honest.
 description: Collected implementation gaps and proposed improvements for the rage-substrate dynamics testbed — embedding richness collapsed to scalars, the one-directional oscillator/coupling wiring, global vs per-membrane coherence, and the membrane-drawing work that isn't built.
 date: 2026-06-22
