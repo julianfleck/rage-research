@@ -51,6 +51,6 @@ The two roles should be kept separate in the build: a membrane layer that draws 
 
 ## Open question / recommendation
 
-Build design A as the membrane baseline and measure the Hopf model against it: does phase-coherence over a membrane tell us anything that internal coupling density and embedding-cluster tightness don't already? If it doesn't, the oscillator stays in the dynamics track and out of the membrane path. If it does — if phase leads where density lags — that's the first concrete evidence the oscillator is worth its weight. Either way the experiment is cheap and the answer is load-bearing for the architecture. (Pairs with the modular-testbed plan in [[codebase]]: membrane-drawing is one swappable mechanism, coherence-read is another.)
+Build design A as the membrane baseline and measure the Hopf model against it: does phase-coherence over a membrane tell us anything that internal coupling density and embedding-cluster tightness don't already? If it doesn't, the oscillator stays in the dynamics track and out of the membrane path. If it does — if phase leads where density lags — that's the first concrete evidence the oscillator is worth its weight. Either way the experiment is cheap and the answer settles a central architectural question. (Pairs with the modular-testbed plan in [[codebase]]: membrane-drawing is one swappable mechanism, coherence-read is another.)
 
 <Related tags="membrane" />
