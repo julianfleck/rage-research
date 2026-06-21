@@ -15,6 +15,7 @@ import { MembranePermeability } from "./membrane-permeability";
 import { MembraneNesting } from "./membrane-nesting";
 import { MembraneCoordination } from "./membrane-coordination";
 import { ResonanceFigure } from "./resonance";
+import { OscillatorBank } from "./oscillators";
 import { CouplingPropagation } from "./coupling-propagation";
 import { FractalZoom } from "./fractal-zoom";
 import { SubstrateSlice } from "./substrate-slice";
@@ -113,6 +114,9 @@ export const figures: Record<string, FigureDef> = {
   // Resonance: phase oscillators — coupled, coherent frames lock into phase and
   // pulse in unison; weak ties stay out of phase.
   "resonance": { kind: "canvas", render: () => <ResonanceFigure /> },
+  // Oscillators: each frame a phasor — orbit radius is amplitude, angle is phase;
+  // a coupled cluster syncs, loners drift, dormant frames collapse to the centre.
+  "oscillators": { kind: "canvas", render: () => <OscillatorBank /> },
   // Coupling: the hero's propagation + binding with the membrane left out, and a
   // stronger pull so co-active frames visibly draw together.
   "coupling-propagation": { kind: "canvas", render: () => <CouplingPropagation /> },
