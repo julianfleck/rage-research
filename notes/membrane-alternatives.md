@@ -1,7 +1,7 @@
 ---
 title: Membranes — alternative designs
 internal: true
-show: false
+show: true
 definition: A membrane is drawn from coupling density, which is built from co-attention — neither of which needs the oscillator. This note separates what establishing a membrane actually requires from what the Hopf layer adds, and sketches two simpler designs (scalar activation + coupling community; embedding-geometry coherence) to measure the full oscillator against.
 description: Working note weighing how much machinery a membrane actually needs — arguing the oscillator is largely orthogonal to drawing a membrane, and sketching simpler designs to test the Hopf model against.
 date: 2026-06-22
