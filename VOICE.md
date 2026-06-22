@@ -57,6 +57,41 @@ where they conflict. The aim: simple, honest, no fluff.
   we intend or are weighing ("we will need", "this would let us", "one option
   is"). When unsure whether something is built, assume it isn't.
 
+## Public vs internal
+
+These notes have two audiences; keep them apart.
+
+- **Public — vision and patterns.** What the substrate is and the concepts that
+  make it up (a [[membranes|membrane]], [[coupling]], an [[oscillators|oscillator]],
+  [[coordination-phase]]), the shape of each idea and why it matters. Provisional,
+  but written for a reader outside the project. Concept notes are public by default.
+- **Internal — implementation and deliberation.** What's actually built and in
+  which repo, what's wired and what isn't, code paths and file/function names, the
+  gap between a concept and the code, design arguments about what to build next,
+  and anything about status, money, or partners.
+
+The line that usually works: a concept is public; *how we currently implement it*
+is internal. "We model a frame as an oscillator, and phase lets us read
+synchronization" is public. "The current build uses a Hopf oscillator because
+Kuramoto can't go dormant, and `step()` reads coupling strength as its C matrix"
+is internal — same idea, lower altitude.
+
+Two ways to keep something internal:
+
+- **A whole note:** `internal: true` in the frontmatter. It still renders (with
+  `show: true`) but is marked internal — the home for the implementation notes
+  ([[oscillator-implementation]], [[codebase]], [[codebase-improvements]],
+  [[membrane-metrics]]).
+- **One section of a public note:** a heading `# Internal: <headline>`. The
+  renderer hides everything under it. Use this for a single internal aside in a
+  mostly-public note rather than leaving it in the open.
+
+Test: would this read to an outsider as a statement of the idea, or does it expose
+what's half-built, which file does what, or what it costs? Patterns and vision
+stay; mechanism, status, and money go internal. When a concept note starts naming
+repos and functions, lift it back to the pattern or move it behind a `# Internal:`
+heading.
+
 ## Referring to code
 
 - Refer to code by its **repository**, not a machine-local path. Write the repo as
