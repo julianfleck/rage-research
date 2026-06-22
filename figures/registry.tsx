@@ -114,8 +114,8 @@ export const figures: Record<string, FigureDef> = {
   // Resonance: phase oscillators — coupled, coherent frames lock into phase and
   // pulse in unison; weak ties stay out of phase.
   "resonance": { kind: "canvas", render: () => <ResonanceFigure /> },
-  // Oscillators: each frame a phasor — orbit radius is amplitude, angle is phase;
-  // a coupled cluster syncs, loners drift, dormant frames collapse to the centre.
+  // Oscillators: each frame shows phase (a tick on a ring) and amplitude (the core
+  // pulsing); a coupled cluster breathes in unison, loners fall out of step.
   "oscillators": { kind: "canvas", render: () => <OscillatorBank /> },
   // Coupling: the hero's propagation + binding with the membrane left out, and a
   // stronger pull so co-active frames visibly draw together.

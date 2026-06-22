@@ -168,7 +168,7 @@ Removing a figure: move the file to `TRASH/` and log it in `TRASH-FILES.md`
 | `membrane-nesting` | three membranes over one field — nested and overlapping, not a partition |
 | `membrane-coordination` | agents co-acting, wiring together, a team membrane forming then dissolving |
 | `resonance` | phase-angle field — sources align frames into domains that interfere; cursor combs it |
-| `oscillators` | each frame as a phasor — orbit radius is amplitude, angle is phase; a coupled cluster syncs, loners drift, dormant frames collapse to the centre |
+| `oscillators` | each frame as an oscillator — a ring tick gives phase, the core pulses for amplitude; a coupled cluster breathes in unison, loners fall out of step, dormant frames barely stir |
 | `fractal-zoom` | endless zoom into self-similar nested membranes |
 | `substrate-slice` | a 2D ecosystem slice: agents drift slowly along a line over a band of frames (appearing and leaving over time) and each turn strike a chord — a connected configuration (subgraph) lifts up out of the band toward the agent, then sinks back as the retrieval decays |
 | `frame-slots` | a frame's named slots are the graph's edges; child frames nest, a pulse lights one composition path |

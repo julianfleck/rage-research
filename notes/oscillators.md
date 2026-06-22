@@ -17,7 +17,7 @@ A flat activation score gives one number per frame: how active it is right now. 
 
 So we model each frame as an **oscillator** — something that pulses, carrying a **phase** (a position in a cycle) on top of its amplitude. Phase means nothing for one frame alone; it only means something *relative* to other frames. That relative reading is the point. Two frames sharing a phase are co-active in the strong sense, not just both switched on. Convergence, lock-in, drift — the regimes substrate dynamics tries to read — are all *synchronization* phenomena, things falling into or out of step. Modelling frames as oscillators chooses a representation where synchronization is the native quantity, and borrows the body of oscillator mathematics (and the brain models built on it) that already knows how to measure it.
 
-<Figure id="oscillators" margin caption="Each frame as an oscillator: orbit radius is amplitude (how active), angle is phase. Coupled frames fall into the same phase; unattended ones decay toward the centre." />
+<Figure id="oscillators" margin caption="Each frame as an oscillator: the tick on the ring is its phase, the pulse of the core its amplitude (how active it is). Coupled frames pulse in unison; loners fall out of step; dormant frames barely stir." />
 
 ## Why a Hopf oscillator
 
