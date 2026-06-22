@@ -2,17 +2,19 @@
 
 import { useEffect, useRef } from "react";
 
-// Each frame is an oscillator. A dot orbits a small ring: the ring's radius is the
-// frame's amplitude (how active it is), the dot's angle is its phase. The first
-// CLUSTER frames are mutually coupled (joined by faint ties) and pull each other
-// into the same phase, so they sweep in unison; loners drift at their own
-// frequency; dormant frames collapse to a still point at the centre. One loner
-// periodically wakes on "attention" and decays again. Black/white, currentColor.
+// Each frame is an oscillator with two quantities, both shown. PHASE — a faint
+// reference ring with a tick that travels round it (where the frame is in its
+// cycle). AMPLITUDE — the core pulses: it swells and brightens once per cycle,
+// deeply if the frame is active, barely if it is dormant (the observable r·cos θ,
+// not a static radius). The first CLUSTER frames are mutually coupled (faint ties)
+// and pull into the same phase, so they breathe in unison; loners fall out of
+// step; one loner periodically wakes on "attention" and decays. currentColor.
 
 const N = 13; // oscillators
 const CLUSTER = 6; // first CLUSTER nodes are mutually coupled and synchronize
 const K = 0.06; // phase-coupling strength within the cluster
-const ORBIT = 0.055; // orbit radius at full amplitude (× min(w,h))
+const RING = 0.05; // reference phase-ring radius (× min(w,h))
+const CORE = 0.038; // core radius at full pulse (× min(w,h))
 const SPEED = 0.05; // base phase advance per frame
 const AMP_RATE = 0.04; // how fast amplitude tracks its target
 
@@ -36,7 +38,7 @@ interface Node {
 }
 
 // Deterministic layout: jittered points in a disc, rejection-sampled so the
-// orbits don't overlap. Stable across reloads (seeded RNG, no Math.random).
+// rings don't overlap. Stable across reloads (seeded RNG, no Math.random).
 const NODES: Node[] = (() => {
   const rng = mulberry32(20260622);
   const pts: [number, number][] = [];
@@ -122,7 +124,7 @@ export function OscillatorBank() {
 
       // Faint ties between coupled frames, so the synchrony reads as coupling.
       ctx.strokeStyle = color;
-      ctx.globalAlpha = 0.12;
+      ctx.globalAlpha = 0.1;
       ctx.lineWidth = 0.6;
       for (let i = 0; i < NODES.length; i++) {
         for (let j = i + 1; j < NODES.length; j++) {
@@ -139,26 +141,29 @@ export function OscillatorBank() {
       for (let i = 0; i < NODES.length; i++) {
         const cx = NODES[i].x * w;
         const cy = NODES[i].y * h;
-        const r = ORBIT * m * amp[i];
-        // orbit ring
+        const osc = 0.5 + 0.5 * Math.cos(phase[i]); // the oscillation, 0..1
+        const pulse = amp[i] * osc; // 0..amp — depth scaled by how active the frame is
+
+        // Phase: a faint reference ring with a tick travelling round it.
         ctx.strokeStyle = color;
-        ctx.globalAlpha = 0.18;
+        ctx.globalAlpha = 0.1;
         ctx.lineWidth = 0.6;
         ctx.beginPath();
-        ctx.arc(cx, cy, Math.max(0.5, r), 0, Math.PI * 2);
+        ctx.arc(cx, cy, RING * m, 0, Math.PI * 2);
         ctx.stroke();
-        // centre
+        const tx = cx + Math.cos(phase[i]) * RING * m;
+        const ty = cy + Math.sin(phase[i]) * RING * m;
         ctx.fillStyle = color;
-        ctx.globalAlpha = 0.3;
+        ctx.globalAlpha = 0.28;
         ctx.beginPath();
-        ctx.arc(cx, cy, 0.8, 0, Math.PI * 2);
+        ctx.arc(tx, ty, 1.1, 0, Math.PI * 2);
         ctx.fill();
-        // orbiting dot — brighter and larger the more active the frame
-        const dx = cx + Math.cos(phase[i]) * r;
-        const dy = cy + Math.sin(phase[i]) * r;
-        ctx.globalAlpha = 0.35 + 0.6 * amp[i];
+
+        // Amplitude: the core pulses — swells and brightens once per cycle, by an
+        // amount set by the frame's amplitude. Dormant frames barely stir.
+        ctx.globalAlpha = 0.16 + 0.72 * pulse;
         ctx.beginPath();
-        ctx.arc(dx, dy, 1.4 + 2.2 * amp[i], 0, Math.PI * 2);
+        ctx.arc(cx, cy, (0.006 + CORE * pulse) * m, 0, Math.PI * 2);
         ctx.fill();
       }
       ctx.globalAlpha = 1;
