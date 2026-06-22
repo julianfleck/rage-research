@@ -4,12 +4,14 @@ description: What happens to a frame-semantic knowledge graph once a population 
 date: 2026-06-11
 series: Articles
 order: 2
-show: false
-preview: true
+show: true
+preview: false
 status: draft
 version: 1
 author: Julian Fleck
-tags: [dynamics]
+tags:
+  - dynamics
+internal: true
 ---
 
 Companion to the paper *Frame-Semantic Graph Construction for Knowledge Substrates*. This piece ties the substrate-dynamics notes into one picture: a [[substrate]] built of [[frame|frames]] that a population of agents continuously reads from and writes back into, what sustained use by that whole population does to it, what can be read off it before behaviour fails, and how to intervene on the medium rather than on the agents. Each mechanism has its own note; this is the synthesis that links them. Where the implementation currently stands is its own note too — see [[codebase|state of the codebase]].

@@ -14,7 +14,8 @@ const N = 13; // oscillators
 const CLUSTER = 6; // first CLUSTER nodes are mutually coupled and synchronize
 const K = 0.06; // phase-coupling strength within the cluster
 const RING = 0.05; // reference phase-ring radius (× min(w,h))
-const CORE = 0.038; // core radius at full pulse (× min(w,h))
+const CORE = 0.02; // extra core radius at full pulse (× min(w,h)) — kept small so
+// the pulse reads mostly as brightness, a gentle breath rather than a big swell
 const SPEED = 0.05; // base phase advance per frame
 const AMP_RATE = 0.04; // how fast amplitude tracks its target
 
@@ -163,7 +164,7 @@ export function OscillatorBank() {
         // amount set by the frame's amplitude. Dormant frames barely stir.
         ctx.globalAlpha = 0.16 + 0.72 * pulse;
         ctx.beginPath();
-        ctx.arc(cx, cy, (0.006 + CORE * pulse) * m, 0, Math.PI * 2);
+        ctx.arc(cx, cy, (0.009 + CORE * pulse) * m, 0, Math.PI * 2);
         ctx.fill();
       }
       ctx.globalAlpha = 1;

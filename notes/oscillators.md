@@ -34,8 +34,8 @@ The **Hopf (Stuart-Landau)** oscillator carries both at once: an amplitude that 
 - **Self-forming structure.** Phase plus [[coupling]] lets clusters assemble themselves: frames used together are pulled toward the same rhythm. Nothing clusters the graph by hand; pulsing-together does it.
 - **A grip for the dynamics.** Synchronization is a measured quantity in the oscillator literature, which is where the candidate readings for convergence, lock-in, and drift come from.
 
-## Honesty about what's built
+# Internal: what isn't settled
 
-We model frames as oscillators, and coupling already pulls them toward synchrony. What isn't settled is whether the oscillator is the right instrument for the questions — whether a single phase angle, seeded from a frame's embedding, holds enough of its meaning to be worth the machinery, and whether the oscillator is even needed to draw a [[membranes|membrane]] (it may not be). The detail of what's actually wired is in [[oscillator-implementation]]; the question of whether a simpler instrument does the same job is [[membrane-metrics]].
+We model frames as oscillators, and coupling already pulls them toward synchrony. What isn't settled is whether the oscillator is the right instrument for the questions — whether a single phase angle, seeded from a frame's embedding, holds enough of its meaning to be worth the machinery, and whether the oscillator is even needed to draw a [[membranes|membrane]] (it may not be). What's actually wired is in [[oscillator-implementation]]; whether a simpler instrument does the same job is [[membrane-metrics]].
 
 <Related tags="phase" />
