@@ -25,6 +25,10 @@ where they conflict. The aim: simple, honest, no fluff.
 - Never write **"load-bearing"** (as in "load-bearing assumption / primitive").
   It's a Claude tell-tale. There is always a plainer word — "central", "the
   sentence the argument rests on", "what this depends on".
+- Don't *call* the writing honest. "Honesty about…", "to be honest", "honestly",
+  "this one stays honest" — self-labelling as honest is a Claude tell, and a
+  section that needs announcing as honest usually wants to be internal anyway.
+  Show it (mark claim types); don't badge it.
 - Don't pad endings with a reflective flourish. End when the point ends.
 
 ## Be honest
