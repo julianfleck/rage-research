@@ -27,6 +27,6 @@ So we model each frame as an **oscillator** — something that pulses, carrying 
 
 # Internal: what isn't settled
 
-We model frames as oscillators, and coupling already pulls them toward synchrony. What isn't settled is whether the oscillator is the right instrument for the questions — whether a single phase angle, seeded from a frame's embedding, holds enough of its meaning to be worth the machinery, and whether the oscillator is even needed to draw a [[membranes|membrane]] (it may not be). What's actually wired is in [[oscillator-implementation]]; whether a simpler instrument does the same job is [[membrane-metrics]].
+We model frames as oscillators, and coupling already pulls them toward synchrony. What isn't settled is whether the oscillator is the right instrument for the questions — whether a single phase angle, seeded from a frame's embedding, holds enough of its meaning (it probably doesn't), and whether the oscillator is even needed to draw a [[membranes|membrane]] (it may not be). What's actually wired is in [[oscillator-implementation]]; whether a simpler instrument does the same job is [[membrane-metrics]].
 
 <Related tags="phase" />
