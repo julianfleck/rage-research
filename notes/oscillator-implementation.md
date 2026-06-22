@@ -15,7 +15,18 @@ tags:
 ---
 
 > [!note] Internal
-> The implementation behind [[oscillators]]. That note says *why* we model a frame as a Hopf oscillator; this one is what's actually in `julianfleck/rage-substrate`, and — the part worth spelling out — where it connects to [[coupling]] and where it only looks like it does.
+> The implementation behind [[oscillators]]. That note says *why* we model a frame as an oscillator at all; this one covers why the current build uses a Hopf oscillator specifically, what's actually in `julianfleck/rage-substrate`, and — the part worth spelling out — where it connects to [[coupling]] and where it only looks like it does.
+
+## Why Hopf
+
+The status quo. The current build models each frame as a **Hopf (Stuart-Landau)** oscillator rather than something cheaper, because the two simpler options each drop something the substrate needs:
+
+- **Phase-only (Kuramoto).** Every oscillator always oscillates — no way to say a frame is *dormant*. It can be in or out of phase, never off. We need frames to fall silent when neglected, so phase alone isn't enough.
+- **Amplitude-only (a decaying score).** Gives forgetting cleanly, but throws away the timing that was the reason to reach for oscillators at all.
+
+Hopf carries both at once: an amplitude that can fall to zero (dormant) and a phase. And it adds the piece neither of the others has — the bifurcation parameter `a`, a single knob with a clean tipping point between decaying to silence (`a < 0`) and sustaining its own rhythm (`a > 0`). One knob gives the dormant/awake switch and a named, well-studied transition to sit the dynamics on. The lineage is deliberate: whole-brain models use exactly this oscillator, the same neuroscience analogue the project leans on elsewhere (activity-flow work on how activation travels over a fixed connectivity graph).
+
+Whether the choice is worth its weight is the open question [[membrane-metrics]] takes up; this note describes what it is, not whether to keep it.
 
 ## What we actually implemented
 
