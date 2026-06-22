@@ -2,7 +2,7 @@
 title: Oscillator implementation
 internal: true
 show: true
-definition: How the oscillator layer is actually built in julianfleck/rage-substrate — each frame a Hopf (Stuart-Landau) oscillator z = r·e^(iθ), seeded from its embedding, driven by attention, coupled through the coupling table, and read by the retrieval re-ranker. The companion to the public oscillators note; this one is honest about what is and isn't wired.
+definition: How the oscillator layer is actually built in julianfleck/rage-substrate — each frame a Hopf (Stuart-Landau) oscillator z = r·e^(iθ), seeded from its embedding, driven by attention, coupled through the coupling table, and read by the retrieval re-ranker. The companion to the public oscillators note; this one spells out what is and isn't wired.
 description: The implementation detail behind the oscillators concept note — embedding seeding, the Stuart-Landau step, what reads the oscillator, and where it does and doesn't meet the coupling layer in julianfleck/rage-substrate.
 date: 2026-06-22
 series: Lab notes
@@ -15,7 +15,7 @@ tags:
 ---
 
 > [!note] Internal
-> The implementation behind [[oscillators]]. That note says *why* we model a frame as a Hopf oscillator; this one is what's actually in `julianfleck/rage-substrate`, and — the part worth being honest about — where it connects to [[coupling]] and where it only looks like it does.
+> The implementation behind [[oscillators]]. That note says *why* we model a frame as a Hopf oscillator; this one is what's actually in `julianfleck/rage-substrate`, and — the part worth spelling out — where it connects to [[coupling]] and where it only looks like it does.
 
 ## What we actually implemented
 
