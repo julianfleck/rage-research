@@ -52,6 +52,20 @@ Each is small, fully observable, and scored against the planted membranes.
 2. **Recovery against overlap.** Sweep the overlap dial. For each boundary-drawing design — A (coupling-density community, allowing overlap) and B (embedding-cluster tightness) from [[membranes/metrics]] — score the drawn membranes against the planted ones with an overlap-aware measure, since membranes may overlap. Which design degrades more gracefully as the regions merge? The curve is the result.
 3. **Does the coupling source matter.** Hold the fixture fixed and generate couplings with different retrieval strategies (dense, hybrid, graph-walk). Does the recovered membrane structure depend on how the substrate was queried, and where do designs A and B diverge? This is where drawing-from-coupling meets the dynamics.
 
+## Lab readiness — and what to build next
+
+What the testbed already has for this, and what's missing. This is the work list as much as a status check.
+
+| Run / design | Lab component | Status |
+|---|---|---|
+| Run 1 — floor + per-region coherence | `fixtures/synthetic/two_clusters`; `metrics/coherence` (order parameter, √π/(2√N) floor, per-region, tightness) | **built — runnable now** |
+| Run 2 — design A (coupling community) | `membranes/community` (draw from coupling density); `metrics/recovery` (overlap-aware F1) | **built** |
+| Run 2 — design B (embedding cluster) | an embedding-cluster boundary-*drawer* | **not built** — only the coupling-density drawer exists; the tightness *read* is there, nothing draws a boundary from it |
+| Run 2/3 — phase arm | the `dynamics` / evolve pass (port v2's Hopf step) | *scaffolded* — the phase comparison can't run until the oscillator is in the lab |
+| Run 3 — coupling source | `retrieval` strategies (dense / RRF / graph-walk) | **built** |
+
+So **runs 1 and 3, and design A throughout, execute today.** Two things complete the comparison, in order of effort: a small **embedding-cluster drawer** for design B (a clustering over frame embeddings, no ODE — see [[membranes/metrics]]), and then the **evolve pass** that ports the oscillator so the phase arm can run at all (the bigger build — see [[codebase]] and [[oscillators/implementation]]). The phase arm also rests on the unsettled [[oscillators/questions|phase-representation question]] — whether one angle is the right quantity to draw or read with — so it's worth running A-vs-B first and treating phase as the follow-on.
+
 ## What corpus
 
 This runs over no text corpus at first — the planted fixture is geometry with a known answer, on purpose, because you can only tell whether a metric recovers structure if you planted it. It graduates outward in three tiers, trading the answer key for realism: **planted** (synthetic vectors, exact ground truth — where the metric is developed), **designed topics** (authored, deliberately distinct paragraphs embedded with a real model — topic labels as an approximate answer), and **full pipeline** (a real document set through extraction — no planted answer, so the evaluation shifts to human-judged or held-out structure). "What corpus" only becomes a live question at the later tiers; the testbed organises the experiment by tier so the trade is explicit.
