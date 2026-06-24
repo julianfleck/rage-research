@@ -25,7 +25,7 @@ The second version came out of getting interested in what happens to such a grap
 - retrieves by a mix of keywords and meaning, and can walk the graph along its own structure;
 - streams its changes live, so the substrate can be watched as it moves rather than polled after the fact.
 
-A caveat on how much of that is joined up. The activation-and-phase layer and the [[coupling]] layer are wired in one direction only: coupling drives the oscillators (frames used together are pulled toward the same rhythm), but the oscillators don't yet feed back — a frame's phase and activation tilt what retrieval surfaces, not what the substrate stores. So the rhythm reads the substrate; it doesn't yet shape it. The detail is in the [[oscillator-implementation]] note.
+A caveat on how much of that is joined up. The activation-and-phase layer and the [[coupling]] layer are wired in one direction only: coupling drives the oscillators (frames used together are pulled toward the same rhythm), but the oscillators don't yet feed back — a frame's phase and activation tilt what retrieval surfaces, not what the substrate stores. So the rhythm reads the substrate; it doesn't yet shape it. The detail is in the [[oscillators/implementation]] note.
 
 ## What isn't built yet
 
