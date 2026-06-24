@@ -32,6 +32,7 @@ The experiment can't be run until three modelling choices are made, and each is 
 
 - **Nesting and overlap vs. the metric.** How do nesting and overlap interact with any [[gini-coefficient|metric]] read over a membrane? The boundary drawn is the population measured — change the boundary and you change the number, so a metric and a boundary-drawer can't be validated fully independently.
 - **What sets a channel's threshold** — how much [[resonance]] it takes to open one, and how far past it the channel opens — the size and permeability a membrane should have for a task, the same unsettled referent as [[task-appropriate-behavior]].
+- **Measuring permeability.** How to measure a membrane's permeability, and the variety it admits — the behaviour of the channel, not just where the boundary falls.
 - **Embedding-model sensitivity.** Every result is conditional on the embedding model that seeds initial positions — a sensitivity study of its own.
 
 <Related tags="membrane" />
