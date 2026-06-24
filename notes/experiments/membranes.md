@@ -30,6 +30,10 @@ A planted fixture is a set of frames whose embeddings are sampled around known c
 
 That gives the two ingredients a membrane method needs — embedding geometry and a coupling graph — with an answer key attached.
 
+## What corpus
+
+This runs over no text corpus at first — the planted fixture is geometry with a known answer, on purpose, because you can only tell whether a metric recovers structure if you planted it. It graduates outward in three tiers, trading the answer key for realism: **planted** (synthetic vectors, exact ground truth — where the metric is developed), **designed topics** (authored, deliberately distinct paragraphs embedded with a real model — topic labels as an approximate answer), and **full pipeline** (a real document set through extraction — no planted answer, so the evaluation shifts to human-judged or held-out structure). "What corpus" only becomes a live question at the later tiers; the testbed organises the experiment by tier so the trade is explicit.
+
 ## Three runs
 
 Each is small, fully observable, and scored against the planted membranes.
