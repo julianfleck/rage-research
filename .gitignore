@@ -14,3 +14,7 @@ research/
 
 # Self-labeled internal working docs (kept out until triaged).
 /tracking.md
+
+# Trash — superseded files parked by the rm-hook; never tracked, excluded from build.
+TRASH/
+TRASH-FILES.md
