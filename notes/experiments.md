@@ -16,12 +16,13 @@ Small, fully observable runs that validate substrate signals — each gets its o
 
 ## Specified
 
-- [[experiments/membranes|Membrane detection]] — draw membranes from a planted substrate and score recovery against ground truth, comparing the candidate designs from [[membrane-metrics]]. The measurement instrument several of the candidates below rely on. *(owner: Megan)*
+- [[membranes/experiments|Membrane detection]] — draw membranes from a planted substrate and score recovery against ground truth, comparing the candidate designs from [[membranes/metrics]]. The measurement instrument several of the candidates below rely on. *(owner: Megan)*
 
 ## Candidates
 
 A first pass, still to be aligned with the team and written up as their own setups:
 
+- **Phase representation** — does a low-dimensional phase *signature* preserve enough embedding geometry to make synchronization mean something, where a single angle doesn't? Quantify what survives the collapse at d = 1, 2, 4, … against full-embedding similarity. A clean dimensionality-reduction study, and arguably the one to run *before* phase is trusted anywhere downstream (see [[oscillators/questions]]). *(candidate owner: Megan)*
 - **Attractor onset** — repeated similarity-driven write-back over a fixed corpus; does [[frame-type-diversity|diversity]] decline and [[coupling]] concentration lead the visible output repetition?
 - **Decay against collapse** — drive co-retrieval to a tight [[membranes|membrane]], stop, and let decay run; do long-tail frames re-enter the default context without erasing the learned coherence?
 - **Contamination propagation** — seed one wrong frame; is the contaminated region identifiable from substrate state before outputs visibly degrade?
