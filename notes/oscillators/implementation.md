@@ -47,7 +47,7 @@ The cubic term is **negative** — this is the *supercritical* normal form, so a
 - **Initial amplitude** — fixed at **0.1** (not from content).
 - **Initial bifurcation `a`** — fixed at **−0.1**, dormant (not from content).
 
-So the embedding sets the two *innate* properties — where a frame sits on the phase circle and how fast it wants to cycle — and the two *state* properties start at dormant defaults, driven thereafter by attention. The intent is sound: content-seeded rather than random, so similar frames start near each other in phase and phase-lock easily, and dormant so nothing is active until used. The reduction is the questionable part — see [[oscillators/questions]], and the fuller treatment in [[codebase-improvements]].
+So the embedding sets the two *innate* properties — where a frame sits on the phase circle and how fast it wants to cycle — and the two *state* properties start at dormant defaults, driven thereafter by attention. The intent is sound: content-seeded rather than random, so similar frames start near each other in phase and phase-lock easily, and dormant so nothing is active until used. The reduction is the questionable part — see [[oscillators/questions]], and the fuller treatment in [[codebase]].
 
 ## The step
 

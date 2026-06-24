@@ -80,8 +80,7 @@ Two ways to keep something internal:
 
 - **A whole note:** `internal: true` in the frontmatter. It still renders (with
   `show: true`) but is marked internal — the home for the implementation notes
-  ([[oscillators/implementation]], [[codebase]], [[codebase-improvements]],
-  [[membranes/implementation]]).
+  ([[oscillators/implementation]], [[codebase]], [[membranes/implementation]]).
 - **One section of a public note:** a heading `# Internal: <headline>`. The
   renderer hides everything under it. Use this for a single internal aside in a
   mostly-public note rather than leaving it in the open.

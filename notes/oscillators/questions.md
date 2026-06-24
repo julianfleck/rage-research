@@ -22,7 +22,7 @@ The phase seeding is **enormously lossy.** `initialize_oscillator()` collapses a
 
 This is the worry worth taking seriously before anything is built on phase. **If the project is about high-dimensional spread collapsing, compressing each frame to one angle before the dynamics even start may throw away exactly what we want to watch.** The research direction that motivated the oscillator wanted a phase *signature* — several dimensions — not a scalar.
 
-So the prior question is sharp and measurable: does a low-dimensional phase signature (a handful of angles, or a small torus) preserve enough of the embedding geometry to make synchronization mean something, where a single angle doesn't? Quantify what survives the collapse at d = 1, 2, 4, … — how well phase distance at each d tracks full-embedding similarity — and the curve says whether the oscillator is even reading the right quantity. This gates whether phase belongs in the membrane path at all. Collected with the other scalar-collapse problems in [[codebase-improvements]].
+So the prior question is sharp and measurable: does a low-dimensional phase signature (a handful of angles, or a small torus) preserve enough of the embedding geometry to make synchronization mean something, where a single angle doesn't? Quantify what survives the collapse at d = 1, 2, 4, … — how well phase distance at each d tracks full-embedding similarity — and the curve says whether the oscillator is even reading the right quantity. This gates whether phase belongs in the membrane path at all. Collected with the other scalar-collapse problems in [[codebase]].
 
 ## Global coherence is close to meaningless
 
