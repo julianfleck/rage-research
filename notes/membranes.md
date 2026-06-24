@@ -39,7 +39,7 @@ A membrane encloses both the information and the actors working with it, not one
 
 Because we treat both actors and content as commensurable, we can apply the same mechanics at every level of nesting — activation, coupling, resonance, decay — and utilize the same metrics to read over a membrane as well as over atomic leaf frames. 
 
-Computing these [[metrics]] over subgraphs of frames is what picks out a membrane: two agents on the same codebase fall inside a frame naturally, and two people with overlapping research interests are grouped just as organically – close enough on the substrate to be put in proximity (or, in the human case, in touch – “you might want to talk”).
+Computing these [[references/metrics|metrics]] over subgraphs of frames is what picks out a membrane: two agents on the same codebase fall inside a frame naturally, and two people with overlapping research interests are grouped just as organically – close enough on the substrate to be put in proximity (or, in the human case, in touch – “you might want to talk”).
 
 ## Nesting and overlap
 

@@ -16,7 +16,7 @@ tags:
 ---
 
 > [!note] Internal
-> The first experiment setup under [[experiments|Experiments]], and one of the [[membranes]] working notes. It turns the recommendation in [[membranes/metrics]] — build a membrane baseline and measure the oscillator against it — into something runnable, on synthetic substrates where the structure is *planted*, so a method can be scored on whether it recovers what's there. Owner: Megan. Run in the `rage-substrate-lab` testbed.
+> The first experiment setup under [[experiments/experiments|Experiments]], and one of the [[membranes]] working notes. It turns the recommendation in [[membranes/metrics]] — build a membrane baseline and measure the oscillator against it — into something runnable, on synthetic substrates where the structure is *planted*, so a method can be scored on whether it recovers what's there. Owner: Megan. Run in the `rage-substrate-lab` testbed.
 
 ## What we're testing
 

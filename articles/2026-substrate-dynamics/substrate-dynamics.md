@@ -59,4 +59,4 @@ Diversity is one read; concentration is its dual. We measure the spread as an ef
 
 ## Validation
 
-How any of this gets validated is a separate, still-forming list — a handful of small, fully observable [[experiments|minimal experiments]], to be aligned on with the team. A signal earns its place only if it precedes the visible failure with a usable lead and beats trace-level baselines.
+How any of this gets validated is a separate, still-forming list — a handful of small, fully observable [[experiments/experiments|minimal experiments]], to be aligned on with the team. A signal earns its place only if it precedes the visible failure with a usable lead and beats trace-level baselines.
