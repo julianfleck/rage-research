@@ -60,11 +60,12 @@ What the testbed already has for this, and what's missing. This is the work list
 |---|---|---|
 | Run 1 — floor + per-region coherence | `fixtures/synthetic/two_clusters`; `metrics/coherence` (order parameter, √π/(2√N) floor, per-region, tightness) | **built — runnable now** |
 | Run 2 — design A (coupling community) | `membranes/community` (draw from coupling density); `metrics/recovery` (overlap-aware F1) | **built** |
-| Run 2 — design B (embedding cluster) | an embedding-cluster boundary-*drawer* | **not built** — only the coupling-density drawer exists; the tightness *read* is there, nothing draws a boundary from it |
+| Run 2 — design B (embedding cluster) | `membranes/draw_by_kmeans` (known *k*, the oracle) and `draw_by_embedding` (unknown *k*) | **built** — k-means recovers the planted membranes cleanly (overlap-F1 ≈ 0.97 at spread 0.35) |
 | Run 2/3 — phase arm | the `dynamics` / evolve pass (port v2's Hopf step) | *scaffolded* — the phase comparison can't run until the oscillator is in the lab |
 | Run 3 — coupling source | `retrieval` strategies (dense / RRF / graph-walk) | **built** |
+| Tier-2 real embeddings | `embedding/EmbedPass` (embed frames via a connector) | **built** — so designed-topics can use real vectors, not just planted geometry |
 
-So **runs 1 and 3, and design A throughout, execute today.** Two things complete the comparison, in order of effort: a small **embedding-cluster drawer** for design B (a clustering over frame embeddings, no ODE — see [[membranes/metrics]]), and then the **evolve pass** that ports the oscillator so the phase arm can run at all (the bigger build — see [[codebase]] and [[oscillators/implementation]]). The phase arm also rests on the unsettled [[oscillators/questions|phase-representation question]] — whether one angle is the right quantity to draw or read with — so it's worth running A-vs-B first and treating phase as the follow-on.
+So **runs 1, 2 (designs A and B), and 3 execute today** — and on the planted fixture design B already *beats* A (≈ 0.97 vs ≈ 0.70), because the couplings come from noisy simulated retrieval while the embeddings carry the planted geometry directly. The one remaining piece is the **evolve pass** that ports the oscillator, so the **phase arm** can run at all (the bigger build — see [[codebase]] and [[oscillators/implementation]]). That arm also rests on the unsettled [[oscillators/questions|phase-representation question]] — whether one angle is the right quantity to draw or read with — so A-vs-B is the experiment to run now, with phase as the follow-on.
 
 ## What corpus
 
