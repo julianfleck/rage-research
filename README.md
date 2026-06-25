@@ -11,8 +11,6 @@ illustrates them. It is consumed by two places:
 - the **attractor.space** renderer, which assembles and publishes this content as
   a website (it includes this repo as a git submodule at `content/rage`);
 
-
-
 ## Layout
 
 | Path | What |
