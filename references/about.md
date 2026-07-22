@@ -31,4 +31,4 @@ Eventually we want to understand that object well enough to keep it healthy: to 
 
 ## Get involved
 
-If you are working on shared memory, multi-agent coordination, retrieval, or the formal side of any of it — or you just want to argue with a note — we would like to hear from you. Reach out to [Julian](https://www.julianfleck.net) or anyone through the [Atlas Research Group](https://atlasresear.ch).
+If you are working on shared memory, multi-agent coordination, retrieval, or the formal side of any of it — or you just want to argue with a note — we would like to hear from you. Reach out to [Julian](https://www.julianfleck.net).
