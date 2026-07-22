@@ -23,12 +23,6 @@ The notes are deliberately partial. They track open questions as much as results
 | **[Kenneth Bruskiewicz](https://bruskiewi.cz)** | Research application developer building knowledge infrastructure for biomedicine and security: data visualization, knowledge engineering, and privacy-respecting data-sharing ecosystems that connect insight across scales — from genes and tissues to multi-lab collaborations. He brings this into practice through institutional work with the NIH, Lawrence Berkeley Lab, Simon Fraser University, and the Broad Institute, and current cybersecurity research on balancing access, privacy, and discovery through the information economics of *membranes*. |
 | **[Alok Srivastava](https://www.playfuldyads.org)** | Philosopher and sociologist working at the intersections of science, technology, and human connection — the dynamics of multidisciplinary labs, the philosophy of language and technology, and relational psychotherapy. He draws on these fields to design decentralized collaboration processes and build relational technologies. He trained as a biophysicist at MIT and worked in biomarkers and diagnostics, and from 2015 to 2019 in AI-driven personalized medicine — helping oncology tumor boards design patient-centered treatments from rich, longitudinal data commons contributed by patients themselves. |
 
-Daniel Friedman advises the project as senior scientific advisor.
-
-| Advisor | Background |
-|---|---|
-| **[Daniel Friedman](https://danielarifriedman.com)** | President of the [Active Inference Institute](https://www.activeinference.institute). His research spans active inference, federated belief sharing across coupled agentic systems, and AI-driven synthesis of knowledge into navigable structures. He advises on the active-inference / Free Energy Principle framing and the Markov-blanket view of membranes, and brings the active-inference research community into the work. |
-
 ## Where this is going
 
 AI is increasingly deployed as populations of agents rather than single assistants, and those agents share memory, context, and retrieval — each one writing back into a store the others read on the next turn. That shared, co-maintained store is what we call the *[[substrate]]*: each write reshapes what everyone else retrieves, so the medium itself begins to carry the coordination. As multi-agent systems become the default, keeping that substrate legible becomes its own problem.
