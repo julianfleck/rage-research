@@ -3,7 +3,7 @@ title: Longview — Digital Minds
 definition: "The Longview Philanthropy 'Digital Minds' submission — a 12-month Substrate Dynamics Co-Lab proposing measurement first: instruments for AI self-reports, agent interactions, and structural coherence over a shared knowledge substrate, with the self-report coherence pilot as its evidence. Submitted 24 July 2026, in review."
 description: "Archival copy of the narrative submitted to Longview Philanthropy's Digital Minds RFP under 'Exploring agent interactions' — the three measurement levels, the self-report pilot, membranes as intervention, cohort design, bios, and conflicts of interest, with the budget left out."
 date: 2026-07-24
-series: Applications
+series: Proposals
 status: in review
 version: 1
 author: Megan Shabram

@@ -3,7 +3,7 @@ title: Schmidt Sciences — Science of Trustworthy AI
 definition: "The Schmidt Sciences 2026 Science of Trustworthy AI submission — a Tier 2, 36-month proposal for a lab treating the multi-agent substrate as a first-class measurement target: pre-behavioral observability (Q1), a formalism for coordination phase (Q2), reversible membrane interventions (Q3), and how far the signal survives orchestration depth (Q4). Submitted 18 May 2026, declined."
 description: "Archival copy of the narrative submitted to the Schmidt Sciences 2026 Science of Trustworthy AI RFP: the four-question research program, team, milestones, and end-of-project outcomes, with the budget and compute request left out."
 date: 2026-05-18
-series: Applications
+series: Proposals
 status: declined
 version: 1
 author: Megan Shabram
@@ -35,8 +35,8 @@ internal: true
 | Outcome | Declined |
 
 Archived next to this note in the content repo: the six CVs submitted with the application
-(`applications/schmidt/resumes/`) and Figure 1
-(`applications/schmidt/figure-1-substrate-observability-and-intervention.pdf`). Neither is served by
+(`proposals/schmidt/resumes/`) and Figure 1
+(`proposals/schmidt/figure-1-substrate-observability-and-intervention.pdf`). Neither is served by
 the site — they live in the repo as the record.
 
 ## Background Information
@@ -283,7 +283,7 @@ If Schmidt Sciences does not fund this proposal, the impact is significant and s
 
 ### Relevant Figure/Diagram
 
-*Figure 1 — Substrate observability and intervention. Archived alongside this note as `applications/schmidt/figure-1-substrate-observability-and-intervention.pdf`.*
+*Figure 1 — Substrate observability and intervention. Archived alongside this note as `proposals/schmidt/figure-1-substrate-observability-and-intervention.pdf`.*
 
 ### References
 
