@@ -39,8 +39,6 @@ Archived next to this note in the content repo: the six CVs submitted with the a
 (`applications/schmidt/figure-1-substrate-observability-and-intervention.pdf`). Neither is served by
 the site — they live in the repo as the record.
 
-## Narrative as submitted
-
 ## Background Information
 
 ### Lead Applicant Name
