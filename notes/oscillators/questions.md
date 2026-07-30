@@ -5,7 +5,7 @@ show: true
 definition: "The open questions on the oscillator track, led by the one worth settling first — the complexity-reduction problem: collapsing a high-dimensional embedding to a single phase angle may throw away exactly the high-dimensional spread the project is trying to watch. Plus global-vs-per-membrane coherence and whether the ODE earns its weight."
 description: "The collected open questions for the oscillator layer — the lossy collapse of an embedding to one phase angle, whether a phase signature beats a scalar, global coherence sitting at its random floor, and whether the Hopf ODE is worth its weight."
 date: 2026-06-24
-series: Oscillators
+series: Lab notes
 status: draft
 version: 1
 author: Julian Fleck

@@ -5,7 +5,7 @@ show: true
 definition: How the oscillator layer is actually built in julianfleck/rage-substrate — each frame a Hopf (Stuart-Landau) oscillator z = r·e^(iθ), seeded from its embedding, driven by attention, coupled through the coupling table, and read by the retrieval re-ranker. The companion to the public oscillators note; this one spells out what is and isn't wired.
 description: The implementation detail behind the oscillators concept note — embedding seeding, the Stuart-Landau step, what reads the oscillator, and where it does and doesn't meet the coupling layer in julianfleck/rage-substrate.
 date: 2026-06-22
-series: Oscillators
+series: Lab notes
 status: draft
 version: 1
 author: Julian Fleck

@@ -5,7 +5,7 @@ show: true
 definition: "The first membrane experiment setup — draw membranes from a synthetic substrate where the structure is planted, and score how well each design recovers it: coupling-density community vs embedding-cluster tightness vs phase coherence, against known ground truth. Three small, fully observable runs, with a table of the quantities measured."
 description: "Experiment setup for membrane detection: draw membranes from planted synthetic substrates and score recovery against ground truth, comparing coupling-density, embedding-tightness, and phase-coherence designs, with a table of exactly what each run measures."
 date: 2026-06-24
-series: Membranes
+series: Lab notes
 status: draft
 version: 2
 author: Julian Fleck

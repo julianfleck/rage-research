@@ -5,7 +5,7 @@ show: true
 definition: "What it actually takes to establish a membrane over the substrate — a density measure, a boundary-drawing step, a release mechanism, and a read over the boundary — what of that is built today, and why the oscillator is mostly orthogonal to all four."
 description: "The implementation status behind membranes: the four things establishing a membrane requires, which are built and which aren't, and the argument that drawing a boundary needs the coupling layer, not the oscillator."
 date: 2026-06-24
-series: Membranes
+series: Lab notes
 status: draft
 version: 1
 author: Julian Fleck

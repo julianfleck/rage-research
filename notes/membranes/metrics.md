@@ -5,7 +5,7 @@ show: true
 definition: "The candidate methods for drawing and reading a membrane: design A (scalar activation + overlapping coupling-community), design B (embedding-geometry coherence), and the full Hopf oscillator as a synchronization instrument that earns its weight only when synchronization dynamics are the object of study."
 description: "Working note comparing the candidate membrane metrics — coupling-community detection, embedding-cluster coherence, and phase coherence — what each measures, how they pair, and where the oscillator does and doesn't help."
 date: 2026-06-24
-series: Membranes
+series: Lab notes
 status: draft
 version: 1
 author: Julian Fleck

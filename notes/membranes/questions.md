@@ -5,7 +5,7 @@ show: true
 definition: "The open questions on the membrane track — what's genuinely unsettled about drawing a boundary and reading over it: which community method, which coherence estimator, which overlap-aware recovery score, and the one that gates the rest — whether the oscillator earns its place in the membrane path at all."
 description: "The collected open questions for membranes — boundary-drawing method, coherence estimator, recovery scoring, how nesting and overlap interact with any metric, and whether phase coherence beats coupling density and embedding tightness."
 date: 2026-06-24
-series: Membranes
+series: Lab notes
 status: draft
 version: 1
 author: Julian Fleck
