@@ -14,11 +14,6 @@ show: true
 internal: true
 ---
 
-> [!note] Internal
-> The narrative as submitted to Schmidt Sciences, kept here as the record of what we claimed and how we framed it — the [[longview-digital-minds|Longview proposal]] translates directly from it. **Budget, budget justification, and the compute request are deliberately left out**, as is the portal export of the full application (it carries the budget tables); both stay in `writing/applications/schmidt/`. Lead applicant Megan Shabram, submitted 18 May 2026 through the Schmidt smapply portal. Declined.
-
-## The submission
-
 | Item | Detail |
 | :---- | :---- |
 | Grantor | Schmidt Sciences |
@@ -33,11 +28,11 @@ internal: true
 | Deadline | 17 May 2026, 23:59 AoE |
 | Submitted | 18 May 2026 (application TAI-RFP-Q1-26-0000002706) |
 | Outcome | Declined |
+| Attachments | Six team CVs and Figure 1, archived with this note |
+| Not reproduced here | Budget, budget justification, and the compute request |
+| Related | [[longview-digital-minds\|Longview — Digital Minds]], which translates from this proposal |
 
-Archived next to this note in the content repo: the six CVs submitted with the application
-(`proposals/schmidt/resumes/`) and Figure 1
-(`proposals/schmidt/figure-1-substrate-observability-and-intervention.pdf`). Neither is served by
-the site — they live in the repo as the record.
+# Multi-Agent Substrates: Observing System Dynamics over Self-Evolving Graphs to Enable Pre-Behavioral Interventions
 
 ## Background Information
 
@@ -78,10 +73,6 @@ For this project, she will serve as Lead Principal Investigator, providing scien
 | 5 | Darren Zal | Researcher; Systems Designer; Software Engineer | Atlas Research Group | Darren Zal is a researcher and systems designer working on coordination infrastructure, AI-assisted knowledge systems, and governance tools for plural, multi-stakeholder environments. His recent work examines shared coordination substrates: memory, commitments, evidence, provenance, permissions, signals, and boundary structures that shape human/AI coordination across contexts. For this project, he will contribute to substrate framing, failure-mode taxonomy, topology/sheaf-informed evaluation approaches, and practical testbed design for observable coordination health, evidence integrity, and repair pathways. |
 
 ## Project Overview
-
-### Project Title
-
-Multi-Agent Substrates: Observing System Dynamics over Self-Evolving Graphs to Enable Pre-Behavioral Interventions
 
 ### Project Tier
 
