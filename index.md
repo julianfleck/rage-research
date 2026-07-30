@@ -26,3 +26,5 @@ These notes document the project as it proceeds — open problems alongside resu
 <Related category="Articles" title="Articles" sort="updated" />
 
 <Related category="Lab notes" title="Lab notes" sort="updated" />
+
+<Related category="Proposals" title="Proposals" sort="updated" />
