@@ -274,7 +274,7 @@ If Schmidt Sciences does not fund this proposal, the impact is significant and s
 
 ### Relevant Figure/Diagram
 
-*Figure 1 — Substrate observability and intervention. Archived alongside this note as `proposals/schmidt/figure-1-substrate-observability-and-intervention.pdf`.*
+*Figure 1 — Substrate observability and intervention. Archived alongside this note.*
 
 ### References
 

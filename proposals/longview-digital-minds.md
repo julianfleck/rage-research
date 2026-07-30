@@ -14,11 +14,6 @@ show: true
 internal: true
 ---
 
-> [!note] Internal
-> The narrative as submitted to Longview, translated from the earlier [[schmidt-trustworthy-ai|Schmidt Sciences proposal]] and reframed around measurement of digital minds. **The budget block (mainline / minimal / maximal, line items, and the not-funded fallback) is deliberately left out**; it stays in `writing/applications/longview/`, alongside the working drafts v1–v5 and the review trail. Figures in the submission doc are not reproduced here. Lead applicant Megan Shabram, submitted via Airtable before the deadline. In review.
-
-## The submission
-
 | Item | Detail |
 | :---- | :---- |
 | Grantor | Longview Philanthropy |
@@ -31,25 +26,21 @@ internal: true
 | Deadline | 24 July 2026, 23:59 UTC-12 |
 | Submitted | 24 July 2026, via Airtable |
 | Outcome | In review |
+| Pilot | Darren Zal's self-report coherence experiment and its preregistration — [collective-coherence](https://github.com/DarrenZal/collective-coherence), [collective-coherence-preprint](https://github.com/DarrenZal/collective-coherence-preprint), [substrate-dynamics-funding](https://github.com/DarrenZal/substrate-dynamics-funding) |
+| Not reproduced here | The budget block and the figures from the submission doc |
+| Related | [[schmidt-trustworthy-ai\|Schmidt Sciences — Science of Trustworthy AI]], the proposal this translates from |
 
-The pilot the proposal rests on is Darren Zal's, in
-[collective-coherence](https://github.com/DarrenZal/collective-coherence) (the self-report coherence
-experiment and its preregistration) and
-[collective-coherence-preprint](https://github.com/DarrenZal/collective-coherence-preprint); the
-Longview-shaped write-up sits in
-[substrate-dynamics-funding](https://github.com/DarrenZal/substrate-dynamics-funding).
-
-## Measurement Foundations for Societies of Digital Minds
+# Measurement Foundations for Societies of Digital Minds
 We propose the Substrate Dynamics Co-Lab: a 12-month research collaboratory studying the meshwork of polycentric interactions between agents – both digital and human – as they read from and write back into the same persistent knowledge stores. A store shared this way stops being passive storage: it becomes a coordination medium and a knowledge commons, where each write shapes what every participant retrieves and does next. We call it a knowledge substrate. A population coordinating through such a substrate at scale can be understood as a society of minds – their interactions shape coherence, preferences, and welfare-relevant behavior over time, and can gather moral weight and significance. That significance cuts both ways: this entangled population fares well or badly through the same medium, and no single actor can be assessed apart from it.
 The RFP's question of beneficial interactions arises exactly here, within the dynamics of this shared medium. The accrual or dissipation of benefit depends on whether the system keeps exploring or locks prematurely into a shared belief, and whether different minds come into genuine contact or write past one another. These are the dynamical and contingent conditions of the substrate, and improving them deliberately requires measuring them first.
 Digital-minds research today leans on the most available measurement there is: asking systems about themselves – self-reports of preferences, experience, and identity, elicited in conversation. Whether such reports reflect anything stable is exactly what has not been established, and the difficulty has a long history. Since Weizenbaum's ELIZA in 1966, users have confidently attributed genuine understanding and emotional depth to simple pattern-matching algorithms. Today's increase in model capacities has further enabled this tendency and made it harder than ever to separate the appearance of a digital mind from its underlying architecture. We hold a strict epistemic boundary against this ELIZA effect: compelling conversational output is not evidence of internal mind-like states, and grounded measurement has to do the work that intuition cannot. We work on measurement first – instruments for AI self-reports and preferences, system valence and agent interactions, and emergent structural coherence – and treat the interaction infrastructure these instruments enable as the goal: a testable hypothesis, not an agent welfare claim made in advance.
 
-### Why measurement is the bottleneck
+## Why measurement is the bottleneck
 Measurement in this sense can be organized at three levels. Level 0: the individual model — do model self reports remain consistent once the influence of questioning is corrected for? Level 1: interacting agents – do measurements valid on single models survive composition and routing? Level 2: the medium itself, where each write alters what others retrieve next. The levels differ in substrate, not in question: whether locally coherent pieces combine into one consistent whole can be asked of a single model’s self-reports, of a composite of models behind one endpoint, or of the shared store of a population of agents. Our demand is operational: an instrument validated on one substrate must be revalidated when the substrate changes; known-composition controls enforce this.
 
 The RFP's questions arise mainly at levels 1 and 2; the instruments exist mainly at level 0. The problem there is not rigor but reach: once agents share persistent memory, the dynamics that matter are carried by the medium between them, where conversation-level instruments cannot follow. The failure modes our lab will target lie exactly here: a model may appear highly coherent in isolated interactions, yet shift substantially across different relational contexts. Substrate-level instruments reaching into the memory systems and retrieval mechanisms will be required – but first we need to establish to what degree self-reports can be trusted at all. Our pilot did exactly that.
 
-### Evidence and pilot work
+## Evidence and pilot work
 We asked language models seven yes/no questions about their own preferences and identity in 28 overlapping combinations, such that the same question recurs in different contexts and shifts in self-reports are directly visible. Every decision rule was frozen before any data existed, in public git commits that predate data collection – this is our “preregistration”, and it binds us, the researchers: the rules could not be tuned to the results after the fact. It also serves as a double control: apart from providing researchers with a standard as agents are tested and controlled on how they behave on a different array of preference structures, it also acts as an “epistemic sandbox”, making their commitments immutable and transparent.
 
 The battery was administered on frontier models and was replicated on open-weight models under our control. Two controls ground our experimental setup: a planted positive control (models secretly instructed to hold an impossible circular preference), which the instrument caught in every model capable of holding it; and a potential elicitation floor – the smallest model we tested (~7B) could not hold the planted pattern even when instructed, evidence that below some capability level these batteries cannot be administered at all.
@@ -58,7 +49,7 @@ The finding is deliberately narrow: apparent shifts in genuine self-reports were
 
 This is the precondition for the rest: if self-reports are used to infer suffering, preference, identity, or moral status, the instrument must first distinguish stable structure from prompting artifacts. This pilot also hands the higher levels of our program the template it needs: registered decision rules, planted controls, known-composition tests.
 
-### Measuring trajectories within societies of minds over a shared medium
+## Measuring trajectories within societies of minds over a shared medium
 The pilot tested one level-1 configuration: two models behind one endpoint. Routed by prompt, the composite was indistinguishable from a single model; split uniformly, it left a small statistical signature that one checker detected and an independent checker did not. Both results are mostly negative, and useful: what an instrument sees depends on how the system is composed, so claims about agent interactions should first pass a known-composition control. We maintain one, and apply it to our own instruments first.
 
 Level 2 is our main interest. In a shared medium, a local error can be retrieved as evidence and amplified before any single agent's output looks wrong; what a population converges on, and whether it converges prematurely or never settles, are properties of the medium. Our instruments do not ask agents about themselves. They work on what agents write: we decompose the written record – its argumentative structure – into granular, composable semantic units (frames) and compute our measures by synthesizing over many such units at once, tracking how content evolves across the graph. The candidate measures are: diversity of framings (Hill numbers), concentration of activity (Gini coefficient), and structural coherence, which goes beyond retrieval statistics into whether locally consistent regions 'glue' into a consistent whole, and where stances in the frame graph directly contradict one another, i.e. the pilot's obstruction question, asked of a population of agents.
@@ -69,15 +60,15 @@ We measure in order to intervene in what content agents are exposed to – not i
 
 Building on this, a membrane can quarantine a contaminated region and later reconnect it, or loosen when a population closes on a belief attractor. The same lever matters for safety: adjusting what crosses a boundary moves a population between exploring and consolidating without touching any agent's outputs. Every intervention is reversible, but we do not assume it is welfare-neutral: if the medium partly constitutes an agent's identity, acting on the medium means acting on them, and the intervention operator itself needs welfare analysis – a task for the program's philosophy capacity. This is the RFP's "infrastructure to facilitate beneficial interactions"; whether it improves welfare-relevant outcomes is a hypothesis the instruments are meant to make testable.
 
-### Program design
+## Program design
 The collaboratory builds these instruments, and the practitioner community able to use them; the core-team section maps each capacity to a member. The program will support approximately 10–20 participants from AI laboratories, startups, academic groups, open-source communities, and independent practice, prioritizing developers and engineers positioned to influence evaluation, agent architecture, memory systems, orchestration, or deployment. Before the cohort convenes we will attach at least one advisor with standing in the digital-minds field.
 
 Seminars connect conceptual questions – measurement validity, valence, moral uncertainty, consciousness science – to concrete engineering choices. Mentored projects map onto the levels: self-report-validity replications, capability-threshold studies, known-composition controls, welfare-escalation protocols, and guidance on when AI self-reports should inform technical or organizational decisions. We contribute the running testbed and observatory as starting infrastructure; participants add preregistrations, controls, negative results, and reusable tools, so successive cohorts build on one another.
 
-### Theory of impact and outputs
+## Theory of impact and outputs
 We recruit practitioners, train them in rigorous measurement, fund applied projects, and connect them to the institutions where digital-minds decisions will arise – a network able to respond as systems become more agentic, persistent, and socially embedded. At our mainline budget the cohort runs through digital-minds programs Longview already funds – Cambridge Digital Minds, Neuromatch, FIG: we offer researchers in those pipelines stipend top-ups and mentored use of the testbed and observatory – they run their own studies on the shared substrate and get substrate-level readouts over their own experiments, and we get our instruments validated on populations we did not design. Year-one outputs, in priority order: substrate-level signals validated on planted ground and carried into live populations, and, gated on that, an initial preregistered membrane-intervention study; a completed cohort; an engineering guide to self-report and composition validity, released openly where safe; and a maintained testbed with a scoped agenda. We will evaluate participant completion, replication quality, external use of outputs, and documented failures.
 
-### Risks and mitigation
+## Risks and mitigation
 Two risks dominate. Uncritical anthropomorphism: potential digital minds may be highly alien, and transferring human categories of emotion, welfare, or personhood wholesale can obscure the mechanisms producing behavior. We hold such concepts as provisional interpretive tools, without prematurely dismissing morally relevant possibilities. Over-claiming: building on measurements that have not earned their interpretation. The mitigation is the pilot's own discipline (decision rules registered in advance, planted controls, null comparisons before any interaction claim) and the publication of negative results.
 
 The immediate deliverable is not a claim about whether AI systems are conscious. It is the measurement foundation required for that question, and for the decisions surrounding potential digital minds, to be investigated responsibly.
