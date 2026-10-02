@@ -22,6 +22,7 @@ import { SubstrateSlice } from "./substrate-slice";
 import { FrameSlots } from "./frame-slots";
 import { DivergenceConvergence } from "./divergence-convergence";
 import { BeliefAttractors } from "./belief-attractors";
+import { TrajectoryField } from "@/components/decks/trajectory-field";
 import { ChartContainer, type ChartConfig } from "@/components/ui/chart";
 
 export type FigureKind = "svg" | "canvas" | "chart";
@@ -133,4 +134,6 @@ export const figures: Record<string, FigureDef> = {
   // Belief attractor: one membrane grows and siphons off every frame —
   // premature convergence.
   "belief-attractors": { kind: "canvas", render: () => <BeliefAttractors /> },
+  // Movement: co-active regions leave observable paths through semantic space.
+  "trajectory-field": { kind: "canvas", render: () => <TrajectoryField /> },
 };

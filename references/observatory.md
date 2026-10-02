@@ -11,7 +11,7 @@ author: Substrate Dynamics Lab
 tags: [observability, visualization]
 ---
 
-The Observatory is our visual instrument for reading a shared knowledge environment in motion. It turns retrieval, use, and write-back events into trajectories and changing regions of joint activity. The important point is already practical: **interaction dynamics are observable**.
+The Observatory is our visual instrument for reading a shared knowledge environment in motion. It turns retrieval, use, and write-back events into [[movement|trajectories]] and changing regions of joint activity. The important point is already practical: **interaction dynamics are observable**.
 
 <Figure id="substrate-hero" margin caption="A wide view of activity gathering and releasing across a shared substrate." />
 
@@ -21,6 +21,6 @@ No single view is a diagnosis. A trajectory can show recurrence, encounter, sepa
 
 <Figure id="membrane-nesting" margin caption="Co-active regions can overlap and nest rather than dividing the field into fixed clusters." />
 
-Motion matters because the shape of a region does not explain how it formed. A still can show where activity gathered; a replay shows the sequence of encounters, separations, and returns that produced it. Short, silent clips are especially useful for comparing a changing landscape, one retrieval trajectory, or two contexts moving into and out of overlap.
+[[movement|Movement]] matters because the shape of a region does not explain how it formed. A still can show where activity gathered; a replay shows the sequence of encounters, separations, and returns that produced it. Short, silent clips are especially useful for comparing a changing landscape, one retrieval trajectory, or two contexts moving into and out of overlap.
 
 The Observatory lets us ask how a population arrived at a configuration, which paths remain available, and how an intervention changes what happens next. The next research question is which observed patterns reliably anticipate later failure, how early they do so, and which interventions generalize across tasks and substrates.

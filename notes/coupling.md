@@ -18,7 +18,7 @@ Parts of a substrate become *coupled* when they are repeatedly active together. 
 
 Coupling does not by itself imply agreement. Two ideas may be used together because they reinforce one another, because they conflict, or because a task repeatedly places them side by side. The important observation is that a population has made the relation consequential through use.
 
-These relations let us read more than isolated events. Their changing pattern shows where activity is stabilizing, where contexts continue to meet, and where previously connected work is releasing. At a chosen grain and time window, structurally overlapping frames that remain coupled form what we call resonance. Connected regions of such activity give us candidate [[membranes|membranes]].
+These relations let us read more than isolated events. Their changing pattern shows where activity is stabilizing, where contexts continue to meet, and where previously connected work is releasing. At a chosen grain and time window, structurally overlapping frames that remain coupled form what we call resonance. Connected regions of such activity form [[membranes]].
 
 We treat the exact update rule and the choice of measurements as implementation questions. The public concept is simpler: repeated interaction writes structure into a shared medium, and that structure can be observed.
 

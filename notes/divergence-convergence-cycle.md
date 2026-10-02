@@ -4,7 +4,7 @@ definition: The movement between opening a field of possibilities and closing it
 description: Collective work cycles between divergence and convergence; lock-in and drift are failures of that movement, not fixed states with universal thresholds.
 date: 2026-10-02
 series: Lab notes
-order: 6
+order: 7
 status: published
 version: 2
 author: Substrate Dynamics Lab
@@ -18,7 +18,7 @@ Healthy work over a substrate *cycles*. Divergence opens the space: new paths ar
 
 Neither movement is healthy on its own. What matters is whether it fits the task and its stakes. A routine task may need to converge quickly over a narrow context. An open research question may need to range widely before settling. The same concentration can be useful in one setting and premature in another.
 
-Across interaction trajectories, this movement appears as exploration, stabilization, lock-in, and drift:
+Across interaction [[movement|trajectories]], this movement appears as exploration, stabilization, lock-in, and drift:
 
 - **Exploration** expands the active field and brings alternatives into contact.
 - **Stabilization** retains relationships that are proving useful.

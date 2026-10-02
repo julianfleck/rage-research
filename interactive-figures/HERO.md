@@ -100,7 +100,7 @@ catalogId; `article-view.tsx` omits the id chip when absent.
 
 Per-setting captions are in the widget (bound to the controls); the page's
 frontmatter + intro prose are MDX-editable. Captions are grounded in
-`content/writing/.../references/metrics.md` and the substrate-dynamics article:
+`notes/measurement-research.md` and the substrate-dynamics article:
 activation decay → forgetting/decay rate, entropy, spread; coupling persistence
 → stabilization vs drift, coupling density/heat-death; coupling build rate →
 Hebbian rate, attractor onset, Gini concentration vs Hill tail; pull strength +

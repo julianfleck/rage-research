@@ -16,7 +16,7 @@ A *membrane* is a computed, temporary boundary around a co-active region of a su
 
 <Figure id="substrate-hero" margin caption="Temporary boundaries become visible where activity gathers and fade as that activity releases." />
 
-Membranes make a collective state easier to read. Instead of inspecting every actor or knowledge unit separately, we can observe the region they are currently working through together: how it moves, what it repeatedly encounters, and how it relates to its surroundings.
+Membranes make a collective state easier to read. Instead of inspecting every actor or knowledge unit separately, we can observe the region they are currently working through together: its [[movement]], what it repeatedly encounters, and how it relates to its surroundings.
 
 Co-attention is not agreement. A membrane says that material and actors are consequentially active together; it does not say that they share a belief, goal, or interpretation. Conflict can be as structurally important as alignment.
 

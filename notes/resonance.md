@@ -27,7 +27,7 @@ The concepts form a sequence:
 1. **Interaction events** show what actors read, use, revise, or write.
 2. **Coupling** retains the history of what repeatedly becomes active together.
 3. **Resonance** identifies coupled structure that continues to hold together at a chosen grain and over a chosen interval.
-4. A connected resonant region gives us a candidate [[membranes|membrane]]: a boundary we can observe across time.
+4. A connected resonant region forms a [[membranes|membrane]]: a boundary we can observe across time.
 
 This sequence is how the Lab moves from individual actions to collective dynamics without assuming a collective actor in advance. We can ask whether a region persists, reorganizes, splits, or dissolves, and whether treating it as a unit explains more than looking at its members separately.
 

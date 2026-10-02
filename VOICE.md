@@ -62,8 +62,8 @@ where they conflict. The aim: simple, honest, no fluff.
 These notes have two audiences; keep them apart.
 
 - **Public — vision and patterns.** What the substrate is and the concepts that
-  make it up (a [[membranes|membrane]], [[coupling]], an [[oscillators|oscillator]],
-  [[coordination-phase]]), the shape of each idea and why it matters. Provisional,
+  make it up (a [[membranes|membrane]], [[coupling]], [[movement]],
+  [[divergence-convergence-cycle|divergence/convergence]]), the shape of each idea and why it matters. Provisional,
   but written for a reader outside the project. Concept notes are public by default.
 - **Internal — implementation and deliberation.** What's actually built and in
   which repo, what's wired and what isn't, code paths and file/function names, the
@@ -80,7 +80,7 @@ Two ways to keep something internal:
 
 - **A whole note:** `internal: true` in the frontmatter. It still renders (with
   `show: true`) but is marked internal — the home for the implementation notes
-  ([[oscillators/implementation]], [[codebase]], [[membranes/implementation]]).
+  ([[dynamics-research]], [[measurement-research]], [[membrane-research]]).
 - **One section of a public note:** a heading `# Internal: <headline>`. The
   renderer hides everything under it. Use this for a single internal aside in a
   mostly-public note rather than leaving it in the open.

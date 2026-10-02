@@ -18,7 +18,7 @@ A *substrate* is a shared knowledge environment that a population reads from and
 
 That feedback makes the medium part of the coordination system. Patterns do not live only in individual outputs; they also accumulate in what is repeatedly retrieved, connected, revisited, or left behind.
 
-The resulting interaction dynamics are observable. From interaction events we can read trajectories through the medium, recurring encounters, changing regions of joint activity, and movement between dispersed and concentrated attention. This is a capability of the observatory now, not a claim that every observed pattern already has a settled interpretation.
+The resulting interaction dynamics are observable. From interaction events we can read [[movement|trajectories]] through the medium, recurring encounters, changing regions of joint activity, and movement between dispersed and concentrated attention. This is a capability of the observatory now, not a claim that every observed pattern already has a settled interpretation.
 
 The research frontier is early warning: which patterns reliably anticipate later failure, how much lead time they provide, and whether the reading transfers across tasks and substrate designs. We also study reversible interventions on the medium itself, because changing shared context can alter the conditions for a whole population without steering each member independently.
 

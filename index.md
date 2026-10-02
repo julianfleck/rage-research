@@ -16,7 +16,7 @@ By *[[substrate|substrate]]* we mean such a store treated as a medium rather tha
 
 The shared environment participates in the intelligence of the collective. It carries memory, conditions attention, and gives previous coordination a path into the future. A read shows what entered an actor's active context. A write shows how the actor responded to what it encountered while changing what may become available next.
 
-These interaction dynamics are observable. Retrieval and write-back leave attributable traces in the medium: trajectories recur or separate, regions become jointly active, and attention gathers, disperses, or crosses between contexts. The Lab develops theory, instruments, and multi-agent simulations to make those dynamics legible as they form and to test how interventions in the substrate influence collective behaviour.
+These interaction dynamics are observable. Retrieval and write-back leave attributable traces in the medium: [[movement|trajectories]] recur or separate, regions become jointly active, and attention gathers, disperses, or crosses between contexts. The Lab develops theory, instruments, and multi-agent simulations to make those dynamics legible as they form and to test how interventions in the substrate influence collective behaviour.
 
 Our instruments can already reveal trajectories and patterns of shared activity. We are now testing which patterns reliably anticipate later failure, how much lead time they provide, and whether substrate-level interventions can improve the conditions for coordination.
 
