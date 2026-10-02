@@ -1,33 +1,36 @@
 ---
 title: Resonance
-definition: A measure on the substrate that combines the coupling frames have built by use (Hebbian) with their semantic coherence. Resonant units are retrieved together — a retrieval is a threshold on resonance, and lowering the threshold reaches deeper into a subgraph, returning finer detail. Concretely it is a setting in the re-ranker.
-description: Resonance in substrate dynamics — Hebbian coupling combined with semantic coherence — read through a retrieval threshold that sets how deep, and so how granular, a retrieval goes.
-date: 2026-06-14
+definition: Structural overlap that remains coupled through use within a chosen time window, allowing a coherent region of activity to become visible.
+description: Resonance connects interaction events and coupling to the regions we read as membranes.
+date: 2026-10-02
 series: Lab notes
-status: draft
-version: 1
-author: Julian Fleck
-tags:
-  - resonance
-  - retrieval
+order: 4
+status: published
+version: 2
+author: Substrate Dynamics Lab
+tags: [resonance, dynamics]
 show: true
-internal: true
 ---
 
-> **Internal — superseded definition.** This note uses “resonance” for a retrieval score and depth control. The current working vocabulary uses it more narrowly for structural overlap that remains coupled within a chosen decay window.
+Interaction events tell us what became active at a moment. [[coupling]] records which parts of the substrate repeatedly became active together. *Resonance* names the next relation: structural overlap that remains coupled through use within a chosen time window.
 
-In substrate dynamics, *resonance* is a measure on the substrate itself, not on any reader: how strongly a set of frames belongs together. It has two ingredients — the [[coupling]] already built across them (Hebbian, accumulated by co-activation over time) and the semantic coherence of their content. Coupling carries the history of use; coherence carries the fit of meaning. Resonance is the two together, which is why frames that have been worked together *and* are about the same thing resonate most.
+Resonance is what lets local events become a region we can follow. A single encounter may be incidental. Repeated encounters among related frames and actors begin to hold a recognizable configuration in place, even while its contents continue to change.
 
-What resonance does is set what gets retrieved together. A retrieval gathers the units whose resonance clears a threshold — resonant units come back as a group. Held high, the threshold returns only the most resonant: the coarse summary at the top of a subgraph. Lowered, retrieval reaches deeper and more of the detail below clears the bar, down to fine grain. So resonance, read through a threshold, is the knob behind granularity — how coarse or fine the retrieved context is (see [[fractal-composition]]). Concretely, the threshold is a setting in the re-ranker.
+<Figure id="membrane-coordination" margin caption="Repeated interaction holds a recognizable region together without fixing its membership or boundary." />
 
-<Figure id="resonance" margin caption="Each frame drawn as its phase angle. Frames that resonate line up to the same angle; where regions of different angle meet, the field interferes." />
+Resonance does not mean agreement. Contradiction, negotiation, and mutual constraint can keep a region active just as reinforcement can. The signal is that the parts continue to matter to one another through the shared medium.
 
-Most retrieval systems treat semantic similarity as the cardinal signal for what belongs together. We read the second-order effects on top of it: co-retrieval and action — what gets used and worked on together — alongside structural composition. Belonging is set by use and structure as much as by meaning. This is the quantity a [[membranes|membrane]]'s channels gate: the membrane is the boundary, the threshold on resonance is what opens a channel, and how far the threshold drops is how deep retrieval reaches. Permeability, depth, and granularity are the same gate read at different grains.
+## From events to membranes
 
-## Open problems
+The concepts form a sequence:
 
-- The function that combines coupling and coherence into a single resonance value — product, weighted sum, something with a threshold of its own — is unsettled.
-- Whether resonance is best read per-edge, per-frame, or per-subgraph, and how those aggregate.
-- How resonance relates to the [[frame-type-diversity|variety]] a retrieval admits: depth and breadth may trade off, or move together.
+1. **Interaction events** show what actors read, use, revise, or write.
+2. **Coupling** retains the history of what repeatedly becomes active together.
+3. **Resonance** identifies coupled structure that continues to hold together at a chosen grain and over a chosen interval.
+4. A connected resonant region gives us a candidate [[membranes|membrane]]: a boundary we can observe across time.
 
-<Related tags="resonance, membrane" />
+This sequence is how the Lab moves from individual actions to collective dynamics without assuming a collective actor in advance. We can ask whether a region persists, reorganizes, splits, or dissolves, and whether treating it as a unit explains more than looking at its members separately.
+
+Resonance depends on scale and time. A configuration that holds for one task may disappear across a longer interval; a coherent region at project scale may contain several conflicting regions when viewed more closely. Declaring that grain is part of the observation.
+
+<Related tags="resonance, dynamics" />

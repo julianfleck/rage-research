@@ -4,7 +4,7 @@ definition: Substrate dynamics can be read at several grains, from one working c
 description: The same interaction field supports several useful grains of observation without making frames, membranes, and actors identical objects.
 date: 2026-10-02
 series: Lab notes
-order: 6
+order: 7
 status: published
 version: 2
 author: Substrate Dynamics Lab

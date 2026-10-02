@@ -1,6 +1,6 @@
 ---
 title: Terms
-description: A short vocabulary for the public account of substrate dynamics.
+description: A short vocabulary for substrate dynamics.
 date: 2026-10-02
 series: References
 order: 3

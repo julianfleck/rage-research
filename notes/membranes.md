@@ -4,7 +4,7 @@ definition: A computed, temporary boundary around a co-active region, detected f
 description: Membranes make changing regions of shared context legible and provide a reversible place to mediate what crosses between them.
 date: 2026-10-02
 series: Lab notes
-order: 4
+order: 5
 status: published
 version: 2
 author: Substrate Dynamics Lab

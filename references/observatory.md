@@ -21,6 +21,6 @@ No single view is a diagnosis. A trajectory can show recurrence, encounter, sepa
 
 <Figure id="membrane-nesting" margin caption="Co-active regions can overlap and nest rather than dividing the field into fixed clusters." />
 
-For the public site, we will use synthetic or explicitly public material and show only the level needed to explain the phenomenon. Short, muted clips can make motion clearer than still diagrams: a landscape changing over time, one anonymous retrieval trajectory, or two contexts moving into and out of overlap. Labels, prompts, actor identities, event logs, operational settings, and corpus-specific detail stay out of frame.
+Motion matters because the shape of a region does not explain how it formed. A still can show where activity gathered; a replay shows the sequence of encounters, separations, and returns that produced it. Short, silent clips are especially useful for comparing a changing landscape, one retrieval trajectory, or two contexts moving into and out of overlap.
 
-The next research question is not whether these dynamics can be seen. It is which observed patterns reliably anticipate later failure, how early they do so, and which interventions generalize across tasks and substrates.
+The Observatory lets us ask how a population arrived at a configuration, which paths remain available, and how an intervention changes what happens next. The next research question is which observed patterns reliably anticipate later failure, how early they do so, and which interventions generalize across tasks and substrates.
