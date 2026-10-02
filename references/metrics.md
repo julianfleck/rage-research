@@ -6,9 +6,12 @@ series: References
 status: draft
 version: 1
 show: true
+internal: true
 author: Julian Fleck
 tags: [instrumentation]
 ---
+> **Internal — deprecated working model.** The energy, threshold, and health-metric model below is retained as research history. It should not be read as the lab's current measurement model.
+
 ## 1. Energy Dynamics
 
 The RAGE substrate operates like a thermodynamic system. Energy flows, dissipates, and concentrates according to simple local rules that produce complex global behavior.

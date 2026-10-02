@@ -7,9 +7,12 @@ series: Lab notes
 status: draft
 version: 1
 show: true
+internal: true
 author: Julian Fleck
 tags: [structure]
 ---
+
+> **Internal — folded into [[scale|Scale]].** The recurring compositional pattern remains useful. The stronger claim that frame, membrane, and agent are the same object is no longer part of the public account.
 
 Frames compose the same way at every size. Structurally, a paragraph's frames make up a section, sections a document, documents a corpus; semantically, a claim with its evidence and sources makes up an argument, arguments an argumentation. A section is built like a document, an argument like a single supported claim — so a larger stretch of the graph tends to look like a smaller one.
 

@@ -1,30 +1,29 @@
 ---
-title: Divergence/convergence cycle
-definition: The healthy oscillation between opening the space (divergence) and closing it around something usable (convergence). The pathologies are cycle failures — premature convergence (lock-in) or failure to converge (drift).
-description: The divergence/convergence cycle — the healthy oscillation between opening and closing the space, its role-relative profile, and its failure modes (premature convergence, drift).
-date: 2026-06-15
+title: Divergence and convergence
+definition: The movement between opening a field of possibilities and settling around something usable; its value depends on the task and its stakes.
+description: Observable movement through exploration, stabilization, lock-in, and drift is meaningful only relative to the work being done.
+date: 2026-10-02
 series: Lab notes
-status: draft
-version: 1
-author: Julian Fleck
-tags:
-  - cycle
-  - dynamics
+order: 5
+status: published
+version: 2
+author: Substrate Dynamics Lab
+tags: [cycle, dynamics]
 show: true
 ---
 
-Healthy work over the substrate *cycles*. Divergence opens the space — exploration, widening [[frame-type-diversity|diversity]]; convergence closes it around something usable. The cycle repeats at every [[scale|scale]], and reading where a population sits in it is the point of watching [[coordination-phase|coordination phase]].
+Collective work moves between opening a field of possibilities and settling around something usable. We call those movements *divergence* and *convergence*.
 
-<Figure id="divergence-convergence" margin caption="The cycle: the working set fans open (divergence) and narrows back through the constraints (convergence), over and over." />
+<Figure id="divergence-convergence" margin caption="A field opens, encounters constraints, and gathers around a workable direction." />
 
-## The cycle
+Across observed interactions, we can distinguish exploration, stabilization, lock-in, and drift. These are descriptions of movement, not universal scores. Rapid convergence may be exactly right for a routine task and dangerous for an open inquiry. Broad exploration may be productive early and wasteful when a decision is overdue.
 
-No single phase is a failure. What counts as healthy is **role-relative**: a brainstorming agent should spend most of its time in exploration, a verification agent in stabilization. There is no universal healthy profile, only a match or mismatch between the substrate's phase and the role and stakes of the task.
+The relevant question is whether the dynamics fit the task and its stakes. That is why no single degree of spread, concentration, or recurrence can diagnose health on its own. The same pattern can mean different things at a different time or scale.
 
-## Failure modes
+Two failure shapes are especially useful to watch. *Lock-in* is convergence that closes alternatives before the work warrants it. *Drift* is continued activity that never consolidates enough to support action. Both can be seen in trajectories and changing regions of co-activity before they are reduced to a label.
 
-The pathologies are cycle failures. **Premature convergence** collapses into [[coordination-phase|lock-in]] before exploration has done its job: the more context settles around a region, the deeper its pull, until new material cannot compete — a belief attractor. **Failure to converge** is drift: couplings decay without consolidation, activity without accumulation.
+<Figure id="belief-attractors" margin caption="One possible lock-in pattern: a growing region repeatedly draws activity back toward itself." />
 
-<Figure id="belief-attractors" margin caption="Premature convergence: one membrane keeps growing and siphons off every frame, until nothing competes from outside — a belief attractor." />
+Our predictive work asks which combinations and sequences of observed patterns reliably precede later failure. That calibration remains task-relative even when the underlying dynamics are legible.
 
 <Related tags="cycle, dynamics" />

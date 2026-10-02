@@ -7,8 +7,11 @@ order: 20
 author: Julian Fleck
 tags: [instrumentation]
 show: true
+internal: true
 unlisted: true
 ---
+
+> **Internal — superseded by the Observatory.** This parameter playground preserves an earlier explanatory model. The public work now emphasizes observed interaction dynamics rather than presenting these controls as the substrate itself.
 
 The same model that drives the landing figure, with its governing parameters exposed. Energy is injected at individual frames, fires across couplings, and decays; co-activated frames couple together (Hebbian) into membranes that form and dissolve. It is a sketch, not the substrate itself — the point is to give a feel for how a handful of rates produce exploration, stabilization, and drift.
 

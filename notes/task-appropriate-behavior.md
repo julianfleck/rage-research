@@ -7,9 +7,12 @@ series: Lab notes
 status: draft
 version: 1
 show: true
+internal: true
 author: Julian Fleck
 tags: [behavior, diversity]
 ---
+
+> **Internal — folded into [[divergence-convergence-cycle|divergence/convergence]].** The public note now carries the essential qualification: healthy dynamics are relative to the task and its stakes. This calibration sketch remains internal.
 
 # Task-appropriate behavior
 

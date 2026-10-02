@@ -11,7 +11,10 @@ tags:
   - phase
   - structure
 show: true
+internal: true
 ---
+
+> **Internal — deprecated working model.** The oscillator representation below is retained because it shaped earlier experiments and visualizations. It is not required by the current account of observable interaction dynamics.
 
 A flat activation score gives one number per frame: how active it is right now. That's enough to rank what a query returns, but it can't express the thing this work is about. Two frames can both be active without being active *together*. A single number can't tell those apart.
 

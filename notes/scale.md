@@ -1,40 +1,25 @@
 ---
 title: Scale
-definition: "Reading the substrate as a topography at many zoom levels — from the whole store down to a single concept — where the boundaries between levels are membranes that nest and overlap rather than nest neatly."
-description: Knowledge as a topography read at many scales — from the whole substrate down to a single concept — interconnected across levels rather than neatly nested.
-date: 2026-06-13
+definition: Substrate dynamics can be read at several grains, from one working context to a population-wide field, with different boundaries becoming visible at each.
+description: The same interaction field supports several useful grains of observation without making frames, membranes, and actors identical objects.
+date: 2026-10-02
 series: Lab notes
-status: draft
-version: 1
+order: 6
+status: published
+version: 2
+author: Substrate Dynamics Lab
+tags: [scale, structure]
 show: true
-author: Julian Fleck
-tags:
-  - scale
-  - structure
 ---
 
-# Scale
+A shared knowledge environment can be read at several grains: one retrieval, one working context, a project, a population, or the wider substrate. What looks like a stable region at one grain may resolve into several moving parts at another.
 
-Knowledge in a [[graph-construction|frame semantics graph]] is a topography, not a flat field and not a clean tree either. Frames compose two ways: structurally (a file holds sections, a section holds concepts) and argumentatively (a claim with its evidence and sources makes an argument). See [[graph-construction|graph construction]] for the composition and [[fractal-composition|fractal composition]] for why it recurs.
+<Figure id="topo-zoom" margin caption="Changing the grain reveals different structures and boundaries in the same interaction field." />
 
-<Figure id="topo-zoom" margin caption="A map of the substrate read at different zoom levels: membranes nesting and overlapping, finer ones revealed as you zoom in." />
+There is a recurring compositional pattern across these levels. Smaller units participate in larger contexts; larger contexts can sometimes be treated as units when the question moves up a scale. This recurrence is useful because it lets us compare dynamics without assuming a single privileged level.
 
-The substrate runs across many scales. A rough ordering, large to small:
+The levels are not identical objects. A frame is a unit of context, a [[membranes|membrane]] is a computed boundary around co-activity, and an actor participates through its interactions. Treating them as interchangeable would hide the distinctions the observatory is meant to preserve.
 
-| Scale | What it is |
-|---|---|
-| Substrate | the whole shared store, everything every population reads and writes |
-| Co-located region | a neighbourhood of the substrate where related work concentrates |
-| Team / project membrane | a boundary around several agents and users working together |
-| Active cohort | a membrane around several agents and their shared, currently active context |
-| Personal base | a membrane around one user and their agents |
-| Project context | the material scoped to a single project |
-| Agent harness | one agent's memory, tools, and instructions |
-| Task context | what is active for a single task |
-| File | one document — e.g. a file of agent instructions |
-| Section | a part within that file |
-| Concept | an individual idea mentioned in it |
+Every reading therefore needs a declared grain and time window. Concentration across an entire substrate can mean something quite different from concentration inside one task context. Scale is part of the interpretation, not a cosmetic choice made after measurement.
 
-Only the substrate sits cleanly above the rest. Everything below it is interconnected across levels, not neatly nested: a single agent's active context, working inside a team, may pull instructions scattered across many files, projects, and other agents' bases. A membrane is not a tier in this list — it is a boundary drawn at a moment over whatever is co-active, wherever it lives.
-
-Which scale you read at sets what a reading means, including any [[gini-coefficient|metric]] computed over it. Pick the scale deliberately, and say which one.
+<Related tags="scale, structure" />

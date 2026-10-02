@@ -11,7 +11,10 @@ tags:
   - phase
   - dynamics
 show: true
+internal: true
 ---
+
+> **Internal — folded into [[divergence-convergence-cycle|divergence/convergence]].** The useful distinction among exploration, stabilization, lock-in, and drift now lives in that public note; this more granular operating model is retained as research history.
 
 *Coordination phase* is the regime a population of agents working over a shared substrate currently occupies — phase in the dynamical-systems sense, as in phase transition, not the oscillator sense. A frame's [[resonance|phase angle]] is a lower-level quantity; coordination phase is what we read off the population.
 

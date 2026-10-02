@@ -7,9 +7,12 @@ series: Lab notes
 status: draft
 version: 1
 show: true
+internal: true
 author: Julian Fleck
 tags: [metric]
 ---
+
+> **Internal research note.** Gini remains one candidate lens on concentration, not a public claim that concentration alone diagnoses substrate health.
 
 # Gini coefficient
 

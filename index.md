@@ -1,30 +1,29 @@
 ---
 title: Substrate dynamics
-description: A research project on the behavior of a shared, machine-readable knowledge store under continuous reading and writing by a population of agents.
-date: 2026-06-12
+description: We study the observable dynamics of shared knowledge environments used by populations of humans and AI agents.
+date: 2026-10-02
 home: true
 show: true
-status: draft
-version: 1
-author: Julian Fleck
+status: published
+version: 2
+author: Substrate Dynamics Lab
 tags: [overview]
 ---
-**We study substrate dynamics: the dynamics that emerge when a population of humans and agents both reads from and writes to a shared knowledge base.**
 
-By *[[substrate]]* we mean such a store treated as a medium rather than a record: it holds what is known and, in doing so, conditions what each agent can retrieve and act on. By *dynamics* we mean how it behaves under sustained use by many agents at once — which connections strengthen, how retrieval concentrates or disperses, how its contents shift as each write conditions the next read.
+**We study how shared knowledge environments change when populations of humans and AI agents continuously read from them, act through them, and write back.**
 
-We follow this because agents are increasingly deployed as populations that share memory, context, and retrieval — what one writes becomes what the others read next. Failures there tend to be collective, and by the time a single agent's output shows one the others have already built on it. Our wager is that the medium carries earlier signs, readable before behaviour expresses them, and can be acted on directly — changing the substrate the agents draw from rather than correcting each agent in turn.
+We call such an environment a [[substrate]] when it functions as a medium, not merely a record. Memory, documents, retrieval systems, tool state, and other forms of shared context all qualify when one participant's activity changes what others can encounter next.
 
-We carry this out over [[graph-construction|frame-semantic knowledge graphs]]: a typed structure of composable, nested [[frame|frames]] that bind into [[membranes]] as agents act — co-active regions whose [[coordination-phase|dynamics]] these notes track. The questions aren't specific to that representation, though; they apply to any shared store, and to what keeps it coherent and interpretable.
+The resulting interaction dynamics are observable. Retrieval and write-back leave traces in the medium: trajectories recur or separate, regions become jointly active, and attention gathers, disperses, or crosses between contexts. Our work makes those collective patterns legible without relying on private reasoning traces or reducing the system to the outputs of one agent at a time.
 
-These notes document the project as it proceeds — open problems alongside results, provisional throughout. And yes, much of this is written with the help of AI, so don't expect perfect prose, especially on anything flagged as draft :)
+That gives us an instrument for studying coordination while it happens. We can describe changes in movement, [[coupling]], and temporary [[membranes|boundaries]] across a shared field. We are testing which patterns reliably anticipate later failure, how much lead time they provide, and which reversible changes to the medium can improve the conditions for coordination.
 
-<Related category="References" title="References" sort="updated" />
+Our current apparatus uses structured [[frame|frames]] and interaction events, but the research question is broader than any one representation. It applies wherever a population shares a changing medium that shapes what its members can see and do.
 
-<Related category="Papers" title="Papers" sort="updated" />
+<Figure id="substrate-hero" margin caption="Observed activity reshapes a shared field: regions gather, overlap, and release as interactions accumulate." />
 
-<Related category="Articles" title="Articles" sort="updated" />
+The public notes give the conceptual account. Implementation details, candidate metrics, experiment backlogs, and superseded models remain preserved as internal research history.
 
-<Related category="Lab notes" title="Lab notes" sort="updated" />
+<Related category="References" title="References" sort="order" />
 
-<Related category="Proposals" title="Proposals" sort="updated" />
+<Related category="Lab notes" title="Concepts" sort="order" />

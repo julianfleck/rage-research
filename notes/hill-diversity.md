@@ -7,9 +7,12 @@ series: Lab notes
 status: draft
 version: 1
 show: true
+internal: true
 author: Julian Fleck
 tags: [metric, diversity]
 ---
+
+> **Internal research note.** Hill diversity remains one candidate lens on variety, not a public claim that any one diversity profile determines task fitness.
 
 # Hill diversity
 

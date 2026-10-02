@@ -1,25 +1,27 @@
 ---
 title: Substrate
-definition: The shared medium a population of agents reads from and writes back into — memory, context, retrieval, and tool state — where each write reshapes what every other agent retrieves next. The write-back feedback is what makes it a substrate rather than a static scaffold.
-description: What the substrate is — the shared medium of memory, context, retrieval, and tool state a population of agents reads from and writes back into, treated as an active medium whose structure evolves with use rather than a static record.
-date: 2026-06-15
+definition: A shared knowledge environment that a population reads from and writes back into, so each interaction can change what others encounter next.
+description: A substrate is shared memory, context, retrieval, or tool state treated as an active medium whose interaction dynamics can be observed.
+date: 2026-10-02
 series: Lab notes
-status: draft
-version: 1
-author: Julian Fleck
-tags:
-  - structure
+order: 1
+status: published
+version: 2
+author: Substrate Dynamics Lab
+tags: [structure, observability]
 show: true
 ---
 
-A *substrate* is the shared medium a population of agents reads from and writes back into — their memory, context, retrieval, and tool state. AI is increasingly deployed this way: populations of agents over a common medium, not isolated chatbots. Its defining property is the write-back loop: each write feeds back into the medium, changing what can be retrieved on the next turn. That loop holds for any dynamic knowledge base — a single agent and a store already have it — but our interest is the second-order effects it produces as use accumulates, which a population sharing the medium makes both larger and harder to see.
+A *substrate* is a shared knowledge environment that a population reads from and writes back into. It may include documents, memory, retrieval, tools, or other forms of context. What matters is the feedback loop: one participant's activity changes what another participant can encounter next.
 
-<Figure id="substrate-slice" margin caption="Each retrieval strikes a different chord: an agent pulls a particular configuration of frames — a subgraph — out of the substrate; the next turn pulls another." />
+<Figure id="substrate-slice" margin caption="Each retrieval brings a temporary configuration of the shared field into working context." />
 
-Multi-agent systems have a class of failures that are collective — properties of the population, not of any single agent: premature convergence on a narrow region before exploration is complete; a local error propagating as others retrieve it as evidence and amplify it; failure to converge at all. Two open questions follow: whether the substrate carries early, measurable signals of such failure — signals that would precede any single agent's behavioural expression of it; and whether reversible interventions on the medium can restore healthy coordination without overriding the agents. The aim: oversight that scales with the size and depth of a deployment rather than being outpaced by it.
+That feedback makes the medium part of the coordination system. Patterns do not live only in individual outputs; they also accumulate in what is repeatedly retrieved, connected, revisited, or left behind.
 
-We borrow the term from ecology: the medium an organism lives in and grows on, soil or a reef or a culture in a dish. Knowledge in a knowledge substrate is treated the same way: as a living system, not a record. Frames and the agents over them grow, couple, and decay; regions flourish or wither; boundaries form and dissolve. The recurring vocabulary — membrane, coupling, resonance, decay — keeps that ecological sense, and is meant literally.
+The resulting interaction dynamics are observable. From interaction events we can read trajectories through the medium, recurring encounters, changing regions of joint activity, and movement between dispersed and concentrated attention. This is a capability of the observatory now, not a claim that every observed pattern already has a settled interpretation.
 
-We build the substrate as a [[frame]]-graph: typed units that compose and nest, so the same structure reads across [[scale|scales]]. Built this way, the store is an active medium, not a record — topology, vocabulary, and traversal behaviour all evolve with use. Its [[coordination-phase|dynamics]] are the object of study. The rest of these notes concern what sustained use by a whole population does to such a medium.
+The research frontier is early warning: which patterns reliably anticipate later failure, how much lead time they provide, and whether the reading transfers across tasks and substrate designs. We also study reversible interventions on the medium itself, because changing shared context can alter the conditions for a whole population without steering each member independently.
 
-<Related tags="structure" />
+Our current apparatus represents the medium as a graph of [[frame|frames]], but substrate dynamics is the broader object of study. The same questions apply to any shared environment with observable interaction and write-back.
+
+<Related tags="structure, observability" />

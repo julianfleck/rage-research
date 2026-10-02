@@ -5,6 +5,7 @@ date: 2026-06-11
 series: Papers
 order: 1
 show: true
+internal: true
 status: draft
 version: 1
 author: Julian Fleck
@@ -12,6 +13,8 @@ tags:
   - frame-semantics
   - construction
 ---
+
+> **Internal — historical architecture draft.** This document preserves an earlier, implementation-specific account of graph construction. It is not the current public interface contract for substrate dynamics.
 
 ## Abstract
 
@@ -305,4 +308,3 @@ These questions belong to the substrate dynamics programme — the *attention-gu
 - Cole (2024) — Activity flow models: activation propagation over empirical connections (neuroscience analogue for the downstream dynamics work)
 
 ---
-

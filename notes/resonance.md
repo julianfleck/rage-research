@@ -11,7 +11,10 @@ tags:
   - resonance
   - retrieval
 show: true
+internal: true
 ---
+
+> **Internal — superseded definition.** This note uses “resonance” for a retrieval score and depth control. The current working vocabulary uses it more narrowly for structural overlap that remains coupled within a chosen decay window.
 
 In substrate dynamics, *resonance* is a measure on the substrate itself, not on any reader: how strongly a set of frames belongs together. It has two ingredients — the [[coupling]] already built across them (Hebbian, accumulated by co-activation over time) and the semantic coherence of their content. Coupling carries the history of use; coherence carries the fit of meaning. Resonance is the two together, which is why frames that have been worked together *and* are about the same thing resonate most.
 

@@ -10,7 +10,10 @@ author: Julian Fleck
 tags:
   - validation
 show: true
+internal: true
 ---
+
+> **Internal — historical experiment backlog.** This page is a stale planning snapshot, retained for research continuity rather than as a statement of current commitments or owners.
 
 Small, fully observable runs that validate substrate signals — each gets its own setup note under `experiments/`. A mechanism earns a place only after it shows a measurable, reproducible effect on a small, controlled problem; a substrate signal counts if it precedes the visible failure with a usable lead and beats trace-level baselines, tested at small scale first.
 
