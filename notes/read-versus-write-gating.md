@@ -13,6 +13,10 @@ internal: false
 tags: [agents, shared-records, experiments]
 ---
 
+## Abstract
+
+We tested two ways to constrain AI agents using a shared record. A write rule reduced stored cross-group contradictions from 25 to 4, largely by design, while agents continued producing potentially conflicting claims at a similar rate. A read filter prevented agents from seeing the other group's claims and eliminated measured overlap between the groups. Later readers who gave definite answers tended to follow the side admitted first, but that side was also shown first, so the cause remains unresolved. These small pilots show how admission and retrieval affect different parts of agent interaction; they do not establish better cooperation.
+
 ## Research question and hypothesis
 
 Does restricting what agents write to a shared record change their subsequent claim production, or does it mainly change the record? Our lab compared an admission rule with a read filter in two preregistered pilot studies run in sequence, using agents grounded in opposed commons and market-liberal source corpora (six texts per side, two per agent). Study M asked whether a write-side consistency lock changes what agents produce or only what the record keeps. Study X, designed after M's result to test Julian Fleck's hypothesis that constraints on retrieval can alter interaction among such agent populations, asked whether a read-side filter changes cross-corpus contest. Its registration called the expected direction close to mechanical. It also stated that a pass, combined with Study M's result, would support the reading that admission constraints and exposure constraints affect different observables (the claims retained in the store and the claims agents subsequently produced). That reading was therefore registered after Study M's result, not planned before either study. Here, substrate-mediated coordination refers to interaction through this shared information environment. Cooperation means successful joint activity and was not directly measured.
