@@ -1,5 +1,5 @@
 ---
-title: "Read and Write Constraints in Multi-Agent Coordination: Pilot Results"
+title: "read vs write gating"
 definition: "A pilot comparison of two places to intervene in a shared agent record: what the record admits and what each agent can read."
 description: In two small preregistered pilots, a write rule kept most cross-corpus contradictions out of a shared record, largely by design, and a read filter removed all overlap between two groups of agents. In follow-up studies, model readers' definitive answers on disputed topics mostly matched the side whose claim was admitted, and shown, first.
 date: 2026-10-29
