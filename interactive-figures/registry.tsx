@@ -1,6 +1,7 @@
 "use client";
 
 import { type ReactNode } from "react";
+import { ReadWriteGating } from "./read-write-gating";
 import { Line, LineChart, XAxis, YAxis } from "recharts";
 import { FlowField } from "@/components/flow-field";
 import { SubstrateHeroCoact } from "./substrate-hero-coact";
@@ -82,6 +83,7 @@ function HillProfile() {
 }
 
 export const figures: Record<string, FigureDef> = {
+  "read-write-gating": { kind: "svg", render: () => <ReadWriteGating /> },
   // Conceptual: activation gathering/dispersing across the substrate.
   "substrate-spread": { kind: "canvas", render: () => <SubstrateField /> },
   // Task spread: a narrow run vs an open run — measurable difference in spread.
